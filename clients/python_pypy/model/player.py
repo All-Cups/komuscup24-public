@@ -3,7 +3,7 @@ from stream_wrapper import StreamWrapper
 from typing import List
 
 class Player:
-    """TODO - Document"""
+    """Player (game participant)"""
 
     __slots__ = ("index","score","vehicles",)
 
@@ -13,11 +13,11 @@ class Player:
 
     def __init__(self, index: int, score: int, vehicles: List[Vehicle]):
         self.index = index
-        """TODO - Document"""
+        """Index"""
         self.score = score
-        """TODO - Document"""
+        """Current score"""
         self.vehicles = vehicles
-        """TODO - Document"""
+        """List of player's vehicles"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "Player":

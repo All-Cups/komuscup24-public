@@ -3,15 +3,15 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Range of values
  */
 class MinMaxRangeLong {
     /**
-     * TODO - Document
+     * Minimal value
      */
     var min: Long
     /**
-     * TODO - Document
+     * Maximal  value
      */
     var max: Long
 

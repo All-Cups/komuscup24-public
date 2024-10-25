@@ -4,16 +4,16 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * Range of values
      */
     class MinMaxRangeLong
     {
         /**
-         * TODO - Document
+         * Minimal value
          */
         public int $min;
         /**
-         * TODO - Document
+         * Maximal  value
          */
         public int $max;
     

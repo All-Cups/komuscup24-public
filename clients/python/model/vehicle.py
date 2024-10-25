@@ -4,7 +4,7 @@ from stream_wrapper import StreamWrapper
 from typing import Optional
 
 class Vehicle:
-    """TODO - Document"""
+    """A vehicle"""
 
     __slots__ = ("position","velocity","speed","rotation_speed","rotation","type_index","quest","fuel",)
 
@@ -19,21 +19,21 @@ class Vehicle:
 
     def __init__(self, position: Vec2Double, velocity: Vec2Double, speed: float, rotation_speed: float, rotation: float, type_index: int, quest: Optional[Quest], fuel: float):
         self.position = position
-        """TODO - Document"""
+        """Current position (center)"""
         self.velocity = velocity
-        """TODO - Document"""
+        """Velocity vector"""
         self.speed = speed
-        """TODO - Document"""
+        """Speed of wheels"""
         self.rotation_speed = rotation_speed
-        """TODO - Document"""
+        """Rotation speed (radians/second)"""
         self.rotation = rotation
-        """TODO - Document"""
+        """Current rotation"""
         self.type_index = type_index
-        """TODO - Document"""
+        """Vehicle type index"""
         self.quest = quest
-        """TODO maybe multiple quests at the same time?"""
+        """Current quest, if any"""
         self.fuel = fuel
-        """TODO - Document"""
+        """Remaining fuel"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "Vehicle":

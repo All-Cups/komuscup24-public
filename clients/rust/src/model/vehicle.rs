@@ -1,23 +1,23 @@
 use super::*;
 
-/// TODO - Document
+/// A vehicle
 #[derive(Clone, Debug)]
 pub struct Vehicle {
-    /// TODO - Document
+    /// Current position (center)
     pub position: model::Vec2F64,
-    /// TODO - Document
+    /// Velocity vector
     pub velocity: model::Vec2F64,
-    /// TODO - Document
+    /// Speed of wheels
     pub speed: f64,
-    /// TODO - Document
+    /// Rotation speed (radians/second)
     pub rotation_speed: f64,
-    /// TODO - Document
+    /// Current rotation
     pub rotation: f64,
-    /// TODO - Document
+    /// Vehicle type index
     pub type_index: i32,
-    /// TODO maybe multiple quests at the same time?
+    /// Current quest, if any
     pub quest: Option<model::Quest>,
-    /// TODO - Document
+    /// Remaining fuel
     pub fuel: f64,
 }
 

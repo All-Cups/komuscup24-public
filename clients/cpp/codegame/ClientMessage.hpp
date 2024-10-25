@@ -2,8 +2,9 @@
 #define __MODEL_CLIENT_MESSAGE_HPP__
 
 #include "Stream.hpp"
+#include "debugging/Color.hpp"
 #include "debugging/DebugCommand.hpp"
-#include "model/DebugData.hpp"
+#include "debugging/DebugData.hpp"
 #include "model/Order.hpp"
 #include "model/Vec2Double.hpp"
 #include "model/VehicleOrder.hpp"

@@ -11,15 +11,15 @@ class PlayerView {
      */
     var currentTick: Int
     /**
-     * TODO - Document
+     * Your player
      */
     var you: komus24.model.Player
     /**
-     * TODO - Document
+     * Other players
      */
     var other: Array<komus24.model.Player>
     /**
-     * TODO - Document
+     * Available quests
      */
     var quests: Array<komus24.model.Quest>
 

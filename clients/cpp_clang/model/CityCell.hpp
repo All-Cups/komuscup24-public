@@ -5,13 +5,13 @@
 
 namespace model {
 
-// TODO - Document
+// City cell
 enum class CityCell {
-    // TODO - Document
+    // Road
     ROAD = 0,
-    // TODO - Document
+    // Building
     BUILDING = 1,
-    // TODO - Document
+    // Refill station
     REFILL_STATION = 2
 };
 

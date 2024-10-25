@@ -1,64 +1,68 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// Game constants
     /// </summary>
     public struct Constants
     {
         /// <summary>
-        /// TODO - Document
+        /// Max duration of the game in ticks
         /// </summary>
         public int MaxTickCount { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Max game time in seconds
         /// </summary>
         public double MaxGameTimeSeconds { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Ticks per second
         /// </summary>
         public double TicksPerSecond { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Subticks for physics simulation
         /// </summary>
         public int Microticks { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Size of a single city cell
         /// </summary>
         public double CellSize { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Collision bounciness
         /// </summary>
         public double CollisionBounciness { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// City type
         /// </summary>
         public Komus24.Model.CityType CityType { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// List of vehicle types
         /// </summary>
         public Komus24.Model.VehicleType[] VehicleTypes { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Speed of refueling at a station
         /// </summary>
         public double RefillSpeed { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Number of available quests
         /// </summary>
         public int QuestCount { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Score range for quests
         /// </summary>
         public Komus24.Model.MinMaxRangeLong QuestScore { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Traffic options
         /// </summary>
         public Komus24.Model.Traffic Traffic { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Collision penalty modifier
+        /// </summary>
+        public double CollisionPenaltyModifier { get; set; }
+        /// <summary>
+        /// Map of the city
         /// </summary>
         public Komus24.Model.CityCell[][] City { get; set; }
     
-        public Constants(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, Komus24.Model.CityType cityType, Komus24.Model.VehicleType[] vehicleTypes, double refillSpeed, int questCount, Komus24.Model.MinMaxRangeLong questScore, Komus24.Model.Traffic traffic, Komus24.Model.CityCell[][] city)
+        public Constants(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, Komus24.Model.CityType cityType, Komus24.Model.VehicleType[] vehicleTypes, double refillSpeed, int questCount, Komus24.Model.MinMaxRangeLong questScore, Komus24.Model.Traffic traffic, double collisionPenaltyModifier, Komus24.Model.CityCell[][] city)
         {
             this.MaxTickCount = maxTickCount;
             this.MaxGameTimeSeconds = maxGameTimeSeconds;
@@ -72,6 +76,7 @@ namespace Komus24.Model
             this.QuestCount = questCount;
             this.QuestScore = questScore;
             this.Traffic = traffic;
+            this.CollisionPenaltyModifier = collisionPenaltyModifier;
             this.City = city;
         }
     
@@ -95,6 +100,7 @@ namespace Komus24.Model
             result.QuestCount = reader.ReadInt32();
             result.QuestScore = Komus24.Model.MinMaxRangeLong.ReadFrom(reader);
             result.Traffic = Komus24.Model.Traffic.ReadFrom(reader);
+            result.CollisionPenaltyModifier = reader.ReadDouble();
             result.City = new Komus24.Model.CityCell[reader.ReadInt32()][];
             for (int cityIndex = 0; cityIndex < result.City.Length; cityIndex++)
             {
@@ -126,6 +132,7 @@ namespace Komus24.Model
             writer.Write(QuestCount);
             QuestScore.WriteTo(writer);
             Traffic.WriteTo(writer);
+            writer.Write(CollisionPenaltyModifier);
             writer.Write(City.Length);
             foreach (var cityElement in City)
             {
@@ -185,6 +192,9 @@ namespace Komus24.Model
             stringResult += ", ";
             stringResult += "Traffic: ";
             stringResult += Traffic.ToString();
+            stringResult += ", ";
+            stringResult += "CollisionPenaltyModifier: ";
+            stringResult += CollisionPenaltyModifier.ToString();
             stringResult += ", ";
             stringResult += "City: ";
             stringResult += "[ ";

@@ -5,19 +5,19 @@ import std.conv;
 import std.typecons : Nullable;
 
 
-/// TODO - Document
+/// Options for traffic
 struct Traffic {
-    /// TODO - Document
+    /// Number of traffic cars
     int amount;
-    /// TODO - Document
+    /// Time to move between adjacent keypoints
     double moveTime;
-    /// TODO - Document
+    /// Radius of each traffic car
     double radius;
-    /// TODO - Document
+    /// Weight of each traffic car
     double weight;
-    /// TODO - Document
+    /// Deceleration after crash
     double crashDeceleration;
-    /// TODO - Document
+    /// Lifetime after crash
     double crashLifetime;
 
     this(int amount, double moveTime, double radius, double weight, double crashDeceleration, double crashLifetime) {

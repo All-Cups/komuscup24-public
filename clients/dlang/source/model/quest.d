@@ -5,13 +5,13 @@ import std.conv;
 import std.typecons : Nullable;
 import model.vec2_int;
 
-/// TODO - Document
+/// A delivery quest
 struct Quest {
-    /// TODO - Document
+    /// Cell where to pick delivery from
     model.Vec2Int pickupCell;
-    /// TODO - Document
+    /// Cell to drop the delivery at
     model.Vec2Int dropCell;
-    /// TODO - Document
+    /// Score for completing the quest
     long score;
 
     this(model.Vec2Int pickupCell, model.Vec2Int dropCell, long score) {

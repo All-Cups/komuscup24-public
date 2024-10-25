@@ -5,23 +5,23 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// A vehicle
 type Vehicle = {
-    /// TODO - Document
+    /// Current position (center)
     Position: Model.Vec2Double;
-    /// TODO - Document
+    /// Velocity vector
     Velocity: Model.Vec2Double;
-    /// TODO - Document
+    /// Speed of wheels
     Speed: double;
-    /// TODO - Document
+    /// Rotation speed (radians/second)
     RotationSpeed: double;
-    /// TODO - Document
+    /// Current rotation
     Rotation: double;
-    /// TODO - Document
+    /// Vehicle type index
     TypeIndex: int;
-    /// TODO maybe multiple quests at the same time?
+    /// Current quest, if any
     Quest: option<Model.Quest>;
-    /// TODO - Document
+    /// Remaining fuel
     Fuel: double;
 } with
 

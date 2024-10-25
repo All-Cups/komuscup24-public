@@ -26,7 +26,7 @@ func NewRunner(host string, port uint16, token string) Runner {
     WriteString(writer, token)
     WriteInt32(writer, 0)
     WriteInt32(writer, 1)
-    WriteInt32(writer, 0)
+    WriteInt32(writer, 2)
     err = writer.Flush()
     if err != nil {
         panic(err)

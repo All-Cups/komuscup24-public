@@ -1,20 +1,20 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// Player (game participant)
     /// </summary>
     public struct Player
     {
         /// <summary>
-        /// TODO - Document
+        /// Index
         /// </summary>
         public int Index { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Current score
         /// </summary>
         public long Score { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// List of player's vehicles
         /// </summary>
         public Komus24.Model.Vehicle[] Vehicles { get; set; }
     

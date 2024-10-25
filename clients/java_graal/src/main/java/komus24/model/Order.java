@@ -7,19 +7,19 @@ import komus24.util.StreamUtil;
  */
 public class Order {
     /**
-     * TODO - Document
+     * Orders for each of the vehicles
      */
     private komus24.model.VehicleOrder[] vehicles;
 
     /**
-     * TODO - Document
+     * Orders for each of the vehicles
      */
     public komus24.model.VehicleOrder[] getVehicles() {
         return vehicles;
     }
 
     /**
-     * TODO - Document
+     * Orders for each of the vehicles
      */
     public void setVehicles(komus24.model.VehicleOrder[] value) {
         this.vehicles = value;

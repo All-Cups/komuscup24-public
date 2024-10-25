@@ -10,7 +10,7 @@ namespace Model {
     class Order
     {
         /**
-         * TODO - Document
+         * Orders for each of the vehicles
          */
         public array $vehicles;
     

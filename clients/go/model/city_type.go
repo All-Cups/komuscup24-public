@@ -4,7 +4,7 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// City type
 type CityType interface {
     // Write CityType to writer
     Write(writer io.Writer)
@@ -24,13 +24,13 @@ func ReadCityType(reader io.Reader) CityType {
     panic("Unexpected tag value")
 }
 
-// TODO - Document
+// Auto generated manhattan map
 type CityTypeManhattan struct {
-    // TODO - Document
+    // Map size
     Size Vec2Int32
-    // TODO - Document
+    // Size of a single block
     BlockSize Vec2Int32
-    // TODO - Document
+    // Number of refill stations
     Refills int32
 }
 
@@ -86,9 +86,9 @@ func (cityTypeManhattan CityTypeManhattan) String() string {
     return stringResult
 }
 
-// TODO - Document
+// Fixed map
 type CityTypeInline struct {
-    // TODO - Document
+    // Each string represents a row in the city
     Cells []string
 }
 

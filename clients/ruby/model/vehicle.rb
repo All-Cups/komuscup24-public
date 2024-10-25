@@ -3,23 +3,23 @@ require './model/vec2_double'
 
 module Model
 
-# TODO - Document
+# A vehicle
 class Vehicle
-    # TODO - Document
+    # Current position (center)
     attr_accessor :position
-    # TODO - Document
+    # Velocity vector
     attr_accessor :velocity
-    # TODO - Document
+    # Speed of wheels
     attr_accessor :speed
-    # TODO - Document
+    # Rotation speed (radians/second)
     attr_accessor :rotation_speed
-    # TODO - Document
+    # Current rotation
     attr_accessor :rotation
-    # TODO - Document
+    # Vehicle type index
     attr_accessor :type_index
-    # TODO maybe multiple quests at the same time?
+    # Current quest, if any
     attr_accessor :quest
-    # TODO - Document
+    # Remaining fuel
     attr_accessor :fuel
 
     def initialize(position, velocity, speed, rotation_speed, rotation, type_index, quest, fuel)

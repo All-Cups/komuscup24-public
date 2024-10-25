@@ -5,13 +5,13 @@ import std.conv;
 import std.typecons : Nullable;
 import model.vehicle;
 
-/// TODO - Document
+/// Player (game participant)
 struct Player {
-    /// TODO - Document
+    /// Index
     int index;
-    /// TODO - Document
+    /// Current score
     long score;
-    /// TODO - Document
+    /// List of player's vehicles
     model.Vehicle[] vehicles;
 
     this(int index, long score, model.Vehicle[] vehicles) {

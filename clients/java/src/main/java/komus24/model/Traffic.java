@@ -3,113 +3,113 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * Options for traffic
  */
 public class Traffic {
     /**
-     * TODO - Document
+     * Number of traffic cars
      */
     private int amount;
 
     /**
-     * TODO - Document
+     * Number of traffic cars
      */
     public int getAmount() {
         return amount;
     }
 
     /**
-     * TODO - Document
+     * Number of traffic cars
      */
     public void setAmount(int value) {
         this.amount = value;
     }
     /**
-     * TODO - Document
+     * Time to move between adjacent keypoints
      */
     private double moveTime;
 
     /**
-     * TODO - Document
+     * Time to move between adjacent keypoints
      */
     public double getMoveTime() {
         return moveTime;
     }
 
     /**
-     * TODO - Document
+     * Time to move between adjacent keypoints
      */
     public void setMoveTime(double value) {
         this.moveTime = value;
     }
     /**
-     * TODO - Document
+     * Radius of each traffic car
      */
     private double radius;
 
     /**
-     * TODO - Document
+     * Radius of each traffic car
      */
     public double getRadius() {
         return radius;
     }
 
     /**
-     * TODO - Document
+     * Radius of each traffic car
      */
     public void setRadius(double value) {
         this.radius = value;
     }
     /**
-     * TODO - Document
+     * Weight of each traffic car
      */
     private double weight;
 
     /**
-     * TODO - Document
+     * Weight of each traffic car
      */
     public double getWeight() {
         return weight;
     }
 
     /**
-     * TODO - Document
+     * Weight of each traffic car
      */
     public void setWeight(double value) {
         this.weight = value;
     }
     /**
-     * TODO - Document
+     * Deceleration after crash
      */
     private double crashDeceleration;
 
     /**
-     * TODO - Document
+     * Deceleration after crash
      */
     public double getCrashDeceleration() {
         return crashDeceleration;
     }
 
     /**
-     * TODO - Document
+     * Deceleration after crash
      */
     public void setCrashDeceleration(double value) {
         this.crashDeceleration = value;
     }
     /**
-     * TODO - Document
+     * Lifetime after crash
      */
     private double crashLifetime;
 
     /**
-     * TODO - Document
+     * Lifetime after crash
      */
     public double getCrashLifetime() {
         return crashLifetime;
     }
 
     /**
-     * TODO - Document
+     * Lifetime after crash
      */
     public void setCrashLifetime(double value) {
         this.crashLifetime = value;

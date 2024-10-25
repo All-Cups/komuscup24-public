@@ -15,11 +15,11 @@ type
     TPlayerView = class
         // Current tick number
         currentTick: Int32;
-        // TODO - Document
+        // Your player
         you: TPlayer;
-        // TODO - Document
+        // Other players
         other: TArray<TPlayer>;
-        // TODO - Document
+        // Available quests
         quests: TArray<TQuest>;
         constructor Create(currentTick: Int32; you: TPlayer; other: TArray<TPlayer>; quests: TArray<TQuest>);
         // Read PlayerView from input stream

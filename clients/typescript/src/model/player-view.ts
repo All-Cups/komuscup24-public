@@ -11,15 +11,15 @@ export class PlayerView {
      */
     currentTick: number
     /**
-     * TODO - Document
+     * Your player
      */
     you: Player
     /**
-     * TODO - Document
+     * Other players
      */
     other: Array<Player>
     /**
-     * TODO - Document
+     * Available quests
      */
     quests: Array<Quest>
 

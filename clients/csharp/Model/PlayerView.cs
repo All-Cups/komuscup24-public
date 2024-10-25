@@ -10,15 +10,15 @@ namespace Komus24.Model
         /// </summary>
         public int CurrentTick { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Your player
         /// </summary>
         public Komus24.Model.Player You { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Other players
         /// </summary>
         public Komus24.Model.Player[] Other { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Available quests
         /// </summary>
         public Komus24.Model.Quest[] Quests { get; set; }
     

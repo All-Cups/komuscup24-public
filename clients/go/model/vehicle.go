@@ -4,23 +4,23 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// A vehicle
 type Vehicle struct {
-    // TODO - Document
+    // Current position (center)
     Position Vec2Float64
-    // TODO - Document
+    // Velocity vector
     Velocity Vec2Float64
-    // TODO - Document
+    // Speed of wheels
     Speed float64
-    // TODO - Document
+    // Rotation speed (radians/second)
     RotationSpeed float64
-    // TODO - Document
+    // Current rotation
     Rotation float64
-    // TODO - Document
+    // Vehicle type index
     TypeIndex int32
-    // TODO maybe multiple quests at the same time?
+    // Current quest, if any
     Quest *Quest
-    // TODO - Document
+    // Remaining fuel
     Fuel float64
 }
 

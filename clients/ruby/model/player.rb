@@ -2,13 +2,13 @@ require './model/vehicle'
 
 module Model
 
-# TODO - Document
+# Player (game participant)
 class Player
-    # TODO - Document
+    # Index
     attr_accessor :index
-    # TODO - Document
+    # Current score
     attr_accessor :score
-    # TODO - Document
+    # List of player's vehicles
     attr_accessor :vehicles
 
     def initialize(index, score, vehicles)

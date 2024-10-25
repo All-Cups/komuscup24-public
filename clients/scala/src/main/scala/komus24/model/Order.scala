@@ -5,7 +5,7 @@ import komus24.util.StreamUtil
 /**
  * Player's orders
  *
- * @param vehicles TODO - Document
+ * @param vehicles Orders for each of the vehicles
  */
 case class Order(vehicles: Seq[komus24.model.VehicleOrder]) {
     /**

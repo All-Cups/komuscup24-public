@@ -17,11 +17,11 @@ class PlayerView:
         self.current_tick = current_tick
         """Current tick number"""
         self.you = you
-        """TODO - Document"""
+        """Your player"""
         self.other = other
-        """TODO - Document"""
+        """Other players"""
         self.quests = quests
-        """TODO - Document"""
+        """Available quests"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "PlayerView":

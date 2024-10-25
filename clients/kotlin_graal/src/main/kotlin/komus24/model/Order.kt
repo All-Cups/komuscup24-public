@@ -7,7 +7,7 @@ import komus24.util.StreamUtil
  */
 class Order {
     /**
-     * TODO - Document
+     * Orders for each of the vehicles
      */
     var vehicles: Array<komus24.model.VehicleOrder>
 

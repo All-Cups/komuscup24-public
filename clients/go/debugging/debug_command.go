@@ -2,7 +2,6 @@ package debugging
 
 import "fmt"
 import "io"
-import . "komus24/model"
 import . "komus24/stream"
 
 // Debug commands that can be sent while debugging with the app

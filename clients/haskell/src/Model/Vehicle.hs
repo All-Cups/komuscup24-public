@@ -7,23 +7,23 @@ import Data.Int
 import Model.Quest (Quest)
 import Model.Vec2Double (Vec2Double)
 
--- | TODO - Document
+-- | A vehicle
 data Vehicle = Vehicle {
-    -- | TODO - Document
+    -- | Current position (center)
     position :: Vec2Double,
-    -- | TODO - Document
+    -- | Velocity vector
     velocity :: Vec2Double,
-    -- | TODO - Document
+    -- | Speed of wheels
     speed :: Double,
-    -- | TODO - Document
+    -- | Rotation speed (radians/second)
     rotationSpeed :: Double,
-    -- | TODO - Document
+    -- | Current rotation
     rotation :: Double,
-    -- | TODO - Document
+    -- | Vehicle type index
     typeIndex :: Int32,
-    -- | TODO maybe multiple quests at the same time?
+    -- | Current quest, if any
     quest :: Maybe Quest,
-    -- | TODO - Document
+    -- | Remaining fuel
     fuel :: Double }
     deriving Show
 

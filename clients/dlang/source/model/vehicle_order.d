@@ -5,13 +5,13 @@ import std.conv;
 import std.typecons : Nullable;
 
 
-/// TODO - Document
+/// Order for controlling a single vehicle
 struct VehicleOrder {
-    /// -1..+1
+    /// Acceleration (-1 - fully backwards, +1 - fully forward)
     double accelerate;
-    /// TODO - Document
+    /// Hand brakes
     bool brakes;
-    /// -1..+1
+    /// Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
     double rotate;
 
     this(double accelerate, bool brakes, double rotate) {

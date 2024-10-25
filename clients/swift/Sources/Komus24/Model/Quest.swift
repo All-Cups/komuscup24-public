@@ -1,12 +1,12 @@
-/// TODO - Document
+/// A delivery quest
 public struct Quest {
-    /// TODO - Document
+    /// Cell where to pick delivery from
     let pickupCell: Vec2Int
 
-    /// TODO - Document
+    /// Cell to drop the delivery at
     let dropCell: Vec2Int
 
-    /// TODO - Document
+    /// Score for completing the quest
     let score: Int64
 
     /// Read Quest from input stream

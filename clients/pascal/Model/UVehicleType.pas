@@ -9,29 +9,29 @@ uses
     SysUtils;
 
 type
-    // TODO - Document
+    // Vehicle type options
     TVehicleType = class
-        // TODO - Document
+        // Name
         name: String;
-        // TODO - Document
+        // Radius
         radius: Double;
-        // TODO - Document
+        // Weight
         weight: Double;
-        // TODO - Document
+        // Maximal backwads movement speed
         maxBackwardsSpeed: Double;
-        // TODO - Document
+        // Maximal forward movement speed
         maxSpeed: Double;
-        // TODO - Document
+        // Acceleration
         acceleration: Double;
-        // TODO - Document
+        // Friction coefficient
         friction: Double;
-        // TODO - Document
+        // Maximal rotation speed
         maxRotateSpeed: Double;
-        // TODO - Document
+        // Rotational acceleration
         rotateAcceleration: Double;
-        // TODO - Document
+        // Maximal amount of fuel
         maxFuel: Double;
-        // TODO - Document
+        // Fuel usage speed
         fuelUseSpeed: Double;
         constructor Create(name: String; radius: Double; weight: Double; maxBackwardsSpeed: Double; maxSpeed: Double; acceleration: Double; friction: Double; maxRotateSpeed: Double; rotateAcceleration: Double; maxFuel: Double; fuelUseSpeed: Double);
         // Read VehicleType from input stream

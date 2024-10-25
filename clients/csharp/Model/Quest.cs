@@ -1,20 +1,20 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// A delivery quest
     /// </summary>
     public struct Quest
     {
         /// <summary>
-        /// TODO - Document
+        /// Cell where to pick delivery from
         /// </summary>
         public Komus24.Model.Vec2Int PickupCell { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Cell to drop the delivery at
         /// </summary>
         public Komus24.Model.Vec2Int DropCell { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Score for completing the quest
         /// </summary>
         public long Score { get; set; }
     

@@ -4,19 +4,19 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// Options for traffic
 type Traffic struct {
-    // TODO - Document
+    // Number of traffic cars
     Amount int32
-    // TODO - Document
+    // Time to move between adjacent keypoints
     MoveTime float64
-    // TODO - Document
+    // Radius of each traffic car
     Radius float64
-    // TODO - Document
+    // Weight of each traffic car
     Weight float64
-    // TODO - Document
+    // Deceleration after crash
     CrashDeceleration float64
-    // TODO - Document
+    // Lifetime after crash
     CrashLifetime float64
 }
 

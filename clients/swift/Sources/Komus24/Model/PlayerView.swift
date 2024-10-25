@@ -3,13 +3,13 @@ public struct PlayerView {
     /// Current tick number
     let currentTick: Int32
 
-    /// TODO - Document
+    /// Your player
     let you: Player
 
-    /// TODO - Document
+    /// Other players
     let other: [Player]
 
-    /// TODO - Document
+    /// Available quests
     let quests: [Quest]
 
     /// Read PlayerView from input stream

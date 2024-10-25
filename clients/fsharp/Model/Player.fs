@@ -5,13 +5,13 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// Player (game participant)
 type Player = {
-    /// TODO - Document
+    /// Index
     Index: int;
-    /// TODO - Document
+    /// Current score
     Score: int64;
-    /// TODO - Document
+    /// List of player's vehicles
     Vehicles: Model.Vehicle[];
 } with
 

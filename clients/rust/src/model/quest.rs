@@ -1,13 +1,13 @@
 use super::*;
 
-/// TODO - Document
+/// A delivery quest
 #[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct Quest {
-    /// TODO - Document
+    /// Cell where to pick delivery from
     pub pickup_cell: model::Vec2I32,
-    /// TODO - Document
+    /// Cell to drop the delivery at
     pub drop_cell: model::Vec2I32,
-    /// TODO - Document
+    /// Score for completing the quest
     pub score: i64,
 }
 

@@ -22,7 +22,7 @@ namespace Komus24
             writer.Write(tokenData);
             writer.Write((int) 0);
             writer.Write((int) 1);
-            writer.Write((int) 0);
+            writer.Write((int) 2);
             writer.Flush();
         }
         public void Run()

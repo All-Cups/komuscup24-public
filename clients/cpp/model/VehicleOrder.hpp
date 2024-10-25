@@ -7,14 +7,14 @@
 
 namespace model {
 
-// TODO - Document
+// Order for controlling a single vehicle
 class VehicleOrder {
 public:
-    // -1..+1
+    // Acceleration (-1 - fully backwards, +1 - fully forward)
     double accelerate;
-    // TODO - Document
+    // Hand brakes
     bool brakes;
-    // -1..+1
+    // Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
     double rotate;
 
     VehicleOrder(double accelerate, bool brakes, double rotate);

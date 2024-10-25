@@ -1,13 +1,13 @@
 use super::*;
 
-/// TODO - Document
+/// Order for controlling a single vehicle
 #[derive(Clone, Debug)]
 pub struct VehicleOrder {
-    /// -1..+1
+    /// Acceleration (-1 - fully backwards, +1 - fully forward)
     pub accelerate: f64,
-    /// TODO - Document
+    /// Hand brakes
     pub brakes: bool,
-    /// -1..+1
+    /// Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
     pub rotate: f64,
 }
 

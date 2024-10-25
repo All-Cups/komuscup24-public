@@ -1,4 +1,4 @@
-const DebugData = require.main.require('./model/debug-data');
+const DebugData = require.main.require('./debugging/debug-data');
 
 /**
  * Debug commands that can be sent while debugging with the app

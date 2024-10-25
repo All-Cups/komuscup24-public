@@ -1,12 +1,12 @@
 module Model
 
-# TODO - Document
+# Order for controlling a single vehicle
 class VehicleOrder
-    # -1..+1
+    # Acceleration (-1 - fully backwards, +1 - fully forward)
     attr_accessor :accelerate
-    # TODO - Document
+    # Hand brakes
     attr_accessor :brakes
-    # -1..+1
+    # Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
     attr_accessor :rotate
 
     def initialize(accelerate, brakes, rotate)

@@ -2,7 +2,8 @@
 #define __MODEL_DEBUG_COMMAND_HPP__
 
 #include "Stream.hpp"
-#include "model/DebugData.hpp"
+#include "debugging/Color.hpp"
+#include "debugging/DebugData.hpp"
 #include "model/Vec2Double.hpp"
 #include <memory>
 #include <sstream>
@@ -17,9 +18,9 @@ namespace debugging {
 class Add {
 public:
     // Data to add
-    model::DebugData debugData;
+    debugging::DebugData debugData;
 
-    Add(model::DebugData debugData);
+    Add(debugging::DebugData debugData);
 
     // Read Add from input stream
     static Add readFrom(InputStream& stream);

@@ -1,6 +1,6 @@
 /// Player's orders
 public struct Order {
-    /// TODO - Document
+    /// Orders for each of the vehicles
     let vehicles: [VehicleOrder]
 
     /// Read Order from input stream

@@ -3,7 +3,7 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * City type
  */
 abstract class CityType {
     /**
@@ -27,19 +27,19 @@ abstract class CityType {
     }
 
     /**
-     * TODO - Document
+     * Auto generated manhattan map
      */
     class Manhattan : CityType {
         /**
-         * TODO - Document
+         * Map size
          */
         var size: komus24.model.Vec2Int
         /**
-         * TODO - Document
+         * Size of a single block
          */
         var blockSize: komus24.model.Vec2Int
         /**
-         * TODO - Document
+         * Number of refill stations
          */
         var refills: Int
     
@@ -97,11 +97,11 @@ abstract class CityType {
     }
 
     /**
-     * TODO - Document
+     * Fixed map
      */
     class Inline : CityType {
         /**
-         * TODO - Document
+         * Each string represents a row in the city
          */
         var cells: Array<String>
     

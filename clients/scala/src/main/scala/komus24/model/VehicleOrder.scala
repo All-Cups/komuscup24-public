@@ -3,11 +3,11 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Order for controlling a single vehicle
  *
- * @param accelerate -1..+1
- * @param brakes TODO - Document
- * @param rotate -1..+1
+ * @param accelerate Acceleration (-1 - fully backwards, +1 - fully forward)
+ * @param brakes Hand brakes
+ * @param rotate Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
  */
 case class VehicleOrder(accelerate: Double, brakes: Boolean, rotate: Double) {
     /**

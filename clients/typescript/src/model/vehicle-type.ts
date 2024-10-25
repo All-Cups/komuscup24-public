@@ -1,51 +1,51 @@
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * Vehicle type options
  */
 export class VehicleType {
     /**
-     * TODO - Document
+     * Name
      */
     name: string
     /**
-     * TODO - Document
+     * Radius
      */
     radius: number
     /**
-     * TODO - Document
+     * Weight
      */
     weight: number
     /**
-     * TODO - Document
+     * Maximal backwads movement speed
      */
     maxBackwardsSpeed: number
     /**
-     * TODO - Document
+     * Maximal forward movement speed
      */
     maxSpeed: number
     /**
-     * TODO - Document
+     * Acceleration
      */
     acceleration: number
     /**
-     * TODO - Document
+     * Friction coefficient
      */
     friction: number
     /**
-     * TODO - Document
+     * Maximal rotation speed
      */
     maxRotateSpeed: number
     /**
-     * TODO - Document
+     * Rotational acceleration
      */
     rotateAcceleration: number
     /**
-     * TODO - Document
+     * Maximal amount of fuel
      */
     maxFuel: number
     /**
-     * TODO - Document
+     * Fuel usage speed
      */
     fuelUseSpeed: number
 

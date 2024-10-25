@@ -3,7 +3,7 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * City type
  */
 sealed trait CityType {
     /**
@@ -14,11 +14,11 @@ sealed trait CityType {
 
 object CityType {
     /**
-     * TODO - Document
+     * Auto generated manhattan map
      *
-     * @param size TODO - Document
-     * @param blockSize TODO - Document
-     * @param refills TODO - Document
+     * @param size Map size
+     * @param blockSize Size of a single block
+     * @param refills Number of refill stations
      */
     case class Manhattan(size: komus24.model.Vec2Int, blockSize: komus24.model.Vec2Int, refills: Int) extends CityType {
         /**
@@ -63,9 +63,9 @@ object CityType {
     }
 
     /**
-     * TODO - Document
+     * Fixed map
      *
-     * @param cells TODO - Document
+     * @param cells Each string represents a row in the city
      */
     case class Inline(cells: Seq[String]) extends CityType {
         /**

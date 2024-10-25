@@ -4,13 +4,13 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// Order for controlling a single vehicle
 type VehicleOrder struct {
-    // -1..+1
+    // Acceleration (-1 - fully backwards, +1 - fully forward)
     Accelerate float64
-    // TODO - Document
+    // Hand brakes
     Brakes bool
-    // -1..+1
+    // Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
     Rotate float64
 }
 

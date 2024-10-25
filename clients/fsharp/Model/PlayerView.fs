@@ -9,11 +9,11 @@ open Komus24
 type PlayerView = {
     /// Current tick number
     CurrentTick: int;
-    /// TODO - Document
+    /// Your player
     You: Model.Player;
-    /// TODO - Document
+    /// Other players
     Other: Model.Player[];
-    /// TODO - Document
+    /// Available quests
     Quests: Model.Quest[];
 } with
 

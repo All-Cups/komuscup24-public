@@ -1,10 +1,10 @@
 module Model
 
-# TODO - Document
+# Range of values
 class MinMaxRangeLong
-    # TODO - Document
+    # Minimal value
     attr_accessor :min
-    # TODO - Document
+    # Maximal  value
     attr_accessor :max
 
     def initialize(min, max)

@@ -2,19 +2,19 @@ import { Vehicle } from "./vehicle";
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * Player (game participant)
  */
 export class Player {
     /**
-     * TODO - Document
+     * Index
      */
     index: number
     /**
-     * TODO - Document
+     * Current score
      */
     score: bigint
     /**
-     * TODO - Document
+     * List of player's vehicles
      */
     vehicles: Array<Vehicle>
 

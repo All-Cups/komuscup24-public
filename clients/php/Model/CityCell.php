@@ -4,22 +4,22 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * City cell
      */
     abstract class CityCell
     {
         /**
-         * TODO - Document
+         * Road
          */
         const ROAD = 0;
 
         /**
-         * TODO - Document
+         * Building
          */
         const BUILDING = 1;
 
         /**
-         * TODO - Document
+         * Refill station
          */
         const REFILL_STATION = 2;
 

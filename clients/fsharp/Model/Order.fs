@@ -7,7 +7,7 @@ open Komus24
 
 /// Player's orders
 type Order = {
-    /// TODO - Document
+    /// Orders for each of the vehicles
     Vehicles: Model.VehicleOrder[];
 } with
 

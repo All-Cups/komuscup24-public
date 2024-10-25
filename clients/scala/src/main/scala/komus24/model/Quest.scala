@@ -3,11 +3,11 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * A delivery quest
  *
- * @param pickupCell TODO - Document
- * @param dropCell TODO - Document
- * @param score TODO - Document
+ * @param pickupCell Cell where to pick delivery from
+ * @param dropCell Cell to drop the delivery at
+ * @param score Score for completing the quest
  */
 case class Quest(pickupCell: komus24.model.Vec2Int, dropCell: komus24.model.Vec2Int, score: Long) {
     /**

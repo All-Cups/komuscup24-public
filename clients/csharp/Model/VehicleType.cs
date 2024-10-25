@@ -1,52 +1,52 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// Vehicle type options
     /// </summary>
     public struct VehicleType
     {
         /// <summary>
-        /// TODO - Document
+        /// Name
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Radius
         /// </summary>
         public double Radius { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Weight
         /// </summary>
         public double Weight { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Maximal backwads movement speed
         /// </summary>
         public double MaxBackwardsSpeed { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Maximal forward movement speed
         /// </summary>
         public double MaxSpeed { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Acceleration
         /// </summary>
         public double Acceleration { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Friction coefficient
         /// </summary>
         public double Friction { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Maximal rotation speed
         /// </summary>
         public double MaxRotateSpeed { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Rotational acceleration
         /// </summary>
         public double RotateAcceleration { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Maximal amount of fuel
         /// </summary>
         public double MaxFuel { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Fuel usage speed
         /// </summary>
         public double FuelUseSpeed { get; set; }
     

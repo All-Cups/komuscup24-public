@@ -3,16 +3,16 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * A vehicle
  *
- * @param position TODO - Document
- * @param velocity TODO - Document
- * @param speed TODO - Document
- * @param rotationSpeed TODO - Document
- * @param rotation TODO - Document
- * @param typeIndex TODO - Document
- * @param quest TODO maybe multiple quests at the same time?
- * @param fuel TODO - Document
+ * @param position Current position (center)
+ * @param velocity Velocity vector
+ * @param speed Speed of wheels
+ * @param rotationSpeed Rotation speed (radians/second)
+ * @param rotation Current rotation
+ * @param typeIndex Vehicle type index
+ * @param quest Current quest, if any
+ * @param fuel Remaining fuel
  */
 case class Vehicle(position: komus24.model.Vec2Double, velocity: komus24.model.Vec2Double, speed: Double, rotationSpeed: Double, rotation: Double, typeIndex: Int, quest: Option[komus24.model.Quest], fuel: Double) {
     /**

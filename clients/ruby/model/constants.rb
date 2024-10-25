@@ -6,36 +6,38 @@ require './model/vehicle_type'
 
 module Model
 
-# TODO - Document
+# Game constants
 class Constants
-    # TODO - Document
+    # Max duration of the game in ticks
     attr_accessor :max_tick_count
-    # TODO - Document
+    # Max game time in seconds
     attr_accessor :max_game_time_seconds
-    # TODO - Document
+    # Ticks per second
     attr_accessor :ticks_per_second
-    # TODO - Document
+    # Subticks for physics simulation
     attr_accessor :microticks
-    # TODO - Document
+    # Size of a single city cell
     attr_accessor :cell_size
-    # TODO - Document
+    # Collision bounciness
     attr_accessor :collision_bounciness
-    # TODO - Document
+    # City type
     attr_accessor :city_type
-    # TODO - Document
+    # List of vehicle types
     attr_accessor :vehicle_types
-    # TODO - Document
+    # Speed of refueling at a station
     attr_accessor :refill_speed
-    # TODO - Document
+    # Number of available quests
     attr_accessor :quest_count
-    # TODO - Document
+    # Score range for quests
     attr_accessor :quest_score
-    # TODO - Document
+    # Traffic options
     attr_accessor :traffic
-    # TODO - Document
+    # Collision penalty modifier
+    attr_accessor :collision_penalty_modifier
+    # Map of the city
     attr_accessor :city
 
-    def initialize(max_tick_count, max_game_time_seconds, ticks_per_second, microticks, cell_size, collision_bounciness, city_type, vehicle_types, refill_speed, quest_count, quest_score, traffic, city)
+    def initialize(max_tick_count, max_game_time_seconds, ticks_per_second, microticks, cell_size, collision_bounciness, city_type, vehicle_types, refill_speed, quest_count, quest_score, traffic, collision_penalty_modifier, city)
         @max_tick_count = max_tick_count
         @max_game_time_seconds = max_game_time_seconds
         @ticks_per_second = ticks_per_second
@@ -48,6 +50,7 @@ class Constants
         @quest_count = quest_count
         @quest_score = quest_score
         @traffic = traffic
+        @collision_penalty_modifier = collision_penalty_modifier
         @city = city
     end
 
@@ -69,6 +72,7 @@ class Constants
         quest_count = stream.read_int()
         quest_score = Model::MinMaxRangeLong.read_from(stream)
         traffic = Model::Traffic.read_from(stream)
+        collision_penalty_modifier = stream.read_double()
         city = []
         stream.read_int().times do |_|
             city_element = []
@@ -78,7 +82,7 @@ class Constants
             end
             city.push(city_element)
         end
-        Constants.new(max_tick_count, max_game_time_seconds, ticks_per_second, microticks, cell_size, collision_bounciness, city_type, vehicle_types, refill_speed, quest_count, quest_score, traffic, city)
+        Constants.new(max_tick_count, max_game_time_seconds, ticks_per_second, microticks, cell_size, collision_bounciness, city_type, vehicle_types, refill_speed, quest_count, quest_score, traffic, collision_penalty_modifier, city)
     end
 
     # Write Constants to output stream
@@ -98,6 +102,7 @@ class Constants
         stream.write_int(@quest_count)
         @quest_score.write_to(stream)
         @traffic.write_to(stream)
+        stream.write_double(@collision_penalty_modifier)
         stream.write_int(@city.length())
         @city.each do |city_element|
             stream.write_int(city_element.length())
@@ -153,6 +158,9 @@ class Constants
         string_result += ", "
         string_result += "traffic: "
         string_result += @traffic.to_s
+        string_result += ", "
+        string_result += "collision_penalty_modifier: "
+        string_result += @collision_penalty_modifier.to_s
         string_result += ", "
         string_result += "city: "
         string_result += "[ "

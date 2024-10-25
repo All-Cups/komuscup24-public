@@ -1,15 +1,15 @@
-/// TODO - Document
+/// City type
 enum CityType {
-    /// TODO - Document
+    /// Auto generated manhattan map
     ///
-    /// - size: TODO - Document
-    /// - blockSize: TODO - Document
-    /// - refills: TODO - Document
+    /// - size: Map size
+    /// - blockSize: Size of a single block
+    /// - refills: Number of refill stations
     case manhattan(size: Vec2Int, blockSize: Vec2Int, refills: Int32)
 
-    /// TODO - Document
+    /// Fixed map
     ///
-    /// - cells: TODO - Document
+    /// - cells: Each string represents a row in the city
     case inline(cells: [String])
 
     /// Read CityType from input stream

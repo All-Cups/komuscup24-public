@@ -12,24 +12,24 @@
 
 namespace model {
 
-// TODO - Document
+// A vehicle
 class Vehicle {
 public:
-    // TODO - Document
+    // Current position (center)
     model::Vec2Double position;
-    // TODO - Document
+    // Velocity vector
     model::Vec2Double velocity;
-    // TODO - Document
+    // Speed of wheels
     double speed;
-    // TODO - Document
+    // Rotation speed (radians/second)
     double rotationSpeed;
-    // TODO - Document
+    // Current rotation
     double rotation;
-    // TODO - Document
+    // Vehicle type index
     int typeIndex;
-    // TODO maybe multiple quests at the same time?
+    // Current quest, if any
     std::optional<model::Quest> quest;
-    // TODO - Document
+    // Remaining fuel
     double fuel;
 
     Vehicle(model::Vec2Double position, model::Vec2Double velocity, double speed, double rotationSpeed, double rotation, int typeIndex, std::optional<model::Quest> quest, double fuel);

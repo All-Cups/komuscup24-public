@@ -4,7 +4,7 @@ import Prelude hiding (id)
 import qualified Trans
 import Trans (Trans)
 import Data.Int
-import Model.DebugData (DebugData)
+import Debugging.DebugData (DebugData)
 
 -- | Add debug data to current tick
 data DebugCommandAdd = DebugCommandAdd {

@@ -17,37 +17,39 @@
 
 namespace model {
 
-// TODO - Document
+// Game constants
 class Constants {
 public:
-    // TODO - Document
+    // Max duration of the game in ticks
     int maxTickCount;
-    // TODO - Document
+    // Max game time in seconds
     double maxGameTimeSeconds;
-    // TODO - Document
+    // Ticks per second
     double ticksPerSecond;
-    // TODO - Document
+    // Subticks for physics simulation
     int microticks;
-    // TODO - Document
+    // Size of a single city cell
     double cellSize;
-    // TODO - Document
+    // Collision bounciness
     double collisionBounciness;
-    // TODO - Document
+    // City type
     model::CityType cityType;
-    // TODO - Document
+    // List of vehicle types
     std::vector<model::VehicleType> vehicleTypes;
-    // TODO - Document
+    // Speed of refueling at a station
     double refillSpeed;
-    // TODO - Document
+    // Number of available quests
     int questCount;
-    // TODO - Document
+    // Score range for quests
     model::MinMaxRangeLong questScore;
-    // TODO - Document
+    // Traffic options
     model::Traffic traffic;
-    // TODO - Document
+    // Collision penalty modifier
+    double collisionPenaltyModifier;
+    // Map of the city
     std::vector<std::vector<model::CityCell>> city;
 
-    Constants(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, model::CityType cityType, std::vector<model::VehicleType> vehicleTypes, double refillSpeed, int questCount, model::MinMaxRangeLong questScore, model::Traffic traffic, std::vector<std::vector<model::CityCell>> city);
+    Constants(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, model::CityType cityType, std::vector<model::VehicleType> vehicleTypes, double refillSpeed, int questCount, model::MinMaxRangeLong questScore, model::Traffic traffic, double collisionPenaltyModifier, std::vector<std::vector<model::CityCell>> city);
 
     // Read Constants from input stream
     static Constants readFrom(InputStream& stream);

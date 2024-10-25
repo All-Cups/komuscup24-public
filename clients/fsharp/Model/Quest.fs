@@ -5,13 +5,13 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// A delivery quest
 type Quest = {
-    /// TODO - Document
+    /// Cell where to pick delivery from
     PickupCell: Model.Vec2Int;
-    /// TODO - Document
+    /// Cell to drop the delivery at
     DropCell: Model.Vec2Int;
-    /// TODO - Document
+    /// Score for completing the quest
     Score: int64;
 } with
 

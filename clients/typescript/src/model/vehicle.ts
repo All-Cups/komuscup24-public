@@ -3,39 +3,39 @@ import { Vec2Double } from "./vec2-double";
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * A vehicle
  */
 export class Vehicle {
     /**
-     * TODO - Document
+     * Current position (center)
      */
     position: Vec2Double
     /**
-     * TODO - Document
+     * Velocity vector
      */
     velocity: Vec2Double
     /**
-     * TODO - Document
+     * Speed of wheels
      */
     speed: number
     /**
-     * TODO - Document
+     * Rotation speed (radians/second)
      */
     rotationSpeed: number
     /**
-     * TODO - Document
+     * Current rotation
      */
     rotation: number
     /**
-     * TODO - Document
+     * Vehicle type index
      */
     typeIndex: number
     /**
-     * TODO maybe multiple quests at the same time?
+     * Current quest, if any
      */
     quest: Quest | null
     /**
-     * TODO - Document
+     * Remaining fuel
      */
     fuel: number
 

@@ -9,13 +9,13 @@ uses
     SysUtils;
 
 type
-    // TODO - Document
+    // Order for controlling a single vehicle
     TVehicleOrder = class
-        // -1..+1
+        // Acceleration (-1 - fully backwards, +1 - fully forward)
         accelerate: Double;
-        // TODO - Document
+        // Hand brakes
         brakes: Boolean;
-        // -1..+1
+        // Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
         rotate: Double;
         constructor Create(accelerate: Double; brakes: Boolean; rotate: Double);
         // Read VehicleOrder from input stream

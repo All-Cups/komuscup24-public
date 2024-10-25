@@ -1,5 +1,5 @@
 /**
- * TODO - Document
+ * City cell
  */
 class CityCell {
     constructor(name, tag) {
@@ -8,15 +8,15 @@ class CityCell {
     }
 
     /**
-     * TODO - Document
+     * Road
      */
     static ROAD = new CityCell("ROAD", 0);
     /**
-     * TODO - Document
+     * Building
      */
     static BUILDING = new CityCell("BUILDING", 1);
     /**
-     * TODO - Document
+     * Refill station
      */
     static REFILL_STATION = new CityCell("REFILL_STATION", 2);
 

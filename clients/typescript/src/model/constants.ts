@@ -6,63 +6,67 @@ import { VehicleType } from "./vehicle-type";
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * Game constants
  */
 export class Constants {
     /**
-     * TODO - Document
+     * Max duration of the game in ticks
      */
     maxTickCount: number
     /**
-     * TODO - Document
+     * Max game time in seconds
      */
     maxGameTimeSeconds: number
     /**
-     * TODO - Document
+     * Ticks per second
      */
     ticksPerSecond: number
     /**
-     * TODO - Document
+     * Subticks for physics simulation
      */
     microticks: number
     /**
-     * TODO - Document
+     * Size of a single city cell
      */
     cellSize: number
     /**
-     * TODO - Document
+     * Collision bounciness
      */
     collisionBounciness: number
     /**
-     * TODO - Document
+     * City type
      */
     cityType: CityType
     /**
-     * TODO - Document
+     * List of vehicle types
      */
     vehicleTypes: Array<VehicleType>
     /**
-     * TODO - Document
+     * Speed of refueling at a station
      */
     refillSpeed: number
     /**
-     * TODO - Document
+     * Number of available quests
      */
     questCount: number
     /**
-     * TODO - Document
+     * Score range for quests
      */
     questScore: MinMaxRangeLong
     /**
-     * TODO - Document
+     * Traffic options
      */
     traffic: Traffic
     /**
-     * TODO - Document
+     * Collision penalty modifier
+     */
+    collisionPenaltyModifier: number
+    /**
+     * Map of the city
      */
     city: Array<Array<CityCell>>
 
-    constructor(maxTickCount: number, maxGameTimeSeconds: number, ticksPerSecond: number, microticks: number, cellSize: number, collisionBounciness: number, cityType: CityType, vehicleTypes: Array<VehicleType>, refillSpeed: number, questCount: number, questScore: MinMaxRangeLong, traffic: Traffic, city: Array<Array<CityCell>>) {
+    constructor(maxTickCount: number, maxGameTimeSeconds: number, ticksPerSecond: number, microticks: number, cellSize: number, collisionBounciness: number, cityType: CityType, vehicleTypes: Array<VehicleType>, refillSpeed: number, questCount: number, questScore: MinMaxRangeLong, traffic: Traffic, collisionPenaltyModifier: number, city: Array<Array<CityCell>>) {
         this.maxTickCount = maxTickCount;
         this.maxGameTimeSeconds = maxGameTimeSeconds;
         this.ticksPerSecond = ticksPerSecond;
@@ -75,6 +79,7 @@ export class Constants {
         this.questCount = questCount;
         this.questScore = questScore;
         this.traffic = traffic;
+        this.collisionPenaltyModifier = collisionPenaltyModifier;
         this.city = city;
     }
 
@@ -111,6 +116,8 @@ export class Constants {
         questScore = await MinMaxRangeLong.readFrom(stream);
         let traffic;
         traffic = await Traffic.readFrom(stream);
+        let collisionPenaltyModifier;
+        collisionPenaltyModifier = await stream.readDouble();
         let city;
         city = [];
         for (let cityCount = await stream.readInt(); cityCount > 0; cityCount--) {
@@ -123,7 +130,7 @@ export class Constants {
             }
             city.push(cityElement);
         }
-        return new Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, city)
+        return new Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, collisionPenaltyModifier, city)
     }
 
     /**
@@ -157,6 +164,8 @@ export class Constants {
         await questScore.writeTo(stream);
         let traffic = this.traffic;
         await traffic.writeTo(stream);
+        let collisionPenaltyModifier = this.collisionPenaltyModifier;
+        await stream.writeDouble(collisionPenaltyModifier);
         let city = this.city;
         await stream.writeInt(city.length);
         for (let cityElement of city) {

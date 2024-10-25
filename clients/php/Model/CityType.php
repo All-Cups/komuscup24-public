@@ -5,7 +5,7 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * City type
      */
     abstract class CityType
     {
@@ -33,22 +33,22 @@ namespace Model {
 
 namespace Model\CityType {
     /**
-     * TODO - Document
+     * Auto generated manhattan map
      */
     class Manhattan extends \Model\CityType
     {
         const TAG = 0;
     
         /**
-         * TODO - Document
+         * Map size
          */
         public \Model\Vec2Int $size;
         /**
-         * TODO - Document
+         * Size of a single block
          */
         public \Model\Vec2Int $blockSize;
         /**
-         * TODO - Document
+         * Number of refill stations
          */
         public int $refills;
     
@@ -83,14 +83,14 @@ namespace Model\CityType {
     }
 
     /**
-     * TODO - Document
+     * Fixed map
      */
     class Inline extends \Model\CityType
     {
         const TAG = 1;
     
         /**
-         * TODO - Document
+         * Each string represents a row in the city
          */
         public array $cells;
     

@@ -1,18 +1,18 @@
 const Vehicle = require.main.require('./model/vehicle');
 /**
- * TODO - Document
+ * Player (game participant)
  */
 class Player {
     /**
-     * TODO - Document
+     * Index
      */
     index;
     /**
-     * TODO - Document
+     * Current score
      */
     score;
     /**
-     * TODO - Document
+     * List of player's vehicles
      */
     vehicles;
 

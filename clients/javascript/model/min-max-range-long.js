@@ -1,13 +1,13 @@
 /**
- * TODO - Document
+ * Range of values
  */
 class MinMaxRangeLong {
     /**
-     * TODO - Document
+     * Minimal value
      */
     min;
     /**
-     * TODO - Document
+     * Maximal  value
      */
     max;
 

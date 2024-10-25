@@ -5,11 +5,11 @@ import std.conv;
 import std.typecons : Nullable;
 
 
-/// TODO - Document
+/// Range of values
 struct MinMaxRangeLong {
-    /// TODO - Document
+    /// Minimal value
     long min;
-    /// TODO - Document
+    /// Maximal  value
     long max;
 
     this(long min, long max) {

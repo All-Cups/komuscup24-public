@@ -7,9 +7,9 @@ from stream_wrapper import StreamWrapper
 from typing import List
 
 class Constants:
-    """TODO - Document"""
+    """Game constants"""
 
-    __slots__ = ("max_tick_count","max_game_time_seconds","ticks_per_second","microticks","cell_size","collision_bounciness","city_type","vehicle_types","refill_speed","quest_count","quest_score","traffic","city",)
+    __slots__ = ("max_tick_count","max_game_time_seconds","ticks_per_second","microticks","cell_size","collision_bounciness","city_type","vehicle_types","refill_speed","quest_count","quest_score","traffic","collision_penalty_modifier","city",)
 
     max_tick_count: int
     max_game_time_seconds: float
@@ -23,35 +23,38 @@ class Constants:
     quest_count: int
     quest_score: MinMaxRangeLong
     traffic: Traffic
+    collision_penalty_modifier: float
     city: List[List[CityCell]]
 
-    def __init__(self, max_tick_count: int, max_game_time_seconds: float, ticks_per_second: float, microticks: int, cell_size: float, collision_bounciness: float, city_type: CityType, vehicle_types: List[VehicleType], refill_speed: float, quest_count: int, quest_score: MinMaxRangeLong, traffic: Traffic, city: List[List[CityCell]]):
+    def __init__(self, max_tick_count: int, max_game_time_seconds: float, ticks_per_second: float, microticks: int, cell_size: float, collision_bounciness: float, city_type: CityType, vehicle_types: List[VehicleType], refill_speed: float, quest_count: int, quest_score: MinMaxRangeLong, traffic: Traffic, collision_penalty_modifier: float, city: List[List[CityCell]]):
         self.max_tick_count = max_tick_count
-        """TODO - Document"""
+        """Max duration of the game in ticks"""
         self.max_game_time_seconds = max_game_time_seconds
-        """TODO - Document"""
+        """Max game time in seconds"""
         self.ticks_per_second = ticks_per_second
-        """TODO - Document"""
+        """Ticks per second"""
         self.microticks = microticks
-        """TODO - Document"""
+        """Subticks for physics simulation"""
         self.cell_size = cell_size
-        """TODO - Document"""
+        """Size of a single city cell"""
         self.collision_bounciness = collision_bounciness
-        """TODO - Document"""
+        """Collision bounciness"""
         self.city_type = city_type
-        """TODO - Document"""
+        """City type"""
         self.vehicle_types = vehicle_types
-        """TODO - Document"""
+        """List of vehicle types"""
         self.refill_speed = refill_speed
-        """TODO - Document"""
+        """Speed of refueling at a station"""
         self.quest_count = quest_count
-        """TODO - Document"""
+        """Number of available quests"""
         self.quest_score = quest_score
-        """TODO - Document"""
+        """Score range for quests"""
         self.traffic = traffic
-        """TODO - Document"""
+        """Traffic options"""
+        self.collision_penalty_modifier = collision_penalty_modifier
+        """Collision penalty modifier"""
         self.city = city
-        """TODO - Document"""
+        """Map of the city"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "Constants":
@@ -72,6 +75,7 @@ class Constants:
         quest_count = stream.read_int()
         quest_score = MinMaxRangeLong.read_from(stream)
         traffic = Traffic.read_from(stream)
+        collision_penalty_modifier = stream.read_double()
         city = []
         for _ in range(stream.read_int()):
             city_element = []
@@ -79,7 +83,7 @@ class Constants:
                 city_element_element = CityCell(stream.read_int())
                 city_element.append(city_element_element)
             city.append(city_element)
-        return Constants(max_tick_count, max_game_time_seconds, ticks_per_second, microticks, cell_size, collision_bounciness, city_type, vehicle_types, refill_speed, quest_count, quest_score, traffic, city)
+        return Constants(max_tick_count, max_game_time_seconds, ticks_per_second, microticks, cell_size, collision_bounciness, city_type, vehicle_types, refill_speed, quest_count, quest_score, traffic, collision_penalty_modifier, city)
     
     def write_to(self, stream: StreamWrapper):
         """Write Constants to output stream
@@ -98,6 +102,7 @@ class Constants:
         stream.write_int(self.quest_count)
         self.quest_score.write_to(stream)
         self.traffic.write_to(stream)
+        stream.write_double(self.collision_penalty_modifier)
         stream.write_int(len(self.city))
         for element in self.city:
             stream.write_int(len(element))
@@ -129,6 +134,8 @@ class Constants:
             repr(self.quest_score) + \
             ", " + \
             repr(self.traffic) + \
+            ", " + \
+            repr(self.collision_penalty_modifier) + \
             ", " + \
             repr(self.city) + \
             ")"

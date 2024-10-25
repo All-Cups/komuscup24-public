@@ -6,7 +6,7 @@ import { Stream } from "../stream";
  */
 export class Order {
     /**
-     * TODO - Document
+     * Orders for each of the vehicles
      */
     vehicles: Array<VehicleOrder>
 

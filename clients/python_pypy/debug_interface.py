@@ -1,8 +1,9 @@
 from codegame.client_message import ClientMessage
 from debugging.debug_command import DebugCommand
-from model.debug_state import DebugState
-from model.debug_data import DebugData
+from debugging.debug_state import DebugState
+from debugging.debug_data import DebugData
 from stream_wrapper import StreamWrapper
+from debugging.color import Color
 from model.vec2_double import Vec2Double
 from stream_wrapper import StreamWrapper
 
@@ -11,8 +12,17 @@ class DebugInterface:
         self.reader = reader
         self.writer = writer
         
-    def add_circle(self, pos: Vec2Double, radius: float):
-        self.add(DebugData.Circle(pos, radius))
+    def add_circle(self, pos: Vec2Double, radius: float, color: Color):
+        self.add(DebugData.Circle(pos, radius, color))
+    
+    def add_line(self, point1: Vec2Double, point2: Vec2Double, width: float, color: Color):
+        self.add(DebugData.Line(point1, point2, width, color))
+    
+    def add_rect(self, corner1: Vec2Double, corner2: Vec2Double, color: Color):
+        self.add(DebugData.Rect(corner1, corner2, color))
+    
+    def add_text(self, text: str, pos: Vec2Double, size: float, align: float, color: Color):
+        self.add(DebugData.Text(text, pos, size, align, color))
 
     def add(self, debug_data: DebugData):
         self.send(DebugCommand.Add(debug_data))

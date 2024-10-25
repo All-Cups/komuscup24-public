@@ -3,11 +3,11 @@
 
 namespace debugging {
 
-Add::Add(model::DebugData debugData) : debugData(debugData) { }
+Add::Add(debugging::DebugData debugData) : debugData(debugData) { }
 
 // Read Add from input stream
 Add Add::readFrom(InputStream& stream) {
-    model::DebugData debugData = model::readDebugData(stream);
+    debugging::DebugData debugData = debugging::readDebugData(stream);
     return Add(debugData);
 }
 

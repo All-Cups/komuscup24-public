@@ -25,55 +25,55 @@ public class PlayerView {
         this.currentTick = value;
     }
     /**
-     * TODO - Document
+     * Your player
      */
     private komus24.model.Player you;
 
     /**
-     * TODO - Document
+     * Your player
      */
     public komus24.model.Player getYou() {
         return you;
     }
 
     /**
-     * TODO - Document
+     * Your player
      */
     public void setYou(komus24.model.Player value) {
         this.you = value;
     }
     /**
-     * TODO - Document
+     * Other players
      */
     private komus24.model.Player[] other;
 
     /**
-     * TODO - Document
+     * Other players
      */
     public komus24.model.Player[] getOther() {
         return other;
     }
 
     /**
-     * TODO - Document
+     * Other players
      */
     public void setOther(komus24.model.Player[] value) {
         this.other = value;
     }
     /**
-     * TODO - Document
+     * Available quests
      */
     private komus24.model.Quest[] quests;
 
     /**
-     * TODO - Document
+     * Available quests
      */
     public komus24.model.Quest[] getQuests() {
         return quests;
     }
 
     /**
-     * TODO - Document
+     * Available quests
      */
     public void setQuests(komus24.model.Quest[] value) {
         this.quests = value;

@@ -11,7 +11,7 @@ class Runner
         @stream.write_string(@token)
         @stream.write_int(0)
         @stream.write_int(1)
-        @stream.write_int(0)
+        @stream.write_int(2)
         @stream.flush()
     end
 

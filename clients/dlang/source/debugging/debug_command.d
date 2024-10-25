@@ -3,7 +3,7 @@ module debugging.debug_command;
 import stream;
 import std.conv;
 import std.typecons : Nullable;
-import model.debug_data;
+import debugging.debug_data;
 
 /// Debug commands that can be sent while debugging with the app
 abstract class DebugCommand {
@@ -31,18 +31,18 @@ abstract class DebugCommand {
         static const int TAG = 0;
     
         /// Data to add
-        model.DebugData debugData;
+        debugging.DebugData debugData;
     
         this() {}
     
-        this(model.DebugData debugData) {
+        this(debugging.DebugData debugData) {
             this.debugData = debugData;
         }
     
         /// Read Add from reader
         static Add readFrom(Stream reader) {
-            model.DebugData debugData;
-            debugData = model.DebugData.readFrom(reader);
+            debugging.DebugData debugData;
+            debugData = debugging.DebugData.readFrom(reader);
             return new Add(debugData);
         }
     

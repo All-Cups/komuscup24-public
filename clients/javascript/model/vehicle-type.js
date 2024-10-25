@@ -1,49 +1,49 @@
 /**
- * TODO - Document
+ * Vehicle type options
  */
 class VehicleType {
     /**
-     * TODO - Document
+     * Name
      */
     name;
     /**
-     * TODO - Document
+     * Radius
      */
     radius;
     /**
-     * TODO - Document
+     * Weight
      */
     weight;
     /**
-     * TODO - Document
+     * Maximal backwads movement speed
      */
     maxBackwardsSpeed;
     /**
-     * TODO - Document
+     * Maximal forward movement speed
      */
     maxSpeed;
     /**
-     * TODO - Document
+     * Acceleration
      */
     acceleration;
     /**
-     * TODO - Document
+     * Friction coefficient
      */
     friction;
     /**
-     * TODO - Document
+     * Maximal rotation speed
      */
     maxRotateSpeed;
     /**
-     * TODO - Document
+     * Rotational acceleration
      */
     rotateAcceleration;
     /**
-     * TODO - Document
+     * Maximal amount of fuel
      */
     maxFuel;
     /**
-     * TODO - Document
+     * Fuel usage speed
      */
     fuelUseSpeed;
 

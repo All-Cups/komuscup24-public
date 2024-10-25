@@ -2,7 +2,7 @@
 
 namespace model {
 
-Constants::Constants(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, model::CityType cityType, std::vector<model::VehicleType> vehicleTypes, double refillSpeed, int questCount, model::MinMaxRangeLong questScore, model::Traffic traffic, std::vector<std::vector<model::CityCell>> city) : maxTickCount(maxTickCount), maxGameTimeSeconds(maxGameTimeSeconds), ticksPerSecond(ticksPerSecond), microticks(microticks), cellSize(cellSize), collisionBounciness(collisionBounciness), cityType(cityType), vehicleTypes(vehicleTypes), refillSpeed(refillSpeed), questCount(questCount), questScore(questScore), traffic(traffic), city(city) { }
+Constants::Constants(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, model::CityType cityType, std::vector<model::VehicleType> vehicleTypes, double refillSpeed, int questCount, model::MinMaxRangeLong questScore, model::Traffic traffic, double collisionPenaltyModifier, std::vector<std::vector<model::CityCell>> city) : maxTickCount(maxTickCount), maxGameTimeSeconds(maxGameTimeSeconds), ticksPerSecond(ticksPerSecond), microticks(microticks), cellSize(cellSize), collisionBounciness(collisionBounciness), cityType(cityType), vehicleTypes(vehicleTypes), refillSpeed(refillSpeed), questCount(questCount), questScore(questScore), traffic(traffic), collisionPenaltyModifier(collisionPenaltyModifier), city(city) { }
 
 // Read Constants from input stream
 Constants Constants::readFrom(InputStream& stream) {
@@ -24,6 +24,7 @@ Constants Constants::readFrom(InputStream& stream) {
     int questCount = stream.readInt();
     model::MinMaxRangeLong questScore = model::MinMaxRangeLong::readFrom(stream);
     model::Traffic traffic = model::Traffic::readFrom(stream);
+    double collisionPenaltyModifier = stream.readDouble();
     std::vector<std::vector<model::CityCell>> city = std::vector<std::vector<model::CityCell>>();
     size_t citySize = stream.readInt();
     city.reserve(citySize);
@@ -37,7 +38,7 @@ Constants Constants::readFrom(InputStream& stream) {
         }
         city.emplace_back(cityElement);
     }
-    return Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, city);
+    return Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, collisionPenaltyModifier, city);
 }
 
 // Write Constants to output stream
@@ -57,6 +58,7 @@ void Constants::writeTo(OutputStream& stream) const {
     stream.write(questCount);
     questScore.writeTo(stream);
     traffic.writeTo(stream);
+    stream.write(collisionPenaltyModifier);
     stream.write((int)(city.size()));
     for (const std::vector<model::CityCell>& cityElement : city) {
         stream.write((int)(cityElement.size()));
@@ -113,6 +115,9 @@ std::string Constants::toString() const {
     ss << ", ";
     ss << "traffic: ";
     ss << traffic.toString();
+    ss << ", ";
+    ss << "collisionPenaltyModifier: ";
+    ss << collisionPenaltyModifier;
     ss << ", ";
     ss << "city: ";
     ss << "[ ";

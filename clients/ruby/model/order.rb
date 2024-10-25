@@ -4,7 +4,7 @@ module Model
 
 # Player's orders
 class Order
-    # TODO - Document
+    # Orders for each of the vehicles
     attr_accessor :vehicles
 
     def initialize(vehicles)

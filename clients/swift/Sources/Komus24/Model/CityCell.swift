@@ -1,12 +1,12 @@
-/// TODO - Document
+/// City cell
 public enum CityCell: Int32 {
-    /// TODO - Document
+    /// Road
     case road = 0
 
-    /// TODO - Document
+    /// Building
     case building = 1
 
-    /// TODO - Document
+    /// Refill station
     case refillStation = 2
 
     /// Read CityCell from input stream

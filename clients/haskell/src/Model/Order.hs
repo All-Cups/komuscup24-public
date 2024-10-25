@@ -7,7 +7,7 @@ import Model.VehicleOrder (VehicleOrder)
 
 -- | Player's orders
 data Order = Order {
-    -- | TODO - Document
+    -- | Orders for each of the vehicles
     vehicles :: [VehicleOrder] }
     deriving Show
 

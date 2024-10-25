@@ -7,11 +7,11 @@ module Model
 class PlayerView
     # Current tick number
     attr_accessor :current_tick
-    # TODO - Document
+    # Your player
     attr_accessor :you
-    # TODO - Document
+    # Other players
     attr_accessor :other
-    # TODO - Document
+    # Available quests
     attr_accessor :quests
 
     def initialize(current_tick, you, other, quests)

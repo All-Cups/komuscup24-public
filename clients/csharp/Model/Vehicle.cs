@@ -1,40 +1,40 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// A vehicle
     /// </summary>
     public struct Vehicle
     {
         /// <summary>
-        /// TODO - Document
+        /// Current position (center)
         /// </summary>
         public Komus24.Model.Vec2Double Position { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Velocity vector
         /// </summary>
         public Komus24.Model.Vec2Double Velocity { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Speed of wheels
         /// </summary>
         public double Speed { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Rotation speed (radians/second)
         /// </summary>
         public double RotationSpeed { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Current rotation
         /// </summary>
         public double Rotation { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Vehicle type index
         /// </summary>
         public int TypeIndex { get; set; }
         /// <summary>
-        /// TODO maybe multiple quests at the same time?
+        /// Current quest, if any
         /// </summary>
         public Komus24.Model.Quest? Quest { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Remaining fuel
         /// </summary>
         public double Fuel { get; set; }
     

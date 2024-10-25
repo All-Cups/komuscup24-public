@@ -97,6 +97,7 @@
 - `quest_count`: `int32` &mdash; Количество постоянно доступных заданий
 - `quest_score`: `MinMaxRangeInt64` &mdash; Диапазон очков за выполнение заданий
 - `traffic`: `Traffic` &mdash; Настройки траффика
+- `collision_penalty_modifier`: `float64` &mdash; Коэффициент штрафных очков при столкновении
 - `city`: `[[CityCell]]` &mdash; Карта города
 
 ## `Vec2Float64`
@@ -154,19 +155,6 @@
 - `other`: `[Player]` &mdash; Остальные игроки
 - `quests`: `[Quest]` &mdash; Доступные задания
 
-## `DebugData`
-
-В данный момент не используется
-
-Варианты:
-
-- `Circle` &mdash; Круг
-
-  Поля:
-
-  - `pos`: `Vec2Float64` &mdash; Центр круга
-  - `radius`: `float64` &mdash; Радиус
-
 ## `VehicleOrder`
 
 Управление машиной
@@ -184,11 +172,3 @@
 Поля:
 
 - `vehicles`: `[VehicleOrder]` &mdash; Команды управления для каждой машины
-
-## `DebugState`
-
-В данный момент не используется
-
-Поля:
-
-- `pressed_keys`: `[string]` &mdash; В данный момент не используется

@@ -6,40 +6,40 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * A vehicle
      */
     class Vehicle
     {
         /**
-         * TODO - Document
+         * Current position (center)
          */
         public \Model\Vec2Double $position;
         /**
-         * TODO - Document
+         * Velocity vector
          */
         public \Model\Vec2Double $velocity;
         /**
-         * TODO - Document
+         * Speed of wheels
          */
         public float $speed;
         /**
-         * TODO - Document
+         * Rotation speed (radians/second)
          */
         public float $rotationSpeed;
         /**
-         * TODO - Document
+         * Current rotation
          */
         public float $rotation;
         /**
-         * TODO - Document
+         * Vehicle type index
          */
         public int $typeIndex;
         /**
-         * TODO maybe multiple quests at the same time?
+         * Current quest, if any
          */
         public ?\Model\Quest $quest;
         /**
-         * TODO - Document
+         * Remaining fuel
          */
         public float $fuel;
     

@@ -3,23 +3,24 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Game constants
  *
- * @param maxTickCount TODO - Document
- * @param maxGameTimeSeconds TODO - Document
- * @param ticksPerSecond TODO - Document
- * @param microticks TODO - Document
- * @param cellSize TODO - Document
- * @param collisionBounciness TODO - Document
- * @param cityType TODO - Document
- * @param vehicleTypes TODO - Document
- * @param refillSpeed TODO - Document
- * @param questCount TODO - Document
- * @param questScore TODO - Document
- * @param traffic TODO - Document
- * @param city TODO - Document
+ * @param maxTickCount Max duration of the game in ticks
+ * @param maxGameTimeSeconds Max game time in seconds
+ * @param ticksPerSecond Ticks per second
+ * @param microticks Subticks for physics simulation
+ * @param cellSize Size of a single city cell
+ * @param collisionBounciness Collision bounciness
+ * @param cityType City type
+ * @param vehicleTypes List of vehicle types
+ * @param refillSpeed Speed of refueling at a station
+ * @param questCount Number of available quests
+ * @param questScore Score range for quests
+ * @param traffic Traffic options
+ * @param collisionPenaltyModifier Collision penalty modifier
+ * @param city Map of the city
  */
-case class Constants(maxTickCount: Int, maxGameTimeSeconds: Double, ticksPerSecond: Double, microticks: Int, cellSize: Double, collisionBounciness: Double, cityType: komus24.model.CityType, vehicleTypes: Seq[komus24.model.VehicleType], refillSpeed: Double, questCount: Int, questScore: komus24.model.MinMaxRangeLong, traffic: komus24.model.Traffic, city: Seq[Seq[komus24.model.CityCell]]) {
+case class Constants(maxTickCount: Int, maxGameTimeSeconds: Double, ticksPerSecond: Double, microticks: Int, cellSize: Double, collisionBounciness: Double, cityType: komus24.model.CityType, vehicleTypes: Seq[komus24.model.VehicleType], refillSpeed: Double, questCount: Int, questScore: komus24.model.MinMaxRangeLong, traffic: komus24.model.Traffic, collisionPenaltyModifier: Double, city: Seq[Seq[komus24.model.CityCell]]) {
     /**
      * Write Constants to output stream
      */
@@ -39,6 +40,7 @@ case class Constants(maxTickCount: Int, maxGameTimeSeconds: Double, ticksPerSeco
         StreamUtil.writeInt(stream, questCount)
         questScore.writeTo(stream)
         traffic.writeTo(stream)
+        StreamUtil.writeDouble(stream, collisionPenaltyModifier)
         StreamUtil.writeInt(stream, city.length)
         city.foreach { value =>
             StreamUtil.writeInt(stream, value.length)
@@ -89,6 +91,9 @@ case class Constants(maxTickCount: Int, maxGameTimeSeconds: Double, ticksPerSeco
         stringBuilder.append("traffic: ")
         stringBuilder.append(traffic)
         stringBuilder.append(", ")
+        stringBuilder.append("collisionPenaltyModifier: ")
+        stringBuilder.append(collisionPenaltyModifier)
+        stringBuilder.append(", ")
         stringBuilder.append("city: ")
         stringBuilder.append(city)
         stringBuilder.append(" }")
@@ -115,6 +120,7 @@ object Constants {
         StreamUtil.readInt(stream),
         komus24.model.MinMaxRangeLong.readFrom(stream),
         komus24.model.Traffic.readFrom(stream),
+        StreamUtil.readDouble(stream),
         (0 until StreamUtil.readInt(stream)).map { _ =>
             (0 until StreamUtil.readInt(stream)).map { _ =>
                 komus24.model.CityCell.readFrom(stream)

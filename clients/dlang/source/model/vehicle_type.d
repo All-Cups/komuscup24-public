@@ -5,29 +5,29 @@ import std.conv;
 import std.typecons : Nullable;
 
 
-/// TODO - Document
+/// Vehicle type options
 struct VehicleType {
-    /// TODO - Document
+    /// Name
     string name;
-    /// TODO - Document
+    /// Radius
     double radius;
-    /// TODO - Document
+    /// Weight
     double weight;
-    /// TODO - Document
+    /// Maximal backwads movement speed
     double maxBackwardsSpeed;
-    /// TODO - Document
+    /// Maximal forward movement speed
     double maxSpeed;
-    /// TODO - Document
+    /// Acceleration
     double acceleration;
-    /// TODO - Document
+    /// Friction coefficient
     double friction;
-    /// TODO - Document
+    /// Maximal rotation speed
     double maxRotateSpeed;
-    /// TODO - Document
+    /// Rotational acceleration
     double rotateAcceleration;
-    /// TODO - Document
+    /// Maximal amount of fuel
     double maxFuel;
-    /// TODO - Document
+    /// Fuel usage speed
     double fuelUseSpeed;
 
     this(string name, double radius, double weight, double maxBackwardsSpeed, double maxSpeed, double acceleration, double friction, double maxRotateSpeed, double rotateAcceleration, double maxFuel, double fuelUseSpeed) {

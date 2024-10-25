@@ -9,36 +9,38 @@ import model.min_max_range_long;
 import model.traffic;
 import model.vehicle_type;
 
-/// TODO - Document
+/// Game constants
 struct Constants {
-    /// TODO - Document
+    /// Max duration of the game in ticks
     int maxTickCount;
-    /// TODO - Document
+    /// Max game time in seconds
     double maxGameTimeSeconds;
-    /// TODO - Document
+    /// Ticks per second
     double ticksPerSecond;
-    /// TODO - Document
+    /// Subticks for physics simulation
     int microticks;
-    /// TODO - Document
+    /// Size of a single city cell
     double cellSize;
-    /// TODO - Document
+    /// Collision bounciness
     double collisionBounciness;
-    /// TODO - Document
+    /// City type
     model.CityType cityType;
-    /// TODO - Document
+    /// List of vehicle types
     model.VehicleType[] vehicleTypes;
-    /// TODO - Document
+    /// Speed of refueling at a station
     double refillSpeed;
-    /// TODO - Document
+    /// Number of available quests
     int questCount;
-    /// TODO - Document
+    /// Score range for quests
     model.MinMaxRangeLong questScore;
-    /// TODO - Document
+    /// Traffic options
     model.Traffic traffic;
-    /// TODO - Document
+    /// Collision penalty modifier
+    double collisionPenaltyModifier;
+    /// Map of the city
     model.CityCell[][] city;
 
-    this(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, model.CityType cityType, model.VehicleType[] vehicleTypes, double refillSpeed, int questCount, model.MinMaxRangeLong questScore, model.Traffic traffic, model.CityCell[][] city) {
+    this(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, model.CityType cityType, model.VehicleType[] vehicleTypes, double refillSpeed, int questCount, model.MinMaxRangeLong questScore, model.Traffic traffic, double collisionPenaltyModifier, model.CityCell[][] city) {
         this.maxTickCount = maxTickCount;
         this.maxGameTimeSeconds = maxGameTimeSeconds;
         this.ticksPerSecond = ticksPerSecond;
@@ -51,6 +53,7 @@ struct Constants {
         this.questCount = questCount;
         this.questScore = questScore;
         this.traffic = traffic;
+        this.collisionPenaltyModifier = collisionPenaltyModifier;
         this.city = city;
     }
 
@@ -85,6 +88,8 @@ struct Constants {
         questScore = model.MinMaxRangeLong.readFrom(reader);
         model.Traffic traffic;
         traffic = model.Traffic.readFrom(reader);
+        double collisionPenaltyModifier;
+        collisionPenaltyModifier = reader.readDouble();
         model.CityCell[][] city;
         city = new model.CityCell[][reader.readInt()];
         for (int cityIndex = 0; cityIndex < city.length; cityIndex++) {
@@ -97,7 +102,7 @@ struct Constants {
             }
             city[cityIndex] = cityKey;
         }
-        return Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, city);
+        return Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, collisionPenaltyModifier, city);
     }
 
     /// Write Constants to writer
@@ -117,6 +122,7 @@ struct Constants {
         writer.write(questCount);
         questScore.writeTo(writer);
         traffic.writeTo(writer);
+        writer.write(collisionPenaltyModifier);
         writer.write(cast(int)(city.length));
         foreach (cityElement; city) {
             writer.write(cast(int)(cityElement.length));

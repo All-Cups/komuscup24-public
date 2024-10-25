@@ -6,7 +6,7 @@ pub enum DebugCommand {
     /// Add debug data to current tick
     Add {
         /// Data to add
-        debug_data: model::DebugData,
+        debug_data: debugging::DebugData,
     },
     /// Clear current tick's debug data
     Clear {
@@ -51,7 +51,7 @@ impl trans::Trans for DebugCommand {
         let tag = <i32 as trans::Trans>::read_from(reader)?;
         match tag {
             0 => {
-                let debug_data: model::DebugData = trans::Trans::read_from(reader)?;
+                let debug_data: debugging::DebugData = trans::Trans::read_from(reader)?;
                 Ok(Self::Add {
                     debug_data,
                 })

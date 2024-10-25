@@ -12,7 +12,7 @@ uses
 type
     // Player's orders
     TOrder = class
-        // TODO - Document
+        // Orders for each of the vehicles
         vehicles: TArray<TVehicleOrder>;
         constructor Create(vehicles: TArray<TVehicleOrder>);
         // Read Order from input stream

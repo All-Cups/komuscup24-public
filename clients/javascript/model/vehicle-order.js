@@ -1,17 +1,17 @@
 /**
- * TODO - Document
+ * Order for controlling a single vehicle
  */
 class VehicleOrder {
     /**
-     * -1..+1
+     * Acceleration (-1 - fully backwards, +1 - fully forward)
      */
     accelerate;
     /**
-     * TODO - Document
+     * Hand brakes
      */
     brakes;
     /**
-     * -1..+1
+     * Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
      */
     rotate;
 

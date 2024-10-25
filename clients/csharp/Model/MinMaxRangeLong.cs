@@ -1,16 +1,16 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// Range of values
     /// </summary>
     public struct MinMaxRangeLong
     {
         /// <summary>
-        /// TODO - Document
+        /// Minimal value
         /// </summary>
         public long Min { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Maximal  value
         /// </summary>
         public long Max { get; set; }
     

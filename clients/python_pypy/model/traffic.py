@@ -1,7 +1,7 @@
 from stream_wrapper import StreamWrapper
 
 class Traffic:
-    """TODO - Document"""
+    """Options for traffic"""
 
     __slots__ = ("amount","move_time","radius","weight","crash_deceleration","crash_lifetime",)
 
@@ -14,17 +14,17 @@ class Traffic:
 
     def __init__(self, amount: int, move_time: float, radius: float, weight: float, crash_deceleration: float, crash_lifetime: float):
         self.amount = amount
-        """TODO - Document"""
+        """Number of traffic cars"""
         self.move_time = move_time
-        """TODO - Document"""
+        """Time to move between adjacent keypoints"""
         self.radius = radius
-        """TODO - Document"""
+        """Radius of each traffic car"""
         self.weight = weight
-        """TODO - Document"""
+        """Weight of each traffic car"""
         self.crash_deceleration = crash_deceleration
-        """TODO - Document"""
+        """Deceleration after crash"""
         self.crash_lifetime = crash_lifetime
-        """TODO - Document"""
+        """Lifetime after crash"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "Traffic":

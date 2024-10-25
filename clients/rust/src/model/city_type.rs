@@ -1,20 +1,20 @@
 use super::*;
 
-/// TODO - Document
+/// City type
 #[derive(Clone, Debug)]
 pub enum CityType {
-    /// TODO - Document
+    /// Auto generated manhattan map
     Manhattan {
-        /// TODO - Document
+        /// Map size
         size: model::Vec2I32,
-        /// TODO - Document
+        /// Size of a single block
         block_size: model::Vec2I32,
-        /// TODO - Document
+        /// Number of refill stations
         refills: i32,
     },
-    /// TODO - Document
+    /// Fixed map
     Inline {
-        /// TODO - Document
+        /// Each string represents a row in the city
         cells: Vec<String>,
     },
 }

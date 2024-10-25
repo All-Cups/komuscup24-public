@@ -1,4 +1,4 @@
-import { DebugData } from "../model/debug-data";
+import { DebugData } from "./debug-data";
 import { Stream } from "../stream";
 
 /**

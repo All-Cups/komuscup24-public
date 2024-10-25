@@ -3,149 +3,149 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * A vehicle
  */
 public class Vehicle {
     /**
-     * TODO - Document
+     * Current position (center)
      */
     private komus24.model.Vec2Double position;
 
     /**
-     * TODO - Document
+     * Current position (center)
      */
     public komus24.model.Vec2Double getPosition() {
         return position;
     }
 
     /**
-     * TODO - Document
+     * Current position (center)
      */
     public void setPosition(komus24.model.Vec2Double value) {
         this.position = value;
     }
     /**
-     * TODO - Document
+     * Velocity vector
      */
     private komus24.model.Vec2Double velocity;
 
     /**
-     * TODO - Document
+     * Velocity vector
      */
     public komus24.model.Vec2Double getVelocity() {
         return velocity;
     }
 
     /**
-     * TODO - Document
+     * Velocity vector
      */
     public void setVelocity(komus24.model.Vec2Double value) {
         this.velocity = value;
     }
     /**
-     * TODO - Document
+     * Speed of wheels
      */
     private double speed;
 
     /**
-     * TODO - Document
+     * Speed of wheels
      */
     public double getSpeed() {
         return speed;
     }
 
     /**
-     * TODO - Document
+     * Speed of wheels
      */
     public void setSpeed(double value) {
         this.speed = value;
     }
     /**
-     * TODO - Document
+     * Rotation speed (radians/second)
      */
     private double rotationSpeed;
 
     /**
-     * TODO - Document
+     * Rotation speed (radians/second)
      */
     public double getRotationSpeed() {
         return rotationSpeed;
     }
 
     /**
-     * TODO - Document
+     * Rotation speed (radians/second)
      */
     public void setRotationSpeed(double value) {
         this.rotationSpeed = value;
     }
     /**
-     * TODO - Document
+     * Current rotation
      */
     private double rotation;
 
     /**
-     * TODO - Document
+     * Current rotation
      */
     public double getRotation() {
         return rotation;
     }
 
     /**
-     * TODO - Document
+     * Current rotation
      */
     public void setRotation(double value) {
         this.rotation = value;
     }
     /**
-     * TODO - Document
+     * Vehicle type index
      */
     private int typeIndex;
 
     /**
-     * TODO - Document
+     * Vehicle type index
      */
     public int getTypeIndex() {
         return typeIndex;
     }
 
     /**
-     * TODO - Document
+     * Vehicle type index
      */
     public void setTypeIndex(int value) {
         this.typeIndex = value;
     }
     /**
-     * TODO maybe multiple quests at the same time?
+     * Current quest, if any
      */
     private komus24.model.Quest quest;
 
     /**
-     * TODO maybe multiple quests at the same time?
+     * Current quest, if any
      */
     public komus24.model.Quest getQuest() {
         return quest;
     }
 
     /**
-     * TODO maybe multiple quests at the same time?
+     * Current quest, if any
      */
     public void setQuest(komus24.model.Quest value) {
         this.quest = value;
     }
     /**
-     * TODO - Document
+     * Remaining fuel
      */
     private double fuel;
 
     /**
-     * TODO - Document
+     * Remaining fuel
      */
     public double getFuel() {
         return fuel;
     }
 
     /**
-     * TODO - Document
+     * Remaining fuel
      */
     public void setFuel(double value) {
         this.fuel = value;

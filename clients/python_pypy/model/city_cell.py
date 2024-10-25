@@ -1,14 +1,14 @@
 from enum import IntEnum
 
 class CityCell(IntEnum):
-    """TODO - Document"""
+    """City cell"""
 
     ROAD = 0
-    """TODO - Document"""
+    """Road"""
     BUILDING = 1
-    """TODO - Document"""
+    """Building"""
     REFILL_STATION = 2
-    """TODO - Document"""
+    """Refill station"""
 
     def __repr__(self):
         return str(self)

@@ -1,6 +1,8 @@
 package main
 
 import (
+    . "komus24/common"
+    . "komus24/debugging_interface"
     . "komus24/model"
     . "komus24/debugging_interface"
 )

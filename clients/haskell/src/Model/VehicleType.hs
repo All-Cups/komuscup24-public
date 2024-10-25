@@ -5,29 +5,29 @@ import qualified Trans
 import Trans (Trans)
 
 
--- | TODO - Document
+-- | Vehicle type options
 data VehicleType = VehicleType {
-    -- | TODO - Document
+    -- | Name
     name :: String,
-    -- | TODO - Document
+    -- | Radius
     radius :: Double,
-    -- | TODO - Document
+    -- | Weight
     weight :: Double,
-    -- | TODO - Document
+    -- | Maximal backwads movement speed
     maxBackwardsSpeed :: Double,
-    -- | TODO - Document
+    -- | Maximal forward movement speed
     maxSpeed :: Double,
-    -- | TODO - Document
+    -- | Acceleration
     acceleration :: Double,
-    -- | TODO - Document
+    -- | Friction coefficient
     friction :: Double,
-    -- | TODO - Document
+    -- | Maximal rotation speed
     maxRotateSpeed :: Double,
-    -- | TODO - Document
+    -- | Rotational acceleration
     rotateAcceleration :: Double,
-    -- | TODO - Document
+    -- | Maximal amount of fuel
     maxFuel :: Double,
-    -- | TODO - Document
+    -- | Fuel usage speed
     fuelUseSpeed :: Double }
     deriving Show
 

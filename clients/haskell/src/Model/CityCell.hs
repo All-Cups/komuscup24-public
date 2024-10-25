@@ -5,13 +5,13 @@ import qualified Trans
 import Trans (Trans)
 import Data.Int
 
--- | TODO - Document
+-- | City cell
 data CityCell
-    -- | TODO - Document
+    -- | Road
     = Road
-    -- | TODO - Document
+    -- | Building
     | Building
-    -- | TODO - Document
+    -- | Refill station
     | RefillStation
     deriving (Eq, Ord, Show)
 

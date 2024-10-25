@@ -5,19 +5,19 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// Options for traffic
 type Traffic = {
-    /// TODO - Document
+    /// Number of traffic cars
     Amount: int;
-    /// TODO - Document
+    /// Time to move between adjacent keypoints
     MoveTime: double;
-    /// TODO - Document
+    /// Radius of each traffic car
     Radius: double;
-    /// TODO - Document
+    /// Weight of each traffic car
     Weight: double;
-    /// TODO - Document
+    /// Deceleration after crash
     CrashDeceleration: double;
-    /// TODO - Document
+    /// Lifetime after crash
     CrashLifetime: double;
 } with
 

@@ -4,11 +4,11 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// Range of values
 type MinMaxRangeInt64 struct {
-    // TODO - Document
+    // Minimal value
     Min int64
-    // TODO - Document
+    // Maximal  value
     Max int64
 }
 

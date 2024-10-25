@@ -1,12 +1,12 @@
-/// TODO - Document
+/// Order for controlling a single vehicle
 public struct VehicleOrder {
-    /// -1..+1
+    /// Acceleration (-1 - fully backwards, +1 - fully forward)
     let accelerate: Double
 
-    /// TODO - Document
+    /// Hand brakes
     let brakes: Bool
 
-    /// -1..+1
+    /// Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
     let rotate: Double
 
     /// Read VehicleOrder from input stream

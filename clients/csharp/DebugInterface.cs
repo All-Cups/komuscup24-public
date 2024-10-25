@@ -12,12 +12,27 @@ namespace Komus24
             this.writer = writer;
         }
 
-        public void AddCircle(Komus24.Model.Vec2Double pos, double radius)
+        public void AddCircle(Komus24.Model.Vec2Double pos, double radius, Komus24.Debugging.Color color)
         {
-            Add(new Komus24.Model.DebugData.Circle(pos, radius));
+            Add(new Komus24.Debugging.DebugData.Circle(pos, radius, color));
+        }
+        
+        public void AddLine(Komus24.Model.Vec2Double point1, Komus24.Model.Vec2Double point2, double width, Komus24.Debugging.Color color)
+        {
+            Add(new Komus24.Debugging.DebugData.Line(point1, point2, width, color));
+        }
+        
+        public void AddRect(Komus24.Model.Vec2Double corner1, Komus24.Model.Vec2Double corner2, Komus24.Debugging.Color color)
+        {
+            Add(new Komus24.Debugging.DebugData.Rect(corner1, corner2, color));
+        }
+        
+        public void AddText(string text, Komus24.Model.Vec2Double pos, double size, double align, Komus24.Debugging.Color color)
+        {
+            Add(new Komus24.Debugging.DebugData.Text(text, pos, size, align, color));
         }
 
-        public void Add(Komus24.Model.DebugData debugData)
+        public void Add(Komus24.Debugging.DebugData debugData)
         {
             Send(new Komus24.Debugging.DebugCommand.Add(debugData));
         }
@@ -43,11 +58,11 @@ namespace Komus24
             writer.Flush();
         }
 
-        public Komus24.Model.DebugState GetState()
+        public Komus24.Debugging.DebugState GetState()
         {
             new Komus24.Codegame.ClientMessage.RequestDebugState().WriteTo(writer);
             writer.Flush();
-            return Komus24.Model.DebugState.ReadFrom(reader);
+            return Komus24.Debugging.DebugState.ReadFrom(reader);
         }
     }
 }

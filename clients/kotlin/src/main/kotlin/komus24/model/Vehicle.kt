@@ -3,39 +3,39 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * A vehicle
  */
 class Vehicle {
     /**
-     * TODO - Document
+     * Current position (center)
      */
     var position: komus24.model.Vec2Double
     /**
-     * TODO - Document
+     * Velocity vector
      */
     var velocity: komus24.model.Vec2Double
     /**
-     * TODO - Document
+     * Speed of wheels
      */
     var speed: Double
     /**
-     * TODO - Document
+     * Rotation speed (radians/second)
      */
     var rotationSpeed: Double
     /**
-     * TODO - Document
+     * Current rotation
      */
     var rotation: Double
     /**
-     * TODO - Document
+     * Vehicle type index
      */
     var typeIndex: Int
     /**
-     * TODO maybe multiple quests at the same time?
+     * Current quest, if any
      */
     var quest: komus24.model.Quest?
     /**
-     * TODO - Document
+     * Remaining fuel
      */
     var fuel: Double
 

@@ -1,31 +1,31 @@
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * Options for traffic
  */
 export class Traffic {
     /**
-     * TODO - Document
+     * Number of traffic cars
      */
     amount: number
     /**
-     * TODO - Document
+     * Time to move between adjacent keypoints
      */
     moveTime: number
     /**
-     * TODO - Document
+     * Radius of each traffic car
      */
     radius: number
     /**
-     * TODO - Document
+     * Weight of each traffic car
      */
     weight: number
     /**
-     * TODO - Document
+     * Deceleration after crash
      */
     crashDeceleration: number
     /**
-     * TODO - Document
+     * Lifetime after crash
      */
     crashLifetime: number
 

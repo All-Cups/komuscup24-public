@@ -1,29 +1,29 @@
 use super::*;
 
-/// TODO - Document
+/// Vehicle type options
 #[derive(Clone, Debug)]
 pub struct VehicleType {
-    /// TODO - Document
+    /// Name
     pub name: String,
-    /// TODO - Document
+    /// Radius
     pub radius: f64,
-    /// TODO - Document
+    /// Weight
     pub weight: f64,
-    /// TODO - Document
+    /// Maximal backwads movement speed
     pub max_backwards_speed: f64,
-    /// TODO - Document
+    /// Maximal forward movement speed
     pub max_speed: f64,
-    /// TODO - Document
+    /// Acceleration
     pub acceleration: f64,
-    /// TODO - Document
+    /// Friction coefficient
     pub friction: f64,
-    /// TODO - Document
+    /// Maximal rotation speed
     pub max_rotate_speed: f64,
-    /// TODO - Document
+    /// Rotational acceleration
     pub rotate_acceleration: f64,
-    /// TODO - Document
+    /// Maximal amount of fuel
     pub max_fuel: f64,
-    /// TODO - Document
+    /// Fuel usage speed
     pub fuel_use_speed: f64,
 }
 

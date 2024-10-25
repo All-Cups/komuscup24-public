@@ -5,29 +5,29 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// Vehicle type options
 type VehicleType = {
-    /// TODO - Document
+    /// Name
     Name: string;
-    /// TODO - Document
+    /// Radius
     Radius: double;
-    /// TODO - Document
+    /// Weight
     Weight: double;
-    /// TODO - Document
+    /// Maximal backwads movement speed
     MaxBackwardsSpeed: double;
-    /// TODO - Document
+    /// Maximal forward movement speed
     MaxSpeed: double;
-    /// TODO - Document
+    /// Acceleration
     Acceleration: double;
-    /// TODO - Document
+    /// Friction coefficient
     Friction: double;
-    /// TODO - Document
+    /// Maximal rotation speed
     MaxRotateSpeed: double;
-    /// TODO - Document
+    /// Rotational acceleration
     RotateAcceleration: double;
-    /// TODO - Document
+    /// Maximal amount of fuel
     MaxFuel: double;
-    /// TODO - Document
+    /// Fuel usage speed
     FuelUseSpeed: double;
 } with
 

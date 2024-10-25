@@ -2,7 +2,7 @@ from model.vec2_int import Vec2Int
 from stream_wrapper import StreamWrapper
 
 class Quest:
-    """TODO - Document"""
+    """A delivery quest"""
 
     __slots__ = ("pickup_cell","drop_cell","score",)
 
@@ -12,11 +12,11 @@ class Quest:
 
     def __init__(self, pickup_cell: Vec2Int, drop_cell: Vec2Int, score: int):
         self.pickup_cell = pickup_cell
-        """TODO - Document"""
+        """Cell where to pick delivery from"""
         self.drop_cell = drop_cell
-        """TODO - Document"""
+        """Cell to drop the delivery at"""
         self.score = score
-        """TODO - Document"""
+        """Score for completing the quest"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "Quest":

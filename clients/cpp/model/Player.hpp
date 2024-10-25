@@ -14,14 +14,14 @@
 
 namespace model {
 
-// TODO - Document
+// Player (game participant)
 class Player {
 public:
-    // TODO - Document
+    // Index
     int index;
-    // TODO - Document
+    // Current score
     long long score;
-    // TODO - Document
+    // List of player's vehicles
     std::vector<model::Vehicle> vehicles;
 
     Player(int index, long long score, std::vector<model::Vehicle> vehicles);

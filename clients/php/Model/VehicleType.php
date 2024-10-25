@@ -4,52 +4,52 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * Vehicle type options
      */
     class VehicleType
     {
         /**
-         * TODO - Document
+         * Name
          */
         public string $name;
         /**
-         * TODO - Document
+         * Radius
          */
         public float $radius;
         /**
-         * TODO - Document
+         * Weight
          */
         public float $weight;
         /**
-         * TODO - Document
+         * Maximal backwads movement speed
          */
         public float $maxBackwardsSpeed;
         /**
-         * TODO - Document
+         * Maximal forward movement speed
          */
         public float $maxSpeed;
         /**
-         * TODO - Document
+         * Acceleration
          */
         public float $acceleration;
         /**
-         * TODO - Document
+         * Friction coefficient
          */
         public float $friction;
         /**
-         * TODO - Document
+         * Maximal rotation speed
          */
         public float $maxRotateSpeed;
         /**
-         * TODO - Document
+         * Rotational acceleration
          */
         public float $rotateAcceleration;
         /**
-         * TODO - Document
+         * Maximal amount of fuel
          */
         public float $maxFuel;
         /**
-         * TODO - Document
+         * Fuel usage speed
          */
         public float $fuelUseSpeed;
     

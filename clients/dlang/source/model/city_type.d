@@ -5,7 +5,7 @@ import std.conv;
 import std.typecons : Nullable;
 import model.vec2_int;
 
-/// TODO - Document
+/// City type
 abstract class CityType {
     /// Write CityType to writer
     abstract void writeTo(Stream writer) const;
@@ -22,15 +22,15 @@ abstract class CityType {
         }
     }
     
-    /// TODO - Document
+    /// Auto generated manhattan map
     static class Manhattan : CityType {
         static const int TAG = 0;
     
-        /// TODO - Document
+        /// Map size
         model.Vec2Int size;
-        /// TODO - Document
+        /// Size of a single block
         model.Vec2Int blockSize;
-        /// TODO - Document
+        /// Number of refill stations
         int refills;
     
         this() {}
@@ -61,11 +61,11 @@ abstract class CityType {
         }
     }
     
-    /// TODO - Document
+    /// Fixed map
     static class Inline : CityType {
         static const int TAG = 1;
     
-        /// TODO - Document
+        /// Each string represents a row in the city
         string[] cells;
     
         this() {}

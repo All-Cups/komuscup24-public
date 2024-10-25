@@ -5,7 +5,7 @@ import . "komus24/stream"
 
 // Player's orders
 type Order struct {
-    // TODO - Document
+    // Orders for each of the vehicles
     Vehicles []VehicleOrder
 }
 

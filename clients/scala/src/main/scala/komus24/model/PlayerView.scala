@@ -6,9 +6,9 @@ import komus24.util.StreamUtil
  * Current game's state
  *
  * @param currentTick Current tick number
- * @param you TODO - Document
- * @param other TODO - Document
- * @param quests TODO - Document
+ * @param you Your player
+ * @param other Other players
+ * @param quests Available quests
  */
 case class PlayerView(currentTick: Int, you: komus24.model.Player, other: Seq[komus24.model.Player], quests: Seq[komus24.model.Quest]) {
     /**

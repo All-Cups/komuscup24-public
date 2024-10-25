@@ -5,11 +5,11 @@ import qualified Trans
 import Trans (Trans)
 import Data.Int
 
--- | TODO - Document
+-- | Range of values
 data MinMaxRangeInt64 = MinMaxRangeInt64 {
-    -- | TODO - Document
+    -- | Minimal value
     min :: Int64,
-    -- | TODO - Document
+    -- | Maximal  value
     max :: Int64 }
     deriving Show
 

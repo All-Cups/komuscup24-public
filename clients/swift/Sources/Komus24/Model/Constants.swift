@@ -1,42 +1,45 @@
-/// TODO - Document
+/// Game constants
 public struct Constants {
-    /// TODO - Document
+    /// Max duration of the game in ticks
     let maxTickCount: Int32
 
-    /// TODO - Document
+    /// Max game time in seconds
     let maxGameTimeSeconds: Double
 
-    /// TODO - Document
+    /// Ticks per second
     let ticksPerSecond: Double
 
-    /// TODO - Document
+    /// Subticks for physics simulation
     let microticks: Int32
 
-    /// TODO - Document
+    /// Size of a single city cell
     let cellSize: Double
 
-    /// TODO - Document
+    /// Collision bounciness
     let collisionBounciness: Double
 
-    /// TODO - Document
+    /// City type
     let cityType: CityType
 
-    /// TODO - Document
+    /// List of vehicle types
     let vehicleTypes: [VehicleType]
 
-    /// TODO - Document
+    /// Speed of refueling at a station
     let refillSpeed: Double
 
-    /// TODO - Document
+    /// Number of available quests
     let questCount: Int32
 
-    /// TODO - Document
+    /// Score range for quests
     let questScore: MinMaxRangeLong
 
-    /// TODO - Document
+    /// Traffic options
     let traffic: Traffic
 
-    /// TODO - Document
+    /// Collision penalty modifier
+    let collisionPenaltyModifier: Double
+
+    /// Map of the city
     let city: [[CityCell]]
 
     /// Read Constants from input stream
@@ -70,6 +73,8 @@ public struct Constants {
         questScore = MinMaxRangeLong.readFrom(stream)
         var traffic: Traffic
         traffic = Traffic.readFrom(stream)
+        var collisionPenaltyModifier: Double
+        collisionPenaltyModifier = stream.readDouble()
         var city: [[CityCell]]
         let citySize = stream.readInt32()
         city = (0..<citySize).map{ _ in
@@ -82,7 +87,7 @@ public struct Constants {
             }
             return citySize
         }
-        return Constants(maxTickCount: maxTickCount, maxGameTimeSeconds: maxGameTimeSeconds, ticksPerSecond: ticksPerSecond, microticks: microticks, cellSize: cellSize, collisionBounciness: collisionBounciness, cityType: cityType, vehicleTypes: vehicleTypes, refillSpeed: refillSpeed, questCount: questCount, questScore: questScore, traffic: traffic, city: city)
+        return Constants(maxTickCount: maxTickCount, maxGameTimeSeconds: maxGameTimeSeconds, ticksPerSecond: ticksPerSecond, microticks: microticks, cellSize: cellSize, collisionBounciness: collisionBounciness, cityType: cityType, vehicleTypes: vehicleTypes, refillSpeed: refillSpeed, questCount: questCount, questScore: questScore, traffic: traffic, collisionPenaltyModifier: collisionPenaltyModifier, city: city)
     }
 
     /// Write Constants to output stream
@@ -102,6 +107,7 @@ public struct Constants {
         stream.writeInt32(questCount)
         questScore.writeTo(stream)
         traffic.writeTo(stream)
+        stream.writeDouble(collisionPenaltyModifier)
         stream.writeInt32(Int32(city.count))
         for cityElement in city {
             stream.writeInt32(Int32(cityElement.count))

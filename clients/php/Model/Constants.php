@@ -9,64 +9,68 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * Game constants
      */
     class Constants
     {
         /**
-         * TODO - Document
+         * Max duration of the game in ticks
          */
         public int $maxTickCount;
         /**
-         * TODO - Document
+         * Max game time in seconds
          */
         public float $maxGameTimeSeconds;
         /**
-         * TODO - Document
+         * Ticks per second
          */
         public float $ticksPerSecond;
         /**
-         * TODO - Document
+         * Subticks for physics simulation
          */
         public int $microticks;
         /**
-         * TODO - Document
+         * Size of a single city cell
          */
         public float $cellSize;
         /**
-         * TODO - Document
+         * Collision bounciness
          */
         public float $collisionBounciness;
         /**
-         * TODO - Document
+         * City type
          */
         public \Model\CityType $cityType;
         /**
-         * TODO - Document
+         * List of vehicle types
          */
         public array $vehicleTypes;
         /**
-         * TODO - Document
+         * Speed of refueling at a station
          */
         public float $refillSpeed;
         /**
-         * TODO - Document
+         * Number of available quests
          */
         public int $questCount;
         /**
-         * TODO - Document
+         * Score range for quests
          */
         public \Model\MinMaxRangeLong $questScore;
         /**
-         * TODO - Document
+         * Traffic options
          */
         public \Model\Traffic $traffic;
         /**
-         * TODO - Document
+         * Collision penalty modifier
+         */
+        public float $collisionPenaltyModifier;
+        /**
+         * Map of the city
          */
         public array $city;
     
-        function __construct(int $maxTickCount, float $maxGameTimeSeconds, float $ticksPerSecond, int $microticks, float $cellSize, float $collisionBounciness, \Model\CityType $cityType, array $vehicleTypes, float $refillSpeed, int $questCount, \Model\MinMaxRangeLong $questScore, \Model\Traffic $traffic, array $city)
+        function __construct(int $maxTickCount, float $maxGameTimeSeconds, float $ticksPerSecond, int $microticks, float $cellSize, float $collisionBounciness, \Model\CityType $cityType, array $vehicleTypes, float $refillSpeed, int $questCount, \Model\MinMaxRangeLong $questScore, \Model\Traffic $traffic, float $collisionPenaltyModifier, array $city)
         {
             $this->maxTickCount = $maxTickCount;
             $this->maxGameTimeSeconds = $maxGameTimeSeconds;
@@ -80,6 +84,7 @@ namespace Model {
             $this->questCount = $questCount;
             $this->questScore = $questScore;
             $this->traffic = $traffic;
+            $this->collisionPenaltyModifier = $collisionPenaltyModifier;
             $this->city = $city;
         }
     
@@ -105,6 +110,7 @@ namespace Model {
             $questCount = $stream->readInt32();
             $questScore = \Model\MinMaxRangeLong::readFrom($stream);
             $traffic = \Model\Traffic::readFrom($stream);
+            $collisionPenaltyModifier = $stream->readDouble();
             $city = [];
             $citySize = $stream->readInt32();
             for ($cityIndex = 0; $cityIndex < $citySize; $cityIndex++) {
@@ -116,7 +122,7 @@ namespace Model {
                 }
                 $city[] = $cityElement;
             }
-            return new Constants($maxTickCount, $maxGameTimeSeconds, $ticksPerSecond, $microticks, $cellSize, $collisionBounciness, $cityType, $vehicleTypes, $refillSpeed, $questCount, $questScore, $traffic, $city);
+            return new Constants($maxTickCount, $maxGameTimeSeconds, $ticksPerSecond, $microticks, $cellSize, $collisionBounciness, $cityType, $vehicleTypes, $refillSpeed, $questCount, $questScore, $traffic, $collisionPenaltyModifier, $city);
         }
         
         /**
@@ -139,6 +145,7 @@ namespace Model {
             $stream->writeInt32($this->questCount);
             $this->questScore->writeTo($stream);
             $this->traffic->writeTo($stream);
+            $stream->writeDouble($this->collisionPenaltyModifier);
             $stream->writeInt32(count($this->city));
             foreach ($this->city as $element) {
                 $stream->writeInt32(count($element));

@@ -1,4 +1,4 @@
-from model.debug_data import DebugData
+from debugging.debug_data import DebugData
 from stream_wrapper import StreamWrapper
 
 class DebugCommand:

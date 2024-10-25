@@ -5,11 +5,11 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// Range of values
 type MinMaxRangeInt64 = {
-    /// TODO - Document
+    /// Minimal value
     Min: int64;
-    /// TODO - Document
+    /// Maximal  value
     Max: int64;
 } with
 

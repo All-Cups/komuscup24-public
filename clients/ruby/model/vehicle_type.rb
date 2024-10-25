@@ -1,28 +1,28 @@
 module Model
 
-# TODO - Document
+# Vehicle type options
 class VehicleType
-    # TODO - Document
+    # Name
     attr_accessor :name
-    # TODO - Document
+    # Radius
     attr_accessor :radius
-    # TODO - Document
+    # Weight
     attr_accessor :weight
-    # TODO - Document
+    # Maximal backwads movement speed
     attr_accessor :max_backwards_speed
-    # TODO - Document
+    # Maximal forward movement speed
     attr_accessor :max_speed
-    # TODO - Document
+    # Acceleration
     attr_accessor :acceleration
-    # TODO - Document
+    # Friction coefficient
     attr_accessor :friction
-    # TODO - Document
+    # Maximal rotation speed
     attr_accessor :max_rotate_speed
-    # TODO - Document
+    # Rotational acceleration
     attr_accessor :rotate_acceleration
-    # TODO - Document
+    # Maximal amount of fuel
     attr_accessor :max_fuel
-    # TODO - Document
+    # Fuel usage speed
     attr_accessor :fuel_use_speed
 
     def initialize(name, radius, weight, max_backwards_speed, max_speed, acceleration, friction, max_rotate_speed, rotate_acceleration, max_fuel, fuel_use_speed)

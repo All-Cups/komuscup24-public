@@ -3,7 +3,7 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * City type
  */
 public abstract class CityType {
     /**
@@ -26,61 +26,61 @@ public abstract class CityType {
     }
 
     /**
-     * TODO - Document
+     * Auto generated manhattan map
      */
     public static class Manhattan extends CityType {
         public static final int TAG = 0;
     
         /**
-         * TODO - Document
+         * Map size
          */
         private komus24.model.Vec2Int size;
     
         /**
-         * TODO - Document
+         * Map size
          */
         public komus24.model.Vec2Int getSize() {
             return size;
         }
     
         /**
-         * TODO - Document
+         * Map size
          */
         public void setSize(komus24.model.Vec2Int value) {
             this.size = value;
         }
         /**
-         * TODO - Document
+         * Size of a single block
          */
         private komus24.model.Vec2Int blockSize;
     
         /**
-         * TODO - Document
+         * Size of a single block
          */
         public komus24.model.Vec2Int getBlockSize() {
             return blockSize;
         }
     
         /**
-         * TODO - Document
+         * Size of a single block
          */
         public void setBlockSize(komus24.model.Vec2Int value) {
             this.blockSize = value;
         }
         /**
-         * TODO - Document
+         * Number of refill stations
          */
         private int refills;
     
         /**
-         * TODO - Document
+         * Number of refill stations
          */
         public int getRefills() {
             return refills;
         }
     
         /**
-         * TODO - Document
+         * Number of refill stations
          */
         public void setRefills(int value) {
             this.refills = value;
@@ -136,25 +136,25 @@ public abstract class CityType {
     }
 
     /**
-     * TODO - Document
+     * Fixed map
      */
     public static class Inline extends CityType {
         public static final int TAG = 1;
     
         /**
-         * TODO - Document
+         * Each string represents a row in the city
          */
         private String[] cells;
     
         /**
-         * TODO - Document
+         * Each string represents a row in the city
          */
         public String[] getCells() {
             return cells;
         }
     
         /**
-         * TODO - Document
+         * Each string represents a row in the city
          */
         public void setCells(String[] value) {
             this.cells = value;

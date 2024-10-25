@@ -3,245 +3,263 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * Game constants
  */
 public class Constants {
     /**
-     * TODO - Document
+     * Max duration of the game in ticks
      */
     private int maxTickCount;
 
     /**
-     * TODO - Document
+     * Max duration of the game in ticks
      */
     public int getMaxTickCount() {
         return maxTickCount;
     }
 
     /**
-     * TODO - Document
+     * Max duration of the game in ticks
      */
     public void setMaxTickCount(int value) {
         this.maxTickCount = value;
     }
     /**
-     * TODO - Document
+     * Max game time in seconds
      */
     private double maxGameTimeSeconds;
 
     /**
-     * TODO - Document
+     * Max game time in seconds
      */
     public double getMaxGameTimeSeconds() {
         return maxGameTimeSeconds;
     }
 
     /**
-     * TODO - Document
+     * Max game time in seconds
      */
     public void setMaxGameTimeSeconds(double value) {
         this.maxGameTimeSeconds = value;
     }
     /**
-     * TODO - Document
+     * Ticks per second
      */
     private double ticksPerSecond;
 
     /**
-     * TODO - Document
+     * Ticks per second
      */
     public double getTicksPerSecond() {
         return ticksPerSecond;
     }
 
     /**
-     * TODO - Document
+     * Ticks per second
      */
     public void setTicksPerSecond(double value) {
         this.ticksPerSecond = value;
     }
     /**
-     * TODO - Document
+     * Subticks for physics simulation
      */
     private int microticks;
 
     /**
-     * TODO - Document
+     * Subticks for physics simulation
      */
     public int getMicroticks() {
         return microticks;
     }
 
     /**
-     * TODO - Document
+     * Subticks for physics simulation
      */
     public void setMicroticks(int value) {
         this.microticks = value;
     }
     /**
-     * TODO - Document
+     * Size of a single city cell
      */
     private double cellSize;
 
     /**
-     * TODO - Document
+     * Size of a single city cell
      */
     public double getCellSize() {
         return cellSize;
     }
 
     /**
-     * TODO - Document
+     * Size of a single city cell
      */
     public void setCellSize(double value) {
         this.cellSize = value;
     }
     /**
-     * TODO - Document
+     * Collision bounciness
      */
     private double collisionBounciness;
 
     /**
-     * TODO - Document
+     * Collision bounciness
      */
     public double getCollisionBounciness() {
         return collisionBounciness;
     }
 
     /**
-     * TODO - Document
+     * Collision bounciness
      */
     public void setCollisionBounciness(double value) {
         this.collisionBounciness = value;
     }
     /**
-     * TODO - Document
+     * City type
      */
     private komus24.model.CityType cityType;
 
     /**
-     * TODO - Document
+     * City type
      */
     public komus24.model.CityType getCityType() {
         return cityType;
     }
 
     /**
-     * TODO - Document
+     * City type
      */
     public void setCityType(komus24.model.CityType value) {
         this.cityType = value;
     }
     /**
-     * TODO - Document
+     * List of vehicle types
      */
     private komus24.model.VehicleType[] vehicleTypes;
 
     /**
-     * TODO - Document
+     * List of vehicle types
      */
     public komus24.model.VehicleType[] getVehicleTypes() {
         return vehicleTypes;
     }
 
     /**
-     * TODO - Document
+     * List of vehicle types
      */
     public void setVehicleTypes(komus24.model.VehicleType[] value) {
         this.vehicleTypes = value;
     }
     /**
-     * TODO - Document
+     * Speed of refueling at a station
      */
     private double refillSpeed;
 
     /**
-     * TODO - Document
+     * Speed of refueling at a station
      */
     public double getRefillSpeed() {
         return refillSpeed;
     }
 
     /**
-     * TODO - Document
+     * Speed of refueling at a station
      */
     public void setRefillSpeed(double value) {
         this.refillSpeed = value;
     }
     /**
-     * TODO - Document
+     * Number of available quests
      */
     private int questCount;
 
     /**
-     * TODO - Document
+     * Number of available quests
      */
     public int getQuestCount() {
         return questCount;
     }
 
     /**
-     * TODO - Document
+     * Number of available quests
      */
     public void setQuestCount(int value) {
         this.questCount = value;
     }
     /**
-     * TODO - Document
+     * Score range for quests
      */
     private komus24.model.MinMaxRangeLong questScore;
 
     /**
-     * TODO - Document
+     * Score range for quests
      */
     public komus24.model.MinMaxRangeLong getQuestScore() {
         return questScore;
     }
 
     /**
-     * TODO - Document
+     * Score range for quests
      */
     public void setQuestScore(komus24.model.MinMaxRangeLong value) {
         this.questScore = value;
     }
     /**
-     * TODO - Document
+     * Traffic options
      */
     private komus24.model.Traffic traffic;
 
     /**
-     * TODO - Document
+     * Traffic options
      */
     public komus24.model.Traffic getTraffic() {
         return traffic;
     }
 
     /**
-     * TODO - Document
+     * Traffic options
      */
     public void setTraffic(komus24.model.Traffic value) {
         this.traffic = value;
     }
     /**
-     * TODO - Document
+     * Collision penalty modifier
+     */
+    private double collisionPenaltyModifier;
+
+    /**
+     * Collision penalty modifier
+     */
+    public double getCollisionPenaltyModifier() {
+        return collisionPenaltyModifier;
+    }
+
+    /**
+     * Collision penalty modifier
+     */
+    public void setCollisionPenaltyModifier(double value) {
+        this.collisionPenaltyModifier = value;
+    }
+    /**
+     * Map of the city
      */
     private komus24.model.CityCell[][] city;
 
     /**
-     * TODO - Document
+     * Map of the city
      */
     public komus24.model.CityCell[][] getCity() {
         return city;
     }
 
     /**
-     * TODO - Document
+     * Map of the city
      */
     public void setCity(komus24.model.CityCell[][] value) {
         this.city = value;
     }
 
-    public Constants(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, komus24.model.CityType cityType, komus24.model.VehicleType[] vehicleTypes, double refillSpeed, int questCount, komus24.model.MinMaxRangeLong questScore, komus24.model.Traffic traffic, komus24.model.CityCell[][] city) {
+    public Constants(int maxTickCount, double maxGameTimeSeconds, double ticksPerSecond, int microticks, double cellSize, double collisionBounciness, komus24.model.CityType cityType, komus24.model.VehicleType[] vehicleTypes, double refillSpeed, int questCount, komus24.model.MinMaxRangeLong questScore, komus24.model.Traffic traffic, double collisionPenaltyModifier, komus24.model.CityCell[][] city) {
         this.maxTickCount = maxTickCount;
         this.maxGameTimeSeconds = maxGameTimeSeconds;
         this.ticksPerSecond = ticksPerSecond;
@@ -254,6 +272,7 @@ public class Constants {
         this.questCount = questCount;
         this.questScore = questScore;
         this.traffic = traffic;
+        this.collisionPenaltyModifier = collisionPenaltyModifier;
         this.city = city;
     }
 
@@ -290,6 +309,8 @@ public class Constants {
         questScore = komus24.model.MinMaxRangeLong.readFrom(stream);
         komus24.model.Traffic traffic;
         traffic = komus24.model.Traffic.readFrom(stream);
+        double collisionPenaltyModifier;
+        collisionPenaltyModifier = StreamUtil.readDouble(stream);
         komus24.model.CityCell[][] city;
         city = new komus24.model.CityCell[StreamUtil.readInt(stream)][];
         for (int cityIndex = 0; cityIndex < city.length; cityIndex++) {
@@ -302,7 +323,7 @@ public class Constants {
             }
             city[cityIndex] = cityElement;
         }
-        return new Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, city);
+        return new Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, collisionPenaltyModifier, city);
     }
 
     /**
@@ -324,6 +345,7 @@ public class Constants {
         StreamUtil.writeInt(stream, questCount);
         questScore.writeTo(stream);
         traffic.writeTo(stream);
+        StreamUtil.writeDouble(stream, collisionPenaltyModifier);
         StreamUtil.writeInt(stream, city.length);
         for (komus24.model.CityCell[] cityElement : city) {
             StreamUtil.writeInt(stream, cityElement.length);
@@ -382,6 +404,9 @@ public class Constants {
         stringBuilder.append(", ");
         stringBuilder.append("traffic: ");
         stringBuilder.append(String.valueOf(traffic));
+        stringBuilder.append(", ");
+        stringBuilder.append("collisionPenaltyModifier: ");
+        stringBuilder.append(String.valueOf(collisionPenaltyModifier));
         stringBuilder.append(", ");
         stringBuilder.append("city: ");
         stringBuilder.append("[ ");

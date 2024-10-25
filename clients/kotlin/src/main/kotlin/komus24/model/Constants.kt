@@ -3,63 +3,67 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Game constants
  */
 class Constants {
     /**
-     * TODO - Document
+     * Max duration of the game in ticks
      */
     var maxTickCount: Int
     /**
-     * TODO - Document
+     * Max game time in seconds
      */
     var maxGameTimeSeconds: Double
     /**
-     * TODO - Document
+     * Ticks per second
      */
     var ticksPerSecond: Double
     /**
-     * TODO - Document
+     * Subticks for physics simulation
      */
     var microticks: Int
     /**
-     * TODO - Document
+     * Size of a single city cell
      */
     var cellSize: Double
     /**
-     * TODO - Document
+     * Collision bounciness
      */
     var collisionBounciness: Double
     /**
-     * TODO - Document
+     * City type
      */
     var cityType: komus24.model.CityType
     /**
-     * TODO - Document
+     * List of vehicle types
      */
     var vehicleTypes: Array<komus24.model.VehicleType>
     /**
-     * TODO - Document
+     * Speed of refueling at a station
      */
     var refillSpeed: Double
     /**
-     * TODO - Document
+     * Number of available quests
      */
     var questCount: Int
     /**
-     * TODO - Document
+     * Score range for quests
      */
     var questScore: komus24.model.MinMaxRangeLong
     /**
-     * TODO - Document
+     * Traffic options
      */
     var traffic: komus24.model.Traffic
     /**
-     * TODO - Document
+     * Collision penalty modifier
+     */
+    var collisionPenaltyModifier: Double
+    /**
+     * Map of the city
      */
     var city: Array<Array<komus24.model.CityCell>>
 
-    constructor(maxTickCount: Int, maxGameTimeSeconds: Double, ticksPerSecond: Double, microticks: Int, cellSize: Double, collisionBounciness: Double, cityType: komus24.model.CityType, vehicleTypes: Array<komus24.model.VehicleType>, refillSpeed: Double, questCount: Int, questScore: komus24.model.MinMaxRangeLong, traffic: komus24.model.Traffic, city: Array<Array<komus24.model.CityCell>>) {
+    constructor(maxTickCount: Int, maxGameTimeSeconds: Double, ticksPerSecond: Double, microticks: Int, cellSize: Double, collisionBounciness: Double, cityType: komus24.model.CityType, vehicleTypes: Array<komus24.model.VehicleType>, refillSpeed: Double, questCount: Int, questScore: komus24.model.MinMaxRangeLong, traffic: komus24.model.Traffic, collisionPenaltyModifier: Double, city: Array<Array<komus24.model.CityCell>>) {
         this.maxTickCount = maxTickCount
         this.maxGameTimeSeconds = maxGameTimeSeconds
         this.ticksPerSecond = ticksPerSecond
@@ -72,6 +76,7 @@ class Constants {
         this.questCount = questCount
         this.questScore = questScore
         this.traffic = traffic
+        this.collisionPenaltyModifier = collisionPenaltyModifier
         this.city = city
     }
 
@@ -95,6 +100,7 @@ class Constants {
         StreamUtil.writeInt(stream, questCount)
         questScore.writeTo(stream)
         traffic.writeTo(stream)
+        StreamUtil.writeDouble(stream, collisionPenaltyModifier)
         StreamUtil.writeInt(stream, city.size)
         for (cityElement in city) {
             StreamUtil.writeInt(stream, cityElement.size)
@@ -154,6 +160,9 @@ class Constants {
         stringBuilder.append("traffic: ")
         stringBuilder.append(traffic)
         stringBuilder.append(", ")
+        stringBuilder.append("collisionPenaltyModifier: ")
+        stringBuilder.append(collisionPenaltyModifier)
+        stringBuilder.append(", ")
         stringBuilder.append("city: ")
         stringBuilder.append("[ ")
         var cityIndex = 0
@@ -212,6 +221,8 @@ class Constants {
             questScore = komus24.model.MinMaxRangeLong.readFrom(stream)
             var traffic: komus24.model.Traffic
             traffic = komus24.model.Traffic.readFrom(stream)
+            var collisionPenaltyModifier: Double
+            collisionPenaltyModifier = StreamUtil.readDouble(stream)
             var city: Array<Array<komus24.model.CityCell>>
             city = Array(StreamUtil.readInt(stream), {
                 var cityElement: Array<komus24.model.CityCell>
@@ -222,7 +233,7 @@ class Constants {
                 })
                 cityElement
             })
-            return Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, city)
+            return Constants(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, collisionPenaltyModifier, city)
         }
     }
 }

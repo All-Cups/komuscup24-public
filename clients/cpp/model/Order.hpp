@@ -13,7 +13,7 @@ namespace model {
 // Player's orders
 class Order {
 public:
-    // TODO - Document
+    // Orders for each of the vehicles
     std::vector<model::VehicleOrder> vehicles;
 
     Order(std::vector<model::VehicleOrder> vehicles);

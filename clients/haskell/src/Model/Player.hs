@@ -6,13 +6,13 @@ import Trans (Trans)
 import Data.Int
 import Model.Vehicle (Vehicle)
 
--- | TODO - Document
+-- | Player (game participant)
 data Player = Player {
-    -- | TODO - Document
+    -- | Index
     index :: Int32,
-    -- | TODO - Document
+    -- | Current score
     score :: Int64,
-    -- | TODO - Document
+    -- | List of player's vehicles
     vehicles :: [Vehicle] }
     deriving Show
 

@@ -10,7 +10,7 @@ uses
     UVec2Int32 in 'Model/UVec2Int32.pas';
 
 type
-    // TODO - Document
+    // City type
     TCityType = class
         // Write CityType to output stream
         procedure WriteTo(stream: TStream); virtual; abstract;
@@ -19,13 +19,13 @@ type
     end;
 
 type
-    // TODO - Document
+    // Auto generated manhattan map
     TCityTypeManhattan = class (TCityType)
-        // TODO - Document
+        // Map size
         size: TVec2Int32;
-        // TODO - Document
+        // Size of a single block
         blockSize: TVec2Int32;
-        // TODO - Document
+        // Number of refill stations
         refills: Int32;
         constructor Create(size: TVec2Int32; blockSize: TVec2Int32; refills: Int32);
         // Read CityTypeManhattan from input stream
@@ -36,9 +36,9 @@ type
     end;
 
 type
-    // TODO - Document
+    // Fixed map
     TCityTypeInline = class (TCityType)
-        // TODO - Document
+        // Each string represents a row in the city
         cells: TArray<String>;
         constructor Create(cells: TArray<String>);
         // Read CityTypeInline from input stream

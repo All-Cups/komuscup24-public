@@ -55,7 +55,7 @@ main = do
           Trans.write token
           Trans.write (0 :: Int32)
           Trans.write (1 :: Int32)
-          Trans.write (0 :: Int32)
+          Trans.write (2 :: Int32)
     SBS.sendAll socket (Binary.runPut message)
     contents <- SBS.getContents socket
     let messages = getManyIncremental Trans.read contents :: [ServerMessage]

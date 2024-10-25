@@ -2,7 +2,7 @@ require './model/vec2_int'
 
 module Model
 
-# TODO - Document
+# City type
 class CityType
     # Read CityType from input stream
     def self.read_from(stream)
@@ -16,15 +16,15 @@ class CityType
         raise "Unexpected tag value"
     end
 
-    # TODO - Document
+    # Auto generated manhattan map
     class Manhattan
         TAG = 0
     
-        # TODO - Document
+        # Map size
         attr_accessor :size
-        # TODO - Document
+        # Size of a single block
         attr_accessor :block_size
-        # TODO - Document
+        # Number of refill stations
         attr_accessor :refills
     
         def initialize(size, block_size, refills)
@@ -67,11 +67,11 @@ class CityType
             to_s
         end
     end
-    # TODO - Document
+    # Fixed map
     class Inline
         TAG = 1
     
-        # TODO - Document
+        # Each string represents a row in the city
         attr_accessor :cells
     
         def initialize(cells)

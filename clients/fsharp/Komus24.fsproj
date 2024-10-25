@@ -20,12 +20,13 @@
         <Compile Include="Model/Player.fs" />
         <Compile Include="Model/PlayerView.fs" />
         <Compile Include="Codegame/ServerMessage.fs" />
-        <Compile Include="Model/DebugData.fs" />
+        <Compile Include="Debugging/Color.fs" />
+        <Compile Include="Debugging/DebugData.fs" />
         <Compile Include="Debugging/DebugCommand.fs" />
         <Compile Include="Model/VehicleOrder.fs" />
         <Compile Include="Model/Order.fs" />
         <Compile Include="Codegame/ClientMessage.fs" />
-        <Compile Include="Model/DebugState.fs" />
+        <Compile Include="Debugging/DebugState.fs" />
         <Compile Include="DebugInterface.fs" />
         <Compile Include="MyStrategy.fs" />
         <Compile Include="Runner.fs" />

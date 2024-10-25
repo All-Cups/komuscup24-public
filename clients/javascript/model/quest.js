@@ -1,18 +1,18 @@
 const Vec2Int = require.main.require('./model/vec2-int');
 /**
- * TODO - Document
+ * A delivery quest
  */
 class Quest {
     /**
-     * TODO - Document
+     * Cell where to pick delivery from
      */
     pickupCell;
     /**
-     * TODO - Document
+     * Cell to drop the delivery at
      */
     dropCell;
     /**
-     * TODO - Document
+     * Score for completing the quest
      */
     score;
 

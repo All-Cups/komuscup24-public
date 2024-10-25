@@ -2,7 +2,7 @@
 
 namespace Komus24.Model
 
-/// TODO - Document
+/// City cell
 type CityCell =
     | Road = 0
     | Building = 1

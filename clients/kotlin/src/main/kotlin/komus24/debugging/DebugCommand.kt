@@ -35,9 +35,9 @@ abstract class DebugCommand {
         /**
          * Data to add
          */
-        var debugData: komus24.model.DebugData
+        var debugData: komus24.debugging.DebugData
     
-        constructor(debugData: komus24.model.DebugData) {
+        constructor(debugData: komus24.debugging.DebugData) {
             this.debugData = debugData
         }
     
@@ -69,8 +69,8 @@ abstract class DebugCommand {
              */
             @Throws(java.io.IOException::class)
             fun readFrom(stream: java.io.InputStream): Add {
-                var debugData: komus24.model.DebugData
-                debugData = komus24.model.DebugData.readFrom(stream)
+                var debugData: komus24.debugging.DebugData
+                debugData = komus24.debugging.DebugData.readFrom(stream)
                 return Add(debugData)
             }
         }

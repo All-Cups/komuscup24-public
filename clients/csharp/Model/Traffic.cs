@@ -1,32 +1,32 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// Options for traffic
     /// </summary>
     public struct Traffic
     {
         /// <summary>
-        /// TODO - Document
+        /// Number of traffic cars
         /// </summary>
         public int Amount { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Time to move between adjacent keypoints
         /// </summary>
         public double MoveTime { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Radius of each traffic car
         /// </summary>
         public double Radius { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Weight of each traffic car
         /// </summary>
         public double Weight { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Deceleration after crash
         /// </summary>
         public double CrashDeceleration { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Lifetime after crash
         /// </summary>
         public double CrashLifetime { get; set; }
     

@@ -3,11 +3,11 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Player (game participant)
  *
- * @param index TODO - Document
- * @param score TODO - Document
- * @param vehicles TODO - Document
+ * @param index Index
+ * @param score Current score
+ * @param vehicles List of player's vehicles
  */
 case class Player(index: Int, score: Long, vehicles: Seq[komus24.model.Vehicle]) {
     /**

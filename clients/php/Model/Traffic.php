@@ -4,32 +4,32 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * Options for traffic
      */
     class Traffic
     {
         /**
-         * TODO - Document
+         * Number of traffic cars
          */
         public int $amount;
         /**
-         * TODO - Document
+         * Time to move between adjacent keypoints
          */
         public float $moveTime;
         /**
-         * TODO - Document
+         * Radius of each traffic car
          */
         public float $radius;
         /**
-         * TODO - Document
+         * Weight of each traffic car
          */
         public float $weight;
         /**
-         * TODO - Document
+         * Deceleration after crash
          */
         public float $crashDeceleration;
         /**
-         * TODO - Document
+         * Lifetime after crash
          */
         public float $crashLifetime;
     

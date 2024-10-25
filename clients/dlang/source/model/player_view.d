@@ -10,11 +10,11 @@ import model.quest;
 struct PlayerView {
     /// Current tick number
     int currentTick;
-    /// TODO - Document
+    /// Your player
     model.Player you;
-    /// TODO - Document
+    /// Other players
     model.Player[] other;
-    /// TODO - Document
+    /// Available quests
     model.Quest[] quests;
 
     this(int currentTick, model.Player you, model.Player[] other, model.Quest[] quests) {

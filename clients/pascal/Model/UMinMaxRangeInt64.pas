@@ -9,11 +9,11 @@ uses
     SysUtils;
 
 type
-    // TODO - Document
+    // Range of values
     TMinMaxRangeInt64 = class
-        // TODO - Document
+        // Minimal value
         min: Int64;
-        // TODO - Document
+        // Maximal  value
         max: Int64;
         constructor Create(min: Int64; max: Int64);
         // Read MinMaxRangeInt64 from input stream

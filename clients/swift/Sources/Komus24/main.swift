@@ -15,7 +15,7 @@ class Runner {
         outputStream.writeString(token)
         outputStream.writeInt32(0)
         outputStream.writeInt32(1)
-        outputStream.writeInt32(0)
+        outputStream.writeInt32(2)
         outputStream.flush()
     }
 

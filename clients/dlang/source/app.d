@@ -21,7 +21,7 @@ class Runner
         stream.write(token);
         stream.write(0);
         stream.write(1);
-        stream.write(0);
+        stream.write(2);
         stream.flush();
     }
 

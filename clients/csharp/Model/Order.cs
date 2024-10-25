@@ -6,7 +6,7 @@ namespace Komus24.Model
     public struct Order
     {
         /// <summary>
-        /// TODO - Document
+        /// Orders for each of the vehicles
         /// </summary>
         public Komus24.Model.VehicleOrder[] Vehicles { get; set; }
     

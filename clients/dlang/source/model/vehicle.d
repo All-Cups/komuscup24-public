@@ -6,23 +6,23 @@ import std.typecons : Nullable;
 import model.quest;
 import model.vec2_double;
 
-/// TODO - Document
+/// A vehicle
 struct Vehicle {
-    /// TODO - Document
+    /// Current position (center)
     model.Vec2Double position;
-    /// TODO - Document
+    /// Velocity vector
     model.Vec2Double velocity;
-    /// TODO - Document
+    /// Speed of wheels
     double speed;
-    /// TODO - Document
+    /// Rotation speed (radians/second)
     double rotationSpeed;
-    /// TODO - Document
+    /// Current rotation
     double rotation;
-    /// TODO - Document
+    /// Vehicle type index
     int typeIndex;
-    /// TODO maybe multiple quests at the same time?
+    /// Current quest, if any
     Nullable!(model.Quest) quest;
-    /// TODO - Document
+    /// Remaining fuel
     double fuel;
 
     this(model.Vec2Double position, model.Vec2Double velocity, double speed, double rotationSpeed, double rotation, int typeIndex, Nullable!(model.Quest) quest, double fuel) {

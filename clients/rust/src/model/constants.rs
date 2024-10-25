@@ -1,33 +1,35 @@
 use super::*;
 
-/// TODO - Document
+/// Game constants
 #[derive(Clone, Debug)]
 pub struct Constants {
-    /// TODO - Document
+    /// Max duration of the game in ticks
     pub max_tick_count: i32,
-    /// TODO - Document
+    /// Max game time in seconds
     pub max_game_time_seconds: f64,
-    /// TODO - Document
+    /// Ticks per second
     pub ticks_per_second: f64,
-    /// TODO - Document
+    /// Subticks for physics simulation
     pub microticks: i32,
-    /// TODO - Document
+    /// Size of a single city cell
     pub cell_size: f64,
-    /// TODO - Document
+    /// Collision bounciness
     pub collision_bounciness: f64,
-    /// TODO - Document
+    /// City type
     pub city_type: model::CityType,
-    /// TODO - Document
+    /// List of vehicle types
     pub vehicle_types: Vec<model::VehicleType>,
-    /// TODO - Document
+    /// Speed of refueling at a station
     pub refill_speed: f64,
-    /// TODO - Document
+    /// Number of available quests
     pub quest_count: i32,
-    /// TODO - Document
+    /// Score range for quests
     pub quest_score: model::MinMaxRangeI64,
-    /// TODO - Document
+    /// Traffic options
     pub traffic: model::Traffic,
-    /// TODO - Document
+    /// Collision penalty modifier
+    pub collision_penalty_modifier: f64,
+    /// Map of the city
     pub city: Vec<Vec<model::CityCell>>,
 }
 
@@ -45,6 +47,7 @@ impl trans::Trans for Constants {
         self.quest_count.write_to(writer)?;
         self.quest_score.write_to(writer)?;
         self.traffic.write_to(writer)?;
+        self.collision_penalty_modifier.write_to(writer)?;
         self.city.write_to(writer)?;
         Ok(())
     }
@@ -61,6 +64,7 @@ impl trans::Trans for Constants {
         let quest_count: i32 = trans::Trans::read_from(reader)?;
         let quest_score: model::MinMaxRangeI64 = trans::Trans::read_from(reader)?;
         let traffic: model::Traffic = trans::Trans::read_from(reader)?;
+        let collision_penalty_modifier: f64 = trans::Trans::read_from(reader)?;
         let city: Vec<Vec<model::CityCell>> = trans::Trans::read_from(reader)?;
         Ok(Self {
             max_tick_count,
@@ -75,6 +79,7 @@ impl trans::Trans for Constants {
             quest_count,
             quest_score,
             traffic,
+            collision_penalty_modifier,
             city,
         })
     }

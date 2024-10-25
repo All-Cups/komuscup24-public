@@ -1,15 +1,15 @@
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * Range of values
  */
 export class MinMaxRangeLong {
     /**
-     * TODO - Document
+     * Minimal value
      */
     min: bigint
     /**
-     * TODO - Document
+     * Maximal  value
      */
     max: bigint
 

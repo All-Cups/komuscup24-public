@@ -3,7 +3,7 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * City cell
  */
 sealed abstract class CityCell (val tag: Int) {
     /**
@@ -16,15 +16,15 @@ sealed abstract class CityCell (val tag: Int) {
 
 object CityCell {
     /**
-     * TODO - Document
+     * Road
      */
     case object ROAD extends CityCell(0)
     /**
-     * TODO - Document
+     * Building
      */
     case object BUILDING extends CityCell(1)
     /**
-     * TODO - Document
+     * Refill station
      */
     case object REFILL_STATION extends CityCell(2)
 

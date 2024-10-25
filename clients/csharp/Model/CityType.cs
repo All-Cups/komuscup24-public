@@ -1,7 +1,7 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// City type
     /// </summary>
     public abstract class CityType
     {
@@ -23,22 +23,22 @@ namespace Komus24.Model
         }
 
         /// <summary>
-        /// TODO - Document
+        /// Auto generated manhattan map
         /// </summary>
         public class Manhattan : CityType
         {
             public const int TAG = 0;
         
             /// <summary>
-            /// TODO - Document
+            /// Map size
             /// </summary>
             public Komus24.Model.Vec2Int Size { get; set; }
             /// <summary>
-            /// TODO - Document
+            /// Size of a single block
             /// </summary>
             public Komus24.Model.Vec2Int BlockSize { get; set; }
             /// <summary>
-            /// TODO - Document
+            /// Number of refill stations
             /// </summary>
             public int Refills { get; set; }
         
@@ -87,14 +87,14 @@ namespace Komus24.Model
         }
 
         /// <summary>
-        /// TODO - Document
+        /// Fixed map
         /// </summary>
         public class Inline : CityType
         {
             public const int TAG = 1;
         
             /// <summary>
-            /// TODO - Document
+            /// Each string represents a row in the city
             /// </summary>
             public string[] Cells { get; set; }
         

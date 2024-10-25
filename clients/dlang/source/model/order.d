@@ -7,7 +7,7 @@ import model.vehicle_order;
 
 /// Player's orders
 struct Order {
-    /// TODO - Document
+    /// Orders for each of the vehicles
     model.VehicleOrder[] vehicles;
 
     this(model.VehicleOrder[] vehicles) {

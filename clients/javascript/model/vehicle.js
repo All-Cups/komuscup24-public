@@ -1,39 +1,39 @@
 const Quest = require.main.require('./model/quest');
 const Vec2Double = require.main.require('./model/vec2-double');
 /**
- * TODO - Document
+ * A vehicle
  */
 class Vehicle {
     /**
-     * TODO - Document
+     * Current position (center)
      */
     position;
     /**
-     * TODO - Document
+     * Velocity vector
      */
     velocity;
     /**
-     * TODO - Document
+     * Speed of wheels
      */
     speed;
     /**
-     * TODO - Document
+     * Rotation speed (radians/second)
      */
     rotationSpeed;
     /**
-     * TODO - Document
+     * Current rotation
      */
     rotation;
     /**
-     * TODO - Document
+     * Vehicle type index
      */
     typeIndex;
     /**
-     * TODO maybe multiple quests at the same time?
+     * Current quest, if any
      */
     quest;
     /**
-     * TODO - Document
+     * Remaining fuel
      */
     fuel;
 

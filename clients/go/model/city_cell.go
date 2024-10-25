@@ -3,15 +3,15 @@ package model
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// City cell
 type CityCell int32
 
 const (
-    // TODO - Document
+    // Road
     CityCellRoad CityCell = 0
-    // TODO - Document
+    // Building
     CityCellBuilding CityCell = 1
-    // TODO - Document
+    // Refill station
     CityCellRefillStation CityCell = 2
 )
 

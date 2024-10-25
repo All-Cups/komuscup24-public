@@ -3,19 +3,19 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * A delivery quest
  */
 class Quest {
     /**
-     * TODO - Document
+     * Cell where to pick delivery from
      */
     var pickupCell: komus24.model.Vec2Int
     /**
-     * TODO - Document
+     * Cell to drop the delivery at
      */
     var dropCell: komus24.model.Vec2Int
     /**
-     * TODO - Document
+     * Score for completing the quest
      */
     var score: Long
 

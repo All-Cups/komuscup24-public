@@ -23,7 +23,7 @@ public class Runner {
         StreamUtil.writeString(outputStream, token);
         StreamUtil.writeInt(outputStream, 0);
         StreamUtil.writeInt(outputStream, 1);
-        StreamUtil.writeInt(outputStream, 0);
+        StreamUtil.writeInt(outputStream, 2);
         outputStream.flush();
     }
 

@@ -1,7 +1,7 @@
 from stream_wrapper import StreamWrapper
 
 class VehicleType:
-    """TODO - Document"""
+    """Vehicle type options"""
 
     __slots__ = ("name","radius","weight","max_backwards_speed","max_speed","acceleration","friction","max_rotate_speed","rotate_acceleration","max_fuel","fuel_use_speed",)
 
@@ -19,27 +19,27 @@ class VehicleType:
 
     def __init__(self, name: str, radius: float, weight: float, max_backwards_speed: float, max_speed: float, acceleration: float, friction: float, max_rotate_speed: float, rotate_acceleration: float, max_fuel: float, fuel_use_speed: float):
         self.name = name
-        """TODO - Document"""
+        """Name"""
         self.radius = radius
-        """TODO - Document"""
+        """Radius"""
         self.weight = weight
-        """TODO - Document"""
+        """Weight"""
         self.max_backwards_speed = max_backwards_speed
-        """TODO - Document"""
+        """Maximal backwads movement speed"""
         self.max_speed = max_speed
-        """TODO - Document"""
+        """Maximal forward movement speed"""
         self.acceleration = acceleration
-        """TODO - Document"""
+        """Acceleration"""
         self.friction = friction
-        """TODO - Document"""
+        """Friction coefficient"""
         self.max_rotate_speed = max_rotate_speed
-        """TODO - Document"""
+        """Maximal rotation speed"""
         self.rotate_acceleration = rotate_acceleration
-        """TODO - Document"""
+        """Rotational acceleration"""
         self.max_fuel = max_fuel
-        """TODO - Document"""
+        """Maximal amount of fuel"""
         self.fuel_use_speed = fuel_use_speed
-        """TODO - Document"""
+        """Fuel usage speed"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "VehicleType":

@@ -2,13 +2,13 @@ module model.city_cell;
 
 import stream;
 
-/// TODO - Document
+/// City cell
 enum CityCell : int {
-    /// TODO - Document
+    /// Road
     Road = 0,
-    /// TODO - Document
+    /// Building
     Building = 1,
-    /// TODO - Document
+    /// Refill station
     RefillStation = 2,
 }
 

@@ -7,7 +7,7 @@ interface
 uses
     Stream,
     SysUtils,
-    UDebugData in 'Model/UDebugData.pas';
+    UDebugData in 'Debugging/UDebugData.pas';
 
 type
     // Debug commands that can be sent while debugging with the app

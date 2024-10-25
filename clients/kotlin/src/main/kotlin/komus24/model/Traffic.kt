@@ -3,31 +3,31 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Options for traffic
  */
 class Traffic {
     /**
-     * TODO - Document
+     * Number of traffic cars
      */
     var amount: Int
     /**
-     * TODO - Document
+     * Time to move between adjacent keypoints
      */
     var moveTime: Double
     /**
-     * TODO - Document
+     * Radius of each traffic car
      */
     var radius: Double
     /**
-     * TODO - Document
+     * Weight of each traffic car
      */
     var weight: Double
     /**
-     * TODO - Document
+     * Deceleration after crash
      */
     var crashDeceleration: Double
     /**
-     * TODO - Document
+     * Lifetime after crash
      */
     var crashLifetime: Double
 

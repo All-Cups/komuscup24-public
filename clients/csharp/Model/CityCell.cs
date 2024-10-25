@@ -1,20 +1,20 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// City cell
     /// </summary>
     public enum CityCell
     {
         /// <summary>
-        /// TODO - Document
+        /// Road
         /// </summary>
         Road = 0,
         /// <summary>
-        /// TODO - Document
+        /// Building
         /// </summary>
         Building = 1,
         /// <summary>
-        /// TODO - Document
+        /// Refill station
         /// </summary>
         RefillStation = 2,
     }

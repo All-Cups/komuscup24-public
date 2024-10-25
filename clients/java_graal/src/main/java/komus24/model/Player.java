@@ -3,59 +3,59 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * Player (game participant)
  */
 public class Player {
     /**
-     * TODO - Document
+     * Index
      */
     private int index;
 
     /**
-     * TODO - Document
+     * Index
      */
     public int getIndex() {
         return index;
     }
 
     /**
-     * TODO - Document
+     * Index
      */
     public void setIndex(int value) {
         this.index = value;
     }
     /**
-     * TODO - Document
+     * Current score
      */
     private long score;
 
     /**
-     * TODO - Document
+     * Current score
      */
     public long getScore() {
         return score;
     }
 
     /**
-     * TODO - Document
+     * Current score
      */
     public void setScore(long value) {
         this.score = value;
     }
     /**
-     * TODO - Document
+     * List of player's vehicles
      */
     private komus24.model.Vehicle[] vehicles;
 
     /**
-     * TODO - Document
+     * List of player's vehicles
      */
     public komus24.model.Vehicle[] getVehicles() {
         return vehicles;
     }
 
     /**
-     * TODO - Document
+     * List of player's vehicles
      */
     public void setVehicles(komus24.model.Vehicle[] value) {
         this.vehicles = value;

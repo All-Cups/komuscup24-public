@@ -9,19 +9,19 @@ uses
     SysUtils;
 
 type
-    // TODO - Document
+    // Options for traffic
     TTraffic = class
-        // TODO - Document
+        // Number of traffic cars
         amount: Int32;
-        // TODO - Document
+        // Time to move between adjacent keypoints
         moveTime: Double;
-        // TODO - Document
+        // Radius of each traffic car
         radius: Double;
-        // TODO - Document
+        // Weight of each traffic car
         weight: Double;
-        // TODO - Document
+        // Deceleration after crash
         crashDeceleration: Double;
-        // TODO - Document
+        // Lifetime after crash
         crashLifetime: Double;
         constructor Create(amount: Int32; moveTime: Double; radius: Double; weight: Double; crashDeceleration: Double; crashLifetime: Double);
         // Read Traffic from input stream

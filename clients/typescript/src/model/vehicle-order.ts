@@ -1,19 +1,19 @@
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * Order for controlling a single vehicle
  */
 export class VehicleOrder {
     /**
-     * -1..+1
+     * Acceleration (-1 - fully backwards, +1 - fully forward)
      */
     accelerate: number
     /**
-     * TODO - Document
+     * Hand brakes
      */
     brakes: boolean
     /**
-     * -1..+1
+     * Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
      */
     rotate: number
 

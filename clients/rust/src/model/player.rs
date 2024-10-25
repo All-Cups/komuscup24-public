@@ -1,13 +1,13 @@
 use super::*;
 
-/// TODO - Document
+/// Player (game participant)
 #[derive(Clone, Debug)]
 pub struct Player {
-    /// TODO - Document
+    /// Index
     pub index: i32,
-    /// TODO - Document
+    /// Current score
     pub score: i64,
-    /// TODO - Document
+    /// List of player's vehicles
     pub vehicles: Vec<model::Vehicle>,
 }
 

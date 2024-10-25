@@ -3,19 +3,19 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Vehicle type options
  *
- * @param name TODO - Document
- * @param radius TODO - Document
- * @param weight TODO - Document
- * @param maxBackwardsSpeed TODO - Document
- * @param maxSpeed TODO - Document
- * @param acceleration TODO - Document
- * @param friction TODO - Document
- * @param maxRotateSpeed TODO - Document
- * @param rotateAcceleration TODO - Document
- * @param maxFuel TODO - Document
- * @param fuelUseSpeed TODO - Document
+ * @param name Name
+ * @param radius Radius
+ * @param weight Weight
+ * @param maxBackwardsSpeed Maximal backwads movement speed
+ * @param maxSpeed Maximal forward movement speed
+ * @param acceleration Acceleration
+ * @param friction Friction coefficient
+ * @param maxRotateSpeed Maximal rotation speed
+ * @param rotateAcceleration Rotational acceleration
+ * @param maxFuel Maximal amount of fuel
+ * @param fuelUseSpeed Fuel usage speed
  */
 case class VehicleType(name: String, radius: Double, weight: Double, maxBackwardsSpeed: Double, maxSpeed: Double, acceleration: Double, friction: Double, maxRotateSpeed: Double, rotateAcceleration: Double, maxFuel: Double, fuelUseSpeed: Double) {
     /**

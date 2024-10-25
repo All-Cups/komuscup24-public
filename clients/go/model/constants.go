@@ -4,37 +4,39 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// Game constants
 type Constants struct {
-    // TODO - Document
+    // Max duration of the game in ticks
     MaxTickCount int32
-    // TODO - Document
+    // Max game time in seconds
     MaxGameTimeSeconds float64
-    // TODO - Document
+    // Ticks per second
     TicksPerSecond float64
-    // TODO - Document
+    // Subticks for physics simulation
     Microticks int32
-    // TODO - Document
+    // Size of a single city cell
     CellSize float64
-    // TODO - Document
+    // Collision bounciness
     CollisionBounciness float64
-    // TODO - Document
+    // City type
     CityType CityType
-    // TODO - Document
+    // List of vehicle types
     VehicleTypes []VehicleType
-    // TODO - Document
+    // Speed of refueling at a station
     RefillSpeed float64
-    // TODO - Document
+    // Number of available quests
     QuestCount int32
-    // TODO - Document
+    // Score range for quests
     QuestScore MinMaxRangeInt64
-    // TODO - Document
+    // Traffic options
     Traffic Traffic
-    // TODO - Document
+    // Collision penalty modifier
+    CollisionPenaltyModifier float64
+    // Map of the city
     City [][]CityCell
 }
 
-func NewConstants(maxTickCount int32, maxGameTimeSeconds float64, ticksPerSecond float64, microticks int32, cellSize float64, collisionBounciness float64, cityType CityType, vehicleTypes []VehicleType, refillSpeed float64, questCount int32, questScore MinMaxRangeInt64, traffic Traffic, city [][]CityCell) Constants {
+func NewConstants(maxTickCount int32, maxGameTimeSeconds float64, ticksPerSecond float64, microticks int32, cellSize float64, collisionBounciness float64, cityType CityType, vehicleTypes []VehicleType, refillSpeed float64, questCount int32, questScore MinMaxRangeInt64, traffic Traffic, collisionPenaltyModifier float64, city [][]CityCell) Constants {
     return Constants {
         MaxTickCount: maxTickCount,
         MaxGameTimeSeconds: maxGameTimeSeconds,
@@ -48,6 +50,7 @@ func NewConstants(maxTickCount int32, maxGameTimeSeconds float64, ticksPerSecond
         QuestCount: questCount,
         QuestScore: questScore,
         Traffic: traffic,
+        CollisionPenaltyModifier: collisionPenaltyModifier,
         City: city,
     }
 }
@@ -83,6 +86,8 @@ func ReadConstants(reader io.Reader) Constants {
     questScore = ReadMinMaxRangeInt64(reader)
     var traffic Traffic
     traffic = ReadTraffic(reader)
+    var collisionPenaltyModifier float64
+    collisionPenaltyModifier = ReadFloat64(reader)
     var city [][]CityCell
     city = make([][]CityCell, ReadInt32(reader))
     for cityIndex := range city {
@@ -108,6 +113,7 @@ func ReadConstants(reader io.Reader) Constants {
         QuestCount: questCount,
         QuestScore: questScore,
         Traffic: traffic,
+        CollisionPenaltyModifier: collisionPenaltyModifier,
         City: city,
     }
 }
@@ -141,6 +147,8 @@ func (constants Constants) Write(writer io.Writer) {
     questScore.Write(writer)
     traffic := constants.Traffic
     traffic.Write(writer)
+    collisionPenaltyModifier := constants.CollisionPenaltyModifier
+    WriteFloat64(writer, collisionPenaltyModifier)
     city := constants.City
     WriteInt32(writer, int32(len(city)))
     for _, cityElement := range city {
@@ -208,6 +216,10 @@ func (constants Constants) String() string {
     stringResult += "Traffic: "
     traffic := constants.Traffic
     stringResult += traffic.String()
+    stringResult += ", "
+    stringResult += "CollisionPenaltyModifier: "
+    collisionPenaltyModifier := constants.CollisionPenaltyModifier
+    stringResult += fmt.Sprint(collisionPenaltyModifier)
     stringResult += ", "
     stringResult += "City: "
     city := constants.City

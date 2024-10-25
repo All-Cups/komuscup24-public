@@ -1,7 +1,7 @@
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * City cell
  */
 export class CityCell {
     readonly name: string;
@@ -13,15 +13,15 @@ export class CityCell {
     }
 
     /**
-     * TODO - Document
+     * Road
      */
     static readonly ROAD = new CityCell("ROAD", 0);
     /**
-     * TODO - Document
+     * Building
      */
     static readonly BUILDING = new CityCell("BUILDING", 1);
     /**
-     * TODO - Document
+     * Refill station
      */
     static readonly REFILL_STATION = new CityCell("REFILL_STATION", 2);
 

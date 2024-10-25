@@ -1,7 +1,7 @@
 <?php
 
 namespace Debugging {
-    require_once 'Model/DebugData.php';
+    require_once 'Debugging/DebugData.php';
     require_once 'Stream.php';
 
     /**
@@ -48,9 +48,9 @@ namespace Debugging\DebugCommand {
         /**
          * Data to add
          */
-        public \Model\DebugData $debugData;
+        public \Debugging\DebugData $debugData;
     
-        function __construct(\Model\DebugData $debugData)
+        function __construct(\Debugging\DebugData $debugData)
         {
             $this->debugData = $debugData;
         }
@@ -60,7 +60,7 @@ namespace Debugging\DebugCommand {
          */
         public static function readFrom(\InputStream $stream): Add
         {
-            $debugData = \Model\DebugData::readFrom($stream);
+            $debugData = \Debugging\DebugData::readFrom($stream);
             return new Add($debugData);
         }
         

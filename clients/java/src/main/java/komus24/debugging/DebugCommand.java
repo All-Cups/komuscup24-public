@@ -38,23 +38,23 @@ public abstract class DebugCommand {
         /**
          * Data to add
          */
-        private komus24.model.DebugData debugData;
+        private komus24.debugging.DebugData debugData;
     
         /**
          * Data to add
          */
-        public komus24.model.DebugData getDebugData() {
+        public komus24.debugging.DebugData getDebugData() {
             return debugData;
         }
     
         /**
          * Data to add
          */
-        public void setDebugData(komus24.model.DebugData value) {
+        public void setDebugData(komus24.debugging.DebugData value) {
             this.debugData = value;
         }
     
-        public Add(komus24.model.DebugData debugData) {
+        public Add(komus24.debugging.DebugData debugData) {
             this.debugData = debugData;
         }
     
@@ -62,8 +62,8 @@ public abstract class DebugCommand {
          * Read Add from input stream
          */
         public static Add readFrom(java.io.InputStream stream) throws java.io.IOException {
-            komus24.model.DebugData debugData;
-            debugData = komus24.model.DebugData.readFrom(stream);
+            komus24.debugging.DebugData debugData;
+            debugData = komus24.debugging.DebugData.readFrom(stream);
             return new Add(debugData);
         }
     

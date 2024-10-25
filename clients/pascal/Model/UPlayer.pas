@@ -10,13 +10,13 @@ uses
     UVehicle in 'Model/UVehicle.pas';
 
 type
-    // TODO - Document
+    // Player (game participant)
     TPlayer = class
-        // TODO - Document
+        // Index
         index: Int32;
-        // TODO - Document
+        // Current score
         score: Int64;
-        // TODO - Document
+        // List of player's vehicles
         vehicles: TArray<TVehicle>;
         constructor Create(index: Int32; score: Int64; vehicles: TArray<TVehicle>);
         // Read Player from input stream

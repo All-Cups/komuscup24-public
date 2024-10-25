@@ -1,8 +1,6 @@
 require_relative 'model/city_cell'
 require_relative 'model/city_type'
 require_relative 'model/constants'
-require_relative 'model/debug_data'
-require_relative 'model/debug_state'
 require_relative 'model/min_max_range_long'
 require_relative 'model/order'
 require_relative 'model/player'

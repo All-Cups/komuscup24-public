@@ -1,27 +1,27 @@
-/// TODO - Document
+/// A vehicle
 public struct Vehicle {
-    /// TODO - Document
+    /// Current position (center)
     let position: Vec2Double
 
-    /// TODO - Document
+    /// Velocity vector
     let velocity: Vec2Double
 
-    /// TODO - Document
+    /// Speed of wheels
     let speed: Double
 
-    /// TODO - Document
+    /// Rotation speed (radians/second)
     let rotationSpeed: Double
 
-    /// TODO - Document
+    /// Current rotation
     let rotation: Double
 
-    /// TODO - Document
+    /// Vehicle type index
     let typeIndex: Int32
 
-    /// TODO maybe multiple quests at the same time?
+    /// Current quest, if any
     let quest: Quest?
 
-    /// TODO - Document
+    /// Remaining fuel
     let fuel: Double
 
     /// Read Vehicle from input stream

@@ -9,14 +9,14 @@ uses
     SysUtils;
 
 type
-    // TODO - Document
+    // City cell
     {$scopedEnums on}
     TCityCell = (
-        // TODO - Document
+        // Road
         Road = 0,
-        // TODO - Document
+        // Building
         Building = 1,
-        // TODO - Document
+        // Refill station
         RefillStation = 2);
 
 implementation

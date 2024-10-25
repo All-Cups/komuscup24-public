@@ -2,13 +2,13 @@ require './model/vec2_int'
 
 module Model
 
-# TODO - Document
+# A delivery quest
 class Quest
-    # TODO - Document
+    # Cell where to pick delivery from
     attr_accessor :pickup_cell
-    # TODO - Document
+    # Cell to drop the delivery at
     attr_accessor :drop_cell
-    # TODO - Document
+    # Score for completing the quest
     attr_accessor :score
 
     def initialize(pickup_cell, drop_cell, score)

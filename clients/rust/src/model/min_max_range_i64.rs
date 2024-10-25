@@ -1,11 +1,11 @@
 use super::*;
 
-/// TODO - Document
+/// Range of values
 #[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct MinMaxRangeI64 {
-    /// TODO - Document
+    /// Minimal value
     pub min: i64,
-    /// TODO - Document
+    /// Maximal  value
     pub max: i64,
 }
 

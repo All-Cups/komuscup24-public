@@ -14,35 +14,37 @@ uses
     UVehicleType in 'Model/UVehicleType.pas';
 
 type
-    // TODO - Document
+    // Game constants
     TConstants = class
-        // TODO - Document
+        // Max duration of the game in ticks
         maxTickCount: Int32;
-        // TODO - Document
+        // Max game time in seconds
         maxGameTimeSeconds: Double;
-        // TODO - Document
+        // Ticks per second
         ticksPerSecond: Double;
-        // TODO - Document
+        // Subticks for physics simulation
         microticks: Int32;
-        // TODO - Document
+        // Size of a single city cell
         cellSize: Double;
-        // TODO - Document
+        // Collision bounciness
         collisionBounciness: Double;
-        // TODO - Document
+        // City type
         cityType: TCityType;
-        // TODO - Document
+        // List of vehicle types
         vehicleTypes: TArray<TVehicleType>;
-        // TODO - Document
+        // Speed of refueling at a station
         refillSpeed: Double;
-        // TODO - Document
+        // Number of available quests
         questCount: Int32;
-        // TODO - Document
+        // Score range for quests
         questScore: TMinMaxRangeInt64;
-        // TODO - Document
+        // Traffic options
         traffic: TTraffic;
-        // TODO - Document
+        // Collision penalty modifier
+        collisionPenaltyModifier: Double;
+        // Map of the city
         city: TArray<TArray<TCityCell>>;
-        constructor Create(maxTickCount: Int32; maxGameTimeSeconds: Double; ticksPerSecond: Double; microticks: Int32; cellSize: Double; collisionBounciness: Double; cityType: TCityType; vehicleTypes: TArray<TVehicleType>; refillSpeed: Double; questCount: Int32; questScore: TMinMaxRangeInt64; traffic: TTraffic; city: TArray<TArray<TCityCell>>);
+        constructor Create(maxTickCount: Int32; maxGameTimeSeconds: Double; ticksPerSecond: Double; microticks: Int32; cellSize: Double; collisionBounciness: Double; cityType: TCityType; vehicleTypes: TArray<TVehicleType>; refillSpeed: Double; questCount: Int32; questScore: TMinMaxRangeInt64; traffic: TTraffic; collisionPenaltyModifier: Double; city: TArray<TArray<TCityCell>>);
         // Read Constants from input stream
         class function ReadFrom(stream: TStream): TConstants; static;
         // Write Constants to output stream
@@ -52,7 +54,7 @@ type
 
 implementation
 
-constructor TConstants.Create(maxTickCount: Int32; maxGameTimeSeconds: Double; ticksPerSecond: Double; microticks: Int32; cellSize: Double; collisionBounciness: Double; cityType: TCityType; vehicleTypes: TArray<TVehicleType>; refillSpeed: Double; questCount: Int32; questScore: TMinMaxRangeInt64; traffic: TTraffic; city: TArray<TArray<TCityCell>>);
+constructor TConstants.Create(maxTickCount: Int32; maxGameTimeSeconds: Double; ticksPerSecond: Double; microticks: Int32; cellSize: Double; collisionBounciness: Double; cityType: TCityType; vehicleTypes: TArray<TVehicleType>; refillSpeed: Double; questCount: Int32; questScore: TMinMaxRangeInt64; traffic: TTraffic; collisionPenaltyModifier: Double; city: TArray<TArray<TCityCell>>);
 begin
     self.maxTickCount := maxTickCount;
     self.maxGameTimeSeconds := maxGameTimeSeconds;
@@ -66,6 +68,7 @@ begin
     self.questCount := questCount;
     self.questScore := questScore;
     self.traffic := traffic;
+    self.collisionPenaltyModifier := collisionPenaltyModifier;
     self.city := city;
 end;
 
@@ -78,6 +81,7 @@ var cityElementIndex: Int32;
 var cityIndex: Int32;
 var cityType: TCityType;
 var collisionBounciness: Double;
+var collisionPenaltyModifier: Double;
 var maxGameTimeSeconds: Double;
 var maxTickCount: Int32;
 var microticks: Int32;
@@ -107,6 +111,7 @@ begin
     questCount := stream.ReadInt32;
     questScore := TMinMaxRangeInt64.ReadFrom(stream);
     traffic := TTraffic.ReadFrom(stream);
+    collisionPenaltyModifier := stream.ReadDouble;
     city := TArray<TArray<TCityCell>>.Create;
     SetLength(city, stream.ReadInt32);
     for cityIndex := 0 to Length(city) - 1 do begin
@@ -118,7 +123,7 @@ begin
         end;
         city[cityIndex] := cityElement;
     end;
-    result := TConstants.Create(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, city);
+    result := TConstants.Create(maxTickCount, maxGameTimeSeconds, ticksPerSecond, microticks, cellSize, collisionBounciness, cityType, vehicleTypes, refillSpeed, questCount, questScore, traffic, collisionPenaltyModifier, city);
 end;
 
 procedure TConstants.WriteTo(stream: TStream);
@@ -141,6 +146,7 @@ begin
     stream.WriteInt32(questCount);
     questScore.WriteTo(stream);
     traffic.WriteTo(stream);
+    stream.WriteDouble(collisionPenaltyModifier);
     stream.WriteInt32(Length(city));
     for cityElement in city do begin
         stream.WriteInt32(Length(cityElement));
@@ -202,6 +208,9 @@ begin
     result += ', ';  
     result += 'traffic=';
     result += traffic.ToString;
+    result += ', ';  
+    result += 'collisionPenaltyModifier=';
+    result += FloatToStr(collisionPenaltyModifier);
     result += ', ';  
     result += 'city=';
     result += '[';

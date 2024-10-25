@@ -1,18 +1,18 @@
 module Model
 
-# TODO - Document
+# Options for traffic
 class Traffic
-    # TODO - Document
+    # Number of traffic cars
     attr_accessor :amount
-    # TODO - Document
+    # Time to move between adjacent keypoints
     attr_accessor :move_time
-    # TODO - Document
+    # Radius of each traffic car
     attr_accessor :radius
-    # TODO - Document
+    # Weight of each traffic car
     attr_accessor :weight
-    # TODO - Document
+    # Deceleration after crash
     attr_accessor :crash_deceleration
-    # TODO - Document
+    # Lifetime after crash
     attr_accessor :crash_lifetime
 
     def initialize(amount, move_time, radius, weight, crash_deceleration, crash_lifetime)

@@ -13,11 +13,23 @@ public class DebugInterface {
         this.outputStream = outputStream;
     }
 
-    public void addCircle(komus24.model.Vec2Double pos, double radius) {
-        this.add(new komus24.model.DebugData.Circle(pos, radius));
+    public void addCircle(komus24.model.Vec2Double pos, double radius, komus24.debugging.Color color) {
+        this.add(new komus24.debugging.DebugData.Circle(pos, radius, color));
+    }
+    
+    public void addLine(komus24.model.Vec2Double point1, komus24.model.Vec2Double point2, double width, komus24.debugging.Color color) {
+        this.add(new komus24.debugging.DebugData.Line(point1, point2, width, color));
+    }
+    
+    public void addRect(komus24.model.Vec2Double corner1, komus24.model.Vec2Double corner2, komus24.debugging.Color color) {
+        this.add(new komus24.debugging.DebugData.Rect(corner1, corner2, color));
+    }
+    
+    public void addText(String text, komus24.model.Vec2Double pos, double size, double align, komus24.debugging.Color color) {
+        this.add(new komus24.debugging.DebugData.Text(text, pos, size, align, color));
     }
 
-    public void add(komus24.model.DebugData debugData) {
+    public void add(komus24.debugging.DebugData debugData) {
         this.send(new komus24.debugging.DebugCommand.Add(debugData));
     }
     
@@ -42,11 +54,11 @@ public class DebugInterface {
         }
     }
 
-    public komus24.model.DebugState getState() {
+    public komus24.debugging.DebugState getState() {
         try {
             new komus24.codegame.ClientMessage.RequestDebugState().writeTo(outputStream);
             outputStream.flush();
-            return komus24.model.DebugState.readFrom(inputStream);
+            return komus24.debugging.DebugState.readFrom(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

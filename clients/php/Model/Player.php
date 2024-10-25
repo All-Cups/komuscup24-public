@@ -5,20 +5,20 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * Player (game participant)
      */
     class Player
     {
         /**
-         * TODO - Document
+         * Index
          */
         public int $index;
         /**
-         * TODO - Document
+         * Current score
          */
         public int $score;
         /**
-         * TODO - Document
+         * List of player's vehicles
          */
         public array $vehicles;
     

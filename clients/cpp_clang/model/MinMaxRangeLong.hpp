@@ -7,12 +7,12 @@
 
 namespace model {
 
-// TODO - Document
+// Range of values
 class MinMaxRangeLong {
 public:
-    // TODO - Document
+    // Minimal value
     long long min;
-    // TODO - Document
+    // Maximal  value
     long long max;
 
     MinMaxRangeLong(long long min, long long max);

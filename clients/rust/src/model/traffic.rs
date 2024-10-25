@@ -1,19 +1,19 @@
 use super::*;
 
-/// TODO - Document
+/// Options for traffic
 #[derive(Clone, Debug)]
 pub struct Traffic {
-    /// TODO - Document
+    /// Number of traffic cars
     pub amount: i32,
-    /// TODO - Document
+    /// Time to move between adjacent keypoints
     pub move_time: f64,
-    /// TODO - Document
+    /// Radius of each traffic car
     pub radius: f64,
-    /// TODO - Document
+    /// Weight of each traffic car
     pub weight: f64,
-    /// TODO - Document
+    /// Deceleration after crash
     pub crash_deceleration: f64,
-    /// TODO - Document
+    /// Lifetime after crash
     pub crash_lifetime: f64,
 }
 

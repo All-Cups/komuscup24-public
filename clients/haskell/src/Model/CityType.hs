@@ -6,13 +6,13 @@ import Trans (Trans)
 import Data.Int
 import Model.Vec2Int32 (Vec2Int32)
 
--- | TODO - Document
+-- | Auto generated manhattan map
 data CityTypeManhattan = CityTypeManhattan {
-    -- | TODO - Document
+    -- | Map size
     size :: Vec2Int32,
-    -- | TODO - Document
+    -- | Size of a single block
     blockSize :: Vec2Int32,
-    -- | TODO - Document
+    -- | Number of refill stations
     refills :: Int32 }
     deriving Show
 
@@ -34,9 +34,9 @@ instance Trans CityTypeManhattan where
             Trans.write blockSize
             Trans.write refills
 
--- | TODO - Document
+-- | Fixed map
 data CityTypeInline = CityTypeInline {
-    -- | TODO - Document
+    -- | Each string represents a row in the city
     cells :: [String] }
     deriving Show
 
@@ -50,11 +50,11 @@ instance Trans CityTypeInline where
         cells } = do
             Trans.write cells
 
--- | TODO - Document
+-- | City type
 data CityType
-    -- | TODO - Document
+    -- | Auto generated manhattan map
     = Manhattan CityTypeManhattan
-    -- | TODO - Document
+    -- | Fixed map
     | Inline CityTypeInline
     deriving Show
 

@@ -36,11 +36,11 @@ namespace Komus24.Debugging
             /// <summary>
             /// Data to add
             /// </summary>
-            public Komus24.Model.DebugData DebugData { get; set; }
+            public Komus24.Debugging.DebugData DebugData { get; set; }
         
             public Add() { }
         
-            public Add(Komus24.Model.DebugData debugData)
+            public Add(Komus24.Debugging.DebugData debugData)
             {
                 this.DebugData = debugData;
             }
@@ -49,7 +49,7 @@ namespace Komus24.Debugging
             public static new Add ReadFrom(System.IO.BinaryReader reader)
             {
                 var result = new Add();
-                result.DebugData = Komus24.Model.DebugData.ReadFrom(reader);
+                result.DebugData = Komus24.Debugging.DebugData.ReadFrom(reader);
                 return result;
             }
         

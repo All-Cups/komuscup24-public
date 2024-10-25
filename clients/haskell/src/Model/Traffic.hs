@@ -5,19 +5,19 @@ import qualified Trans
 import Trans (Trans)
 import Data.Int
 
--- | TODO - Document
+-- | Options for traffic
 data Traffic = Traffic {
-    -- | TODO - Document
+    -- | Number of traffic cars
     amount :: Int32,
-    -- | TODO - Document
+    -- | Time to move between adjacent keypoints
     moveTime :: Double,
-    -- | TODO - Document
+    -- | Radius of each traffic car
     radius :: Double,
-    -- | TODO - Document
+    -- | Weight of each traffic car
     weight :: Double,
-    -- | TODO - Document
+    -- | Deceleration after crash
     crashDeceleration :: Double,
-    -- | TODO - Document
+    -- | Lifetime after crash
     crashLifetime :: Double }
     deriving Show
 

@@ -3,7 +3,7 @@ from stream_wrapper import StreamWrapper
 from typing import List
 
 class CityType:
-    """TODO - Document"""
+    """City type"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "CityType":
@@ -17,7 +17,7 @@ class CityType:
         raise Exception("Unexpected tag value")
 
 class Manhattan(CityType):
-    """TODO - Document"""
+    """Auto generated manhattan map"""
 
     TAG = 0
 
@@ -29,11 +29,11 @@ class Manhattan(CityType):
 
     def __init__(self, size: Vec2Int, block_size: Vec2Int, refills: int):
         self.size = size
-        """TODO - Document"""
+        """Map size"""
         self.block_size = block_size
-        """TODO - Document"""
+        """Size of a single block"""
         self.refills = refills
-        """TODO - Document"""
+        """Number of refill stations"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "Manhattan":
@@ -64,7 +64,7 @@ class Manhattan(CityType):
 CityType.Manhattan = Manhattan
 
 class Inline(CityType):
-    """TODO - Document"""
+    """Fixed map"""
 
     TAG = 1
 
@@ -74,7 +74,7 @@ class Inline(CityType):
 
     def __init__(self, cells: List[str]):
         self.cells = cells
-        """TODO - Document"""
+        """Each string represents a row in the city"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "Inline":

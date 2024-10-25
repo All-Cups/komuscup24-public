@@ -4,8 +4,6 @@ module model;
 public import model.city_cell;
 public import model.city_type;
 public import model.constants;
-public import model.debug_data;
-public import model.debug_state;
 public import model.min_max_range_long;
 public import model.order;
 public import model.player;

@@ -18,7 +18,7 @@ object DebugCommand {
      *
      * @param debugData Data to add
      */
-    case class Add(debugData: komus24.model.DebugData) extends DebugCommand {
+    case class Add(debugData: komus24.debugging.DebugData) extends DebugCommand {
         /**
          * Write Add to output stream
          */
@@ -46,7 +46,7 @@ object DebugCommand {
          * Read Add from input stream
          */
         def readFrom(stream: java.io.InputStream): Add = Add(
-            komus24.model.DebugData.readFrom(stream)
+            komus24.debugging.DebugData.readFrom(stream)
         )
     }
 

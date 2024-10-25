@@ -1,7 +1,7 @@
 from stream_wrapper import StreamWrapper
 
 class MinMaxRangeLong:
-    """TODO - Document"""
+    """Range of values"""
 
     __slots__ = ("min","max",)
 
@@ -10,9 +10,9 @@ class MinMaxRangeLong:
 
     def __init__(self, min: int, max: int):
         self.min = min
-        """TODO - Document"""
+        """Minimal value"""
         self.max = max
-        """TODO - Document"""
+        """Maximal  value"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "MinMaxRangeLong":

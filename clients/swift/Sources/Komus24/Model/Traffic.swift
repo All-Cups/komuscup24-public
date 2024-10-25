@@ -1,21 +1,21 @@
-/// TODO - Document
+/// Options for traffic
 public struct Traffic {
-    /// TODO - Document
+    /// Number of traffic cars
     let amount: Int32
 
-    /// TODO - Document
+    /// Time to move between adjacent keypoints
     let moveTime: Double
 
-    /// TODO - Document
+    /// Radius of each traffic car
     let radius: Double
 
-    /// TODO - Document
+    /// Weight of each traffic car
     let weight: Double
 
-    /// TODO - Document
+    /// Deceleration after crash
     let crashDeceleration: Double
 
-    /// TODO - Document
+    /// Lifetime after crash
     let crashLifetime: Double
 
     /// Read Traffic from input stream

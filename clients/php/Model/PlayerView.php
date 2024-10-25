@@ -15,15 +15,15 @@ namespace Model {
          */
         public int $currentTick;
         /**
-         * TODO - Document
+         * Your player
          */
         public \Model\Player $you;
         /**
-         * TODO - Document
+         * Other players
          */
         public array $other;
         /**
-         * TODO - Document
+         * Available quests
          */
         public array $quests;
     

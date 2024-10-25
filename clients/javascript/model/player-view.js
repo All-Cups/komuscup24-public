@@ -9,15 +9,15 @@ class PlayerView {
      */
     currentTick;
     /**
-     * TODO - Document
+     * Your player
      */
     you;
     /**
-     * TODO - Document
+     * Other players
      */
     other;
     /**
-     * TODO - Document
+     * Available quests
      */
     quests;
 

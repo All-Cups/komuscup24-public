@@ -8,11 +8,11 @@ import . "komus24/stream"
 type PlayerView struct {
     // Current tick number
     CurrentTick int32
-    // TODO - Document
+    // Your player
     You Player
-    // TODO - Document
+    // Other players
     Other []Player
-    // TODO - Document
+    // Available quests
     Quests []Quest
 }
 

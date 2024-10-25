@@ -3,7 +3,7 @@ use super::*;
 /// Player's orders
 #[derive(Clone, Debug)]
 pub struct Order {
-    /// TODO - Document
+    /// Orders for each of the vehicles
     pub vehicles: Vec<model::VehicleOrder>,
 }
 

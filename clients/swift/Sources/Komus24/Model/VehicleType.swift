@@ -1,36 +1,36 @@
-/// TODO - Document
+/// Vehicle type options
 public struct VehicleType {
-    /// TODO - Document
+    /// Name
     let name: String
 
-    /// TODO - Document
+    /// Radius
     let radius: Double
 
-    /// TODO - Document
+    /// Weight
     let weight: Double
 
-    /// TODO - Document
+    /// Maximal backwads movement speed
     let maxBackwardsSpeed: Double
 
-    /// TODO - Document
+    /// Maximal forward movement speed
     let maxSpeed: Double
 
-    /// TODO - Document
+    /// Acceleration
     let acceleration: Double
 
-    /// TODO - Document
+    /// Friction coefficient
     let friction: Double
 
-    /// TODO - Document
+    /// Maximal rotation speed
     let maxRotateSpeed: Double
 
-    /// TODO - Document
+    /// Rotational acceleration
     let rotateAcceleration: Double
 
-    /// TODO - Document
+    /// Maximal amount of fuel
     let maxFuel: Double
 
-    /// TODO - Document
+    /// Fuel usage speed
     let fuelUseSpeed: Double
 
     /// Read VehicleType from input stream

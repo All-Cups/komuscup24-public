@@ -4,13 +4,13 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// Player (game participant)
 type Player struct {
-    // TODO - Document
+    // Index
     Index int32
-    // TODO - Document
+    // Current score
     Score int64
-    // TODO - Document
+    // List of player's vehicles
     Vehicles []Vehicle
 }
 

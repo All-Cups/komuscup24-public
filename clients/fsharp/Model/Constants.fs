@@ -5,33 +5,35 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// Game constants
 type Constants = {
-    /// TODO - Document
+    /// Max duration of the game in ticks
     MaxTickCount: int;
-    /// TODO - Document
+    /// Max game time in seconds
     MaxGameTimeSeconds: double;
-    /// TODO - Document
+    /// Ticks per second
     TicksPerSecond: double;
-    /// TODO - Document
+    /// Subticks for physics simulation
     Microticks: int;
-    /// TODO - Document
+    /// Size of a single city cell
     CellSize: double;
-    /// TODO - Document
+    /// Collision bounciness
     CollisionBounciness: double;
-    /// TODO - Document
+    /// City type
     CityType: Model.CityType;
-    /// TODO - Document
+    /// List of vehicle types
     VehicleTypes: Model.VehicleType[];
-    /// TODO - Document
+    /// Speed of refueling at a station
     RefillSpeed: double;
-    /// TODO - Document
+    /// Number of available quests
     QuestCount: int;
-    /// TODO - Document
+    /// Score range for quests
     QuestScore: Model.MinMaxRangeInt64;
-    /// TODO - Document
+    /// Traffic options
     Traffic: Model.Traffic;
-    /// TODO - Document
+    /// Collision penalty modifier
+    CollisionPenaltyModifier: double;
+    /// Map of the city
     City: Model.CityCell[][];
 } with
 
@@ -51,6 +53,7 @@ type Constants = {
         writer.Write this.QuestCount
         this.QuestScore.writeTo writer
         this.Traffic.writeTo writer
+        writer.Write this.CollisionPenaltyModifier
         writer.Write this.City.Length
         this.City |> Array.iter (fun value ->
             writer.Write value.Length
@@ -73,6 +76,7 @@ type Constants = {
         QuestCount = reader.ReadInt32()
         QuestScore = Model.MinMaxRangeInt64.readFrom reader;
         Traffic = Model.Traffic.readFrom reader;
+        CollisionPenaltyModifier = reader.ReadDouble()
         City = [|for _ in 1 .. reader.ReadInt32() do
                    yield [|for _ in 1 .. reader.ReadInt32() do
                              yield reader.ReadInt32() |> enum |] |]

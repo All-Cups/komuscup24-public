@@ -5,13 +5,13 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// Order for controlling a single vehicle
 type VehicleOrder = {
-    /// -1..+1
+    /// Acceleration (-1 - fully backwards, +1 - fully forward)
     Accelerate: double;
-    /// TODO - Document
+    /// Hand brakes
     Brakes: bool;
-    /// -1..+1
+    /// Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
     Rotate: double;
 } with
 

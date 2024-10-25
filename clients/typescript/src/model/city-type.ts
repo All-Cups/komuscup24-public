@@ -2,7 +2,7 @@ import { Vec2Int } from "./vec2-int";
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * City type
  */
 export abstract class CityType {
     /**
@@ -27,19 +27,19 @@ export abstract class CityType {
 
 export namespace CityType {
     /**
-     * TODO - Document
+     * Auto generated manhattan map
      */
     export class Manhattan extends CityType {
         /**
-         * TODO - Document
+         * Map size
          */
         size: Vec2Int
         /**
-         * TODO - Document
+         * Size of a single block
          */
         blockSize: Vec2Int
         /**
-         * TODO - Document
+         * Number of refill stations
          */
         refills: number
     
@@ -81,11 +81,11 @@ export namespace CityType {
         export const TAG = 0;
     }
     /**
-     * TODO - Document
+     * Fixed map
      */
     export class Inline extends CityType {
         /**
-         * TODO - Document
+         * Each string represents a row in the city
          */
         cells: Array<string>
     

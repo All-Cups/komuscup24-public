@@ -2,7 +2,7 @@
 
 require_once 'Codegame/ClientMessage.php';
 require_once 'Debugging/DebugCommand.php';
-require_once 'Model/DebugState.php';
+require_once 'Debugging/DebugState.php';
 
 class DebugInterface
 {
@@ -19,19 +19,31 @@ class DebugInterface
         $this->tcpStream->outputStream->flush();
     }
 
-    public function getState(): \Model\DebugState
+    public function getState(): \Debugging\DebugState
     {
         (new \Codegame\ClientMessage\RequestDebugState())->writeTo($this->tcpStream->outputStream);
         $this->tcpStream->outputStream->flush();
-        return \Model\DebugState\readFrom($this->tcpStream->inputStream);
+        return \Debugging\DebugState\readFrom($this->tcpStream->inputStream);
     }
 
-    function addCircle(\Model\Vec2Double $pos, float $radius): void
+    function addCircle(\Model\Vec2Double $pos, float $radius, \Debugging\Color $color): void
     {
-        $this->add(new \Model\DebugData\Circle($pos, $radius));
+        $this->add(new \Debugging\DebugData\Circle($pos, $radius, $color));
+    }
+    function addLine(\Model\Vec2Double $point1, \Model\Vec2Double $point2, float $width, \Debugging\Color $color): void
+    {
+        $this->add(new \Debugging\DebugData\Line($point1, $point2, $width, $color));
+    }
+    function addRect(\Model\Vec2Double $corner1, \Model\Vec2Double $corner2, \Debugging\Color $color): void
+    {
+        $this->add(new \Debugging\DebugData\Rect($corner1, $corner2, $color));
+    }
+    function addText(string $text, \Model\Vec2Double $pos, float $size, float $align, \Debugging\Color $color): void
+    {
+        $this->add(new \Debugging\DebugData\Text($text, $pos, $size, $align, $color));
     }
 
-    function add(\Model\DebugData $debugData): void
+    function add(\Debugging\DebugData $debugData): void
     {
         $this->send(new \Debugging\DebugCommand\Add($debugData));
     }

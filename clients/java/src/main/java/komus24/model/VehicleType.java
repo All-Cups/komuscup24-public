@@ -3,203 +3,203 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * Vehicle type options
  */
 public class VehicleType {
     /**
-     * TODO - Document
+     * Name
      */
     private String name;
 
     /**
-     * TODO - Document
+     * Name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * TODO - Document
+     * Name
      */
     public void setName(String value) {
         this.name = value;
     }
     /**
-     * TODO - Document
+     * Radius
      */
     private double radius;
 
     /**
-     * TODO - Document
+     * Radius
      */
     public double getRadius() {
         return radius;
     }
 
     /**
-     * TODO - Document
+     * Radius
      */
     public void setRadius(double value) {
         this.radius = value;
     }
     /**
-     * TODO - Document
+     * Weight
      */
     private double weight;
 
     /**
-     * TODO - Document
+     * Weight
      */
     public double getWeight() {
         return weight;
     }
 
     /**
-     * TODO - Document
+     * Weight
      */
     public void setWeight(double value) {
         this.weight = value;
     }
     /**
-     * TODO - Document
+     * Maximal backwads movement speed
      */
     private double maxBackwardsSpeed;
 
     /**
-     * TODO - Document
+     * Maximal backwads movement speed
      */
     public double getMaxBackwardsSpeed() {
         return maxBackwardsSpeed;
     }
 
     /**
-     * TODO - Document
+     * Maximal backwads movement speed
      */
     public void setMaxBackwardsSpeed(double value) {
         this.maxBackwardsSpeed = value;
     }
     /**
-     * TODO - Document
+     * Maximal forward movement speed
      */
     private double maxSpeed;
 
     /**
-     * TODO - Document
+     * Maximal forward movement speed
      */
     public double getMaxSpeed() {
         return maxSpeed;
     }
 
     /**
-     * TODO - Document
+     * Maximal forward movement speed
      */
     public void setMaxSpeed(double value) {
         this.maxSpeed = value;
     }
     /**
-     * TODO - Document
+     * Acceleration
      */
     private double acceleration;
 
     /**
-     * TODO - Document
+     * Acceleration
      */
     public double getAcceleration() {
         return acceleration;
     }
 
     /**
-     * TODO - Document
+     * Acceleration
      */
     public void setAcceleration(double value) {
         this.acceleration = value;
     }
     /**
-     * TODO - Document
+     * Friction coefficient
      */
     private double friction;
 
     /**
-     * TODO - Document
+     * Friction coefficient
      */
     public double getFriction() {
         return friction;
     }
 
     /**
-     * TODO - Document
+     * Friction coefficient
      */
     public void setFriction(double value) {
         this.friction = value;
     }
     /**
-     * TODO - Document
+     * Maximal rotation speed
      */
     private double maxRotateSpeed;
 
     /**
-     * TODO - Document
+     * Maximal rotation speed
      */
     public double getMaxRotateSpeed() {
         return maxRotateSpeed;
     }
 
     /**
-     * TODO - Document
+     * Maximal rotation speed
      */
     public void setMaxRotateSpeed(double value) {
         this.maxRotateSpeed = value;
     }
     /**
-     * TODO - Document
+     * Rotational acceleration
      */
     private double rotateAcceleration;
 
     /**
-     * TODO - Document
+     * Rotational acceleration
      */
     public double getRotateAcceleration() {
         return rotateAcceleration;
     }
 
     /**
-     * TODO - Document
+     * Rotational acceleration
      */
     public void setRotateAcceleration(double value) {
         this.rotateAcceleration = value;
     }
     /**
-     * TODO - Document
+     * Maximal amount of fuel
      */
     private double maxFuel;
 
     /**
-     * TODO - Document
+     * Maximal amount of fuel
      */
     public double getMaxFuel() {
         return maxFuel;
     }
 
     /**
-     * TODO - Document
+     * Maximal amount of fuel
      */
     public void setMaxFuel(double value) {
         this.maxFuel = value;
     }
     /**
-     * TODO - Document
+     * Fuel usage speed
      */
     private double fuelUseSpeed;
 
     /**
-     * TODO - Document
+     * Fuel usage speed
      */
     public double getFuelUseSpeed() {
         return fuelUseSpeed;
     }
 
     /**
-     * TODO - Document
+     * Fuel usage speed
      */
     public void setFuelUseSpeed(double value) {
         this.fuelUseSpeed = value;

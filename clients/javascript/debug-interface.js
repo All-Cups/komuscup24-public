@@ -1,15 +1,27 @@
 const ClientMessage = require('./codegame/client-message');
-const DebugState = require('./model/debug-state');
+const DebugState = require('./debugging/debug-state');
 const DebugCommand = require('./debugging/debug-command');
-const DebugData = require('./model/debug-data');
+const DebugData = require('./debugging/debug-data');
 
 class DebugInterface {
     constructor(stream) {
         this.stream = stream;
     }
 
-    async addCircle(pos, radius) {
-        await this.add(new DebugData.Circle(pos, radius));
+    async addCircle(pos, radius, color) {
+        await this.add(new DebugData.Circle(pos, radius, color));
+    }
+    
+    async addLine(point1, point2, width, color) {
+        await this.add(new DebugData.Line(point1, point2, width, color));
+    }
+    
+    async addRect(corner1, corner2, color) {
+        await this.add(new DebugData.Rect(corner1, corner2, color));
+    }
+    
+    async addText(text, pos, size, align, color) {
+        await this.add(new DebugData.Text(text, pos, size, align, color));
     }
 
     async add(debugData) {

@@ -13,14 +13,14 @@
 namespace model {
 
 
-// TODO - Document
+// Auto generated manhattan map
 class Manhattan {
 public:
-    // TODO - Document
+    // Map size
     model::Vec2Int size;
-    // TODO - Document
+    // Size of a single block
     model::Vec2Int blockSize;
-    // TODO - Document
+    // Number of refill stations
     int refills;
 
     Manhattan(model::Vec2Int size, model::Vec2Int blockSize, int refills);
@@ -37,10 +37,10 @@ public:
     bool operator ==(const Manhattan& other) const;
 };
 
-// TODO - Document
+// Fixed map
 class Inline {
 public:
-    // TODO - Document
+    // Each string represents a row in the city
     std::vector<std::string> cells;
 
     Inline(std::vector<std::string> cells);
@@ -55,7 +55,7 @@ public:
     std::string toString() const;
 };
 
-// TODO - Document
+// City type
 typedef std::variant<Manhattan, Inline> CityType;
 
 // Read CityType from input stream

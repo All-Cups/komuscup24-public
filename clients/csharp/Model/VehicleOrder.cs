@@ -1,20 +1,20 @@
 namespace Komus24.Model
 {
     /// <summary>
-    /// TODO - Document
+    /// Order for controlling a single vehicle
     /// </summary>
     public struct VehicleOrder
     {
         /// <summary>
-        /// -1..+1
+        /// Acceleration (-1 - fully backwards, +1 - fully forward)
         /// </summary>
         public double Accelerate { get; set; }
         /// <summary>
-        /// TODO - Document
+        /// Hand brakes
         /// </summary>
         public bool Brakes { get; set; }
         /// <summary>
-        /// -1..+1
+        /// Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
         /// </summary>
         public double Rotate { get; set; }
     

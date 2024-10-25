@@ -8,7 +8,7 @@ open Komus24
 /// Add debug data to current tick
 type DebugCommandAdd = {
     /// Data to add
-    DebugData: Model.DebugData;
+    DebugData: Debugging.DebugData;
 } with
 
     /// Write Add to writer
@@ -19,7 +19,7 @@ type DebugCommandAdd = {
 
     /// Read Add from reader
     static member readFrom(reader: System.IO.BinaryReader) = {
-        DebugData = Model.DebugData.readFrom reader;
+        DebugData = Debugging.DebugData.readFrom reader;
     }
 
 /// Clear current tick's debug data

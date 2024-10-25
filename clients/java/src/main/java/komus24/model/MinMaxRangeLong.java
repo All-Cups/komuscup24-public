@@ -3,41 +3,41 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * Range of values
  */
 public class MinMaxRangeLong {
     /**
-     * TODO - Document
+     * Minimal value
      */
     private long min;
 
     /**
-     * TODO - Document
+     * Minimal value
      */
     public long getMin() {
         return min;
     }
 
     /**
-     * TODO - Document
+     * Minimal value
      */
     public void setMin(long value) {
         this.min = value;
     }
     /**
-     * TODO - Document
+     * Maximal  value
      */
     private long max;
 
     /**
-     * TODO - Document
+     * Maximal  value
      */
     public long getMax() {
         return max;
     }
 
     /**
-     * TODO - Document
+     * Maximal  value
      */
     public void setMax(long value) {
         this.max = value;

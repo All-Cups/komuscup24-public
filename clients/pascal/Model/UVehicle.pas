@@ -12,23 +12,23 @@ uses
     UVec2Double in 'Model/UVec2Double.pas';
 
 type
-    // TODO - Document
+    // A vehicle
     TVehicle = class
-        // TODO - Document
+        // Current position (center)
         position: TVec2Double;
-        // TODO - Document
+        // Velocity vector
         velocity: TVec2Double;
-        // TODO - Document
+        // Speed of wheels
         speed: Double;
-        // TODO - Document
+        // Rotation speed (radians/second)
         rotationSpeed: Double;
-        // TODO - Document
+        // Current rotation
         rotation: Double;
-        // TODO - Document
+        // Vehicle type index
         typeIndex: Int32;
-        // TODO maybe multiple quests at the same time?
+        // Current quest, if any
         quest: TNullable<TQuest>;
-        // TODO - Document
+        // Remaining fuel
         fuel: Double;
         constructor Create(position: TVec2Double; velocity: TVec2Double; speed: Double; rotationSpeed: Double; rotation: Double; typeIndex: Int32; quest: TNullable<TQuest>; fuel: Double);
         // Read Vehicle from input stream

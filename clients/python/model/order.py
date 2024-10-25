@@ -11,7 +11,7 @@ class Order:
 
     def __init__(self, vehicles: List[VehicleOrder]):
         self.vehicles = vehicles
-        """TODO - Document"""
+        """Orders for each of the vehicles"""
 
     @staticmethod
     def read_from(stream: StreamWrapper) -> "Order":

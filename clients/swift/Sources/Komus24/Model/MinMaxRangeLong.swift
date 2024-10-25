@@ -1,9 +1,9 @@
-/// TODO - Document
+/// Range of values
 public struct MinMaxRangeLong {
-    /// TODO - Document
+    /// Minimal value
     let min: Int64
 
-    /// TODO - Document
+    /// Maximal  value
     let max: Int64
 
     /// Read MinMaxRangeLong from input stream

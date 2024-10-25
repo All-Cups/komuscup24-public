@@ -6,13 +6,13 @@ import Trans (Trans)
 import Data.Int
 import Model.Vec2Int32 (Vec2Int32)
 
--- | TODO - Document
+-- | A delivery quest
 data Quest = Quest {
-    -- | TODO - Document
+    -- | Cell where to pick delivery from
     pickupCell :: Vec2Int32,
-    -- | TODO - Document
+    -- | Cell to drop the delivery at
     dropCell :: Vec2Int32,
-    -- | TODO - Document
+    -- | Score for completing the quest
     score :: Int64 }
     deriving Show
 

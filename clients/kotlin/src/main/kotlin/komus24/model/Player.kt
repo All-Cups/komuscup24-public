@@ -3,19 +3,19 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Player (game participant)
  */
 class Player {
     /**
-     * TODO - Document
+     * Index
      */
     var index: Int
     /**
-     * TODO - Document
+     * Current score
      */
     var score: Long
     /**
-     * TODO - Document
+     * List of player's vehicles
      */
     var vehicles: Array<komus24.model.Vehicle>
 

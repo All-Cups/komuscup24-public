@@ -1,4 +1,4 @@
-require './model/debug_data'
+require './debugging/debug_data'
 
 module Debugging
 
@@ -35,7 +35,7 @@ class DebugCommand
     
         # Read Add from input stream
         def self.read_from(stream)
-            debug_data = Model::DebugData.read_from(stream)
+            debug_data = Debugging::DebugData.read_from(stream)
             Add.new(debug_data)
         end
     

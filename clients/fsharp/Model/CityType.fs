@@ -5,13 +5,13 @@ namespace Komus24.Model
 
 open Komus24
 
-/// TODO - Document
+/// Auto generated manhattan map
 type CityTypeManhattan = {
-    /// TODO - Document
+    /// Map size
     Size: Model.Vec2Int;
-    /// TODO - Document
+    /// Size of a single block
     BlockSize: Model.Vec2Int;
-    /// TODO - Document
+    /// Number of refill stations
     Refills: int;
 } with
 
@@ -30,9 +30,9 @@ type CityTypeManhattan = {
         Refills = reader.ReadInt32()
     }
 
-/// TODO - Document
+/// Fixed map
 type CityTypeInline = {
-    /// TODO - Document
+    /// Each string represents a row in the city
     Cells: string[];
 } with
 
@@ -52,11 +52,11 @@ type CityTypeInline = {
                     yield reader.ReadInt32() |> reader.ReadBytes |> System.Text.Encoding.UTF8.GetString |]
     }
 
-/// TODO - Document
+/// City type
 type CityType =
-    /// TODO - Document
+    /// Auto generated manhattan map
     | Manhattan of CityTypeManhattan
-    /// TODO - Document
+    /// Fixed map
     | Inline of CityTypeInline
     with
 

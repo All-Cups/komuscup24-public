@@ -3,59 +3,59 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * Order for controlling a single vehicle
  */
 public class VehicleOrder {
     /**
-     * -1..+1
+     * Acceleration (-1 - fully backwards, +1 - fully forward)
      */
     private double accelerate;
 
     /**
-     * -1..+1
+     * Acceleration (-1 - fully backwards, +1 - fully forward)
      */
     public double getAccelerate() {
         return accelerate;
     }
 
     /**
-     * -1..+1
+     * Acceleration (-1 - fully backwards, +1 - fully forward)
      */
     public void setAccelerate(double value) {
         this.accelerate = value;
     }
     /**
-     * TODO - Document
+     * Hand brakes
      */
     private boolean brakes;
 
     /**
-     * TODO - Document
+     * Hand brakes
      */
     public boolean isBrakes() {
         return brakes;
     }
 
     /**
-     * TODO - Document
+     * Hand brakes
      */
     public void setBrakes(boolean value) {
         this.brakes = value;
     }
     /**
-     * -1..+1
+     * Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
      */
     private double rotate;
 
     /**
-     * -1..+1
+     * Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
      */
     public double getRotate() {
         return rotate;
     }
 
     /**
-     * -1..+1
+     * Rotate the steering wheel (-1 - full clockwise, +1 - full counterclockwise)
      */
     public void setRotate(double value) {
         this.rotate = value;

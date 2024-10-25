@@ -1,29 +1,29 @@
 /**
- * TODO - Document
+ * Options for traffic
  */
 class Traffic {
     /**
-     * TODO - Document
+     * Number of traffic cars
      */
     amount;
     /**
-     * TODO - Document
+     * Time to move between adjacent keypoints
      */
     moveTime;
     /**
-     * TODO - Document
+     * Radius of each traffic car
      */
     radius;
     /**
-     * TODO - Document
+     * Weight of each traffic car
      */
     weight;
     /**
-     * TODO - Document
+     * Deceleration after crash
      */
     crashDeceleration;
     /**
-     * TODO - Document
+     * Lifetime after crash
      */
     crashLifetime;
 

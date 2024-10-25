@@ -10,13 +10,13 @@ uses
     UVec2Int32 in 'Model/UVec2Int32.pas';
 
 type
-    // TODO - Document
+    // A delivery quest
     TQuest = class
-        // TODO - Document
+        // Cell where to pick delivery from
         pickupCell: TVec2Int32;
-        // TODO - Document
+        // Cell to drop the delivery at
         dropCell: TVec2Int32;
-        // TODO - Document
+        // Score for completing the quest
         score: Int64;
         constructor Create(pickupCell: TVec2Int32; dropCell: TVec2Int32; score: Int64);
         // Read Quest from input stream

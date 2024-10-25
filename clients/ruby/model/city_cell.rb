@@ -1,12 +1,12 @@
 module Model
 
-# TODO - Document
+# City cell
 module CityCell
-    # TODO - Document
+    # Road
     ROAD = 0
-    # TODO - Document
+    # Building
     BUILDING = 1
-    # TODO - Document
+    # Refill station
     REFILL_STATION = 2
 
     # Read CityCell from input stream

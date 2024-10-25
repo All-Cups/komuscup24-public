@@ -20,11 +20,11 @@ class PlayerView {
 public:
     // Current tick number
     int currentTick;
-    // TODO - Document
+    // Your player
     model::Player you;
-    // TODO - Document
+    // Other players
     std::vector<model::Player> other;
-    // TODO - Document
+    // Available quests
     std::vector<model::Quest> quests;
 
     PlayerView(int currentTick, model::Player you, std::vector<model::Player> other, std::vector<model::Quest> quests);

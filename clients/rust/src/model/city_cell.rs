@@ -1,13 +1,13 @@
 use super::*;
 
-/// TODO - Document
+/// City cell
 #[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub enum CityCell {
-    /// TODO - Document
+    /// Road
     Road,
-    /// TODO - Document
+    /// Building
     Building,
-    /// TODO - Document
+    /// Refill station
     RefillStation,
 }
 

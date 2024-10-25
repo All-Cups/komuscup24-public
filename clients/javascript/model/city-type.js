@@ -1,7 +1,7 @@
 const Vec2Int = require.main.require('./model/vec2-int');
 
 /**
- * TODO - Document
+ * City type
  */
 class CityType {
     /**
@@ -19,19 +19,19 @@ class CityType {
     }
 }
 /**
- * TODO - Document
+ * Auto generated manhattan map
  */
 class Manhattan extends CityType {
     /**
-     * TODO - Document
+     * Map size
      */
     size;
     /**
-     * TODO - Document
+     * Size of a single block
      */
     blockSize;
     /**
-     * TODO - Document
+     * Number of refill stations
      */
     refills;
 
@@ -72,11 +72,11 @@ class Manhattan extends CityType {
 Manhattan.TAG = 0;
 CityType.Manhattan = Manhattan;
 /**
- * TODO - Document
+ * Fixed map
  */
 class Inline extends CityType {
     /**
-     * TODO - Document
+     * Each string represents a row in the city
      */
     cells;
 

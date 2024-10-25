@@ -3,59 +3,59 @@ package komus24.model;
 import komus24.util.StreamUtil;
 
 /**
- * TODO - Document
+ * A delivery quest
  */
 public class Quest {
     /**
-     * TODO - Document
+     * Cell where to pick delivery from
      */
     private komus24.model.Vec2Int pickupCell;
 
     /**
-     * TODO - Document
+     * Cell where to pick delivery from
      */
     public komus24.model.Vec2Int getPickupCell() {
         return pickupCell;
     }
 
     /**
-     * TODO - Document
+     * Cell where to pick delivery from
      */
     public void setPickupCell(komus24.model.Vec2Int value) {
         this.pickupCell = value;
     }
     /**
-     * TODO - Document
+     * Cell to drop the delivery at
      */
     private komus24.model.Vec2Int dropCell;
 
     /**
-     * TODO - Document
+     * Cell to drop the delivery at
      */
     public komus24.model.Vec2Int getDropCell() {
         return dropCell;
     }
 
     /**
-     * TODO - Document
+     * Cell to drop the delivery at
      */
     public void setDropCell(komus24.model.Vec2Int value) {
         this.dropCell = value;
     }
     /**
-     * TODO - Document
+     * Score for completing the quest
      */
     private long score;
 
     /**
-     * TODO - Document
+     * Score for completing the quest
      */
     public long getScore() {
         return score;
     }
 
     /**
-     * TODO - Document
+     * Score for completing the quest
      */
     public void setScore(long value) {
         this.score = value;

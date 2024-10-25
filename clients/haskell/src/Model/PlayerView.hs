@@ -11,11 +11,11 @@ import Model.Quest (Quest)
 data PlayerView = PlayerView {
     -- | Current tick number
     currentTick :: Int32,
-    -- | TODO - Document
+    -- | Your player
     you :: Player,
-    -- | TODO - Document
+    -- | Other players
     other :: [Player],
-    -- | TODO - Document
+    -- | Available quests
     quests :: [Quest] }
     deriving Show
 

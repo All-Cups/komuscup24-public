@@ -1,12 +1,12 @@
-/// TODO - Document
+/// Player (game participant)
 public struct Player {
-    /// TODO - Document
+    /// Index
     let index: Int32
 
-    /// TODO - Document
+    /// Current score
     let score: Int64
 
-    /// TODO - Document
+    /// List of player's vehicles
     let vehicles: [Vehicle]
 
     /// Read Player from input stream

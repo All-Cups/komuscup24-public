@@ -4,29 +4,29 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// Vehicle type options
 type VehicleType struct {
-    // TODO - Document
+    // Name
     Name string
-    // TODO - Document
+    // Radius
     Radius float64
-    // TODO - Document
+    // Weight
     Weight float64
-    // TODO - Document
+    // Maximal backwads movement speed
     MaxBackwardsSpeed float64
-    // TODO - Document
+    // Maximal forward movement speed
     MaxSpeed float64
-    // TODO - Document
+    // Acceleration
     Acceleration float64
-    // TODO - Document
+    // Friction coefficient
     Friction float64
-    // TODO - Document
+    // Maximal rotation speed
     MaxRotateSpeed float64
-    // TODO - Document
+    // Rotational acceleration
     RotateAcceleration float64
-    // TODO - Document
+    // Maximal amount of fuel
     MaxFuel float64
-    // TODO - Document
+    // Fuel usage speed
     FuelUseSpeed float64
 }
 

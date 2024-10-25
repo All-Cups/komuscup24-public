@@ -9,14 +9,14 @@
 
 namespace model {
 
-// TODO - Document
+// A delivery quest
 class Quest {
 public:
-    // TODO - Document
+    // Cell where to pick delivery from
     model::Vec2Int pickupCell;
-    // TODO - Document
+    // Cell to drop the delivery at
     model::Vec2Int dropCell;
-    // TODO - Document
+    // Score for completing the quest
     long long score;
 
     Quest(model::Vec2Int pickupCell, model::Vec2Int dropCell, long long score);

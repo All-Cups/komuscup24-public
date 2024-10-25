@@ -2,19 +2,19 @@ import { Vec2Int } from "./vec2-int";
 import { Stream } from "../stream";
 
 /**
- * TODO - Document
+ * A delivery quest
  */
 export class Quest {
     /**
-     * TODO - Document
+     * Cell where to pick delivery from
      */
     pickupCell: Vec2Int
     /**
-     * TODO - Document
+     * Cell to drop the delivery at
      */
     dropCell: Vec2Int
     /**
-     * TODO - Document
+     * Score for completing the quest
      */
     score: bigint
 

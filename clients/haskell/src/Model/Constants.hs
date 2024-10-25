@@ -10,33 +10,35 @@ import Model.MinMaxRangeInt64 (MinMaxRangeInt64)
 import Model.Traffic (Traffic)
 import Model.VehicleType (VehicleType)
 
--- | TODO - Document
+-- | Game constants
 data Constants = Constants {
-    -- | TODO - Document
+    -- | Max duration of the game in ticks
     maxTickCount :: Int32,
-    -- | TODO - Document
+    -- | Max game time in seconds
     maxGameTimeSeconds :: Double,
-    -- | TODO - Document
+    -- | Ticks per second
     ticksPerSecond :: Double,
-    -- | TODO - Document
+    -- | Subticks for physics simulation
     microticks :: Int32,
-    -- | TODO - Document
+    -- | Size of a single city cell
     cellSize :: Double,
-    -- | TODO - Document
+    -- | Collision bounciness
     collisionBounciness :: Double,
-    -- | TODO - Document
+    -- | City type
     cityType :: CityType,
-    -- | TODO - Document
+    -- | List of vehicle types
     vehicleTypes :: [VehicleType],
-    -- | TODO - Document
+    -- | Speed of refueling at a station
     refillSpeed :: Double,
-    -- | TODO - Document
+    -- | Number of available quests
     questCount :: Int32,
-    -- | TODO - Document
+    -- | Score range for quests
     questScore :: MinMaxRangeInt64,
-    -- | TODO - Document
+    -- | Traffic options
     traffic :: Traffic,
-    -- | TODO - Document
+    -- | Collision penalty modifier
+    collisionPenaltyModifier :: Double,
+    -- | Map of the city
     city :: [[CityCell]] }
     deriving Show
 
@@ -54,6 +56,7 @@ instance Trans Constants where
         questCount <- Trans.read
         questScore <- Trans.read
         traffic <- Trans.read
+        collisionPenaltyModifier <- Trans.read
         city <- Trans.read
         return Constants {
             maxTickCount,
@@ -68,6 +71,7 @@ instance Trans Constants where
             questCount,
             questScore,
             traffic,
+            collisionPenaltyModifier,
             city }
     
     write Constants {
@@ -83,6 +87,7 @@ instance Trans Constants where
         questCount,
         questScore,
         traffic,
+        collisionPenaltyModifier,
         city } = do
             Trans.write maxTickCount
             Trans.write maxGameTimeSeconds
@@ -96,4 +101,5 @@ instance Trans Constants where
             Trans.write questCount
             Trans.write questScore
             Trans.write traffic
+            Trans.write collisionPenaltyModifier
             Trans.write city

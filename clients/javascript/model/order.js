@@ -4,7 +4,7 @@ const VehicleOrder = require.main.require('./model/vehicle-order');
  */
 class Order {
     /**
-     * TODO - Document
+     * Orders for each of the vehicles
      */
     vehicles;
 

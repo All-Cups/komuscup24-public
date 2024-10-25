@@ -19,7 +19,7 @@ class Runner {
         await this.stream.writeString(this.token);
         await this.stream.writeInt(0);
         await this.stream.writeInt(1);
-        await this.stream.writeInt(0);
+        await this.stream.writeInt(2);
         await this.stream.flush();
     }
 

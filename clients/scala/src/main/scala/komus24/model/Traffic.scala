@@ -3,14 +3,14 @@ package komus24.model
 import komus24.util.StreamUtil
 
 /**
- * TODO - Document
+ * Options for traffic
  *
- * @param amount TODO - Document
- * @param moveTime TODO - Document
- * @param radius TODO - Document
- * @param weight TODO - Document
- * @param crashDeceleration TODO - Document
- * @param crashLifetime TODO - Document
+ * @param amount Number of traffic cars
+ * @param moveTime Time to move between adjacent keypoints
+ * @param radius Radius of each traffic car
+ * @param weight Weight of each traffic car
+ * @param crashDeceleration Deceleration after crash
+ * @param crashLifetime Lifetime after crash
  */
 case class Traffic(amount: Int, moveTime: Double, radius: Double, weight: Double, crashDeceleration: Double, crashLifetime: Double) {
     /**

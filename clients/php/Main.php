@@ -16,7 +16,7 @@ class Runner
         $this->tcpStream->outputStream->writeString($token);
         $this->tcpStream->outputStream->writeInt32(0);
         $this->tcpStream->outputStream->writeInt32(1);
-        $this->tcpStream->outputStream->writeInt32(0);
+        $this->tcpStream->outputStream->writeInt32(2);
         $this->tcpStream->outputStream->flush();
     }
 

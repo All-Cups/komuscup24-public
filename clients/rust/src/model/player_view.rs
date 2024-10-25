@@ -5,11 +5,11 @@ use super::*;
 pub struct PlayerView {
     /// Current tick number
     pub current_tick: i32,
-    /// TODO - Document
+    /// Your player
     pub you: model::Player,
-    /// TODO - Document
+    /// Other players
     pub other: Vec<model::Player>,
-    /// TODO - Document
+    /// Available quests
     pub quests: Vec<model::Quest>,
 }
 

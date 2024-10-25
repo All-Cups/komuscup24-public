@@ -5,20 +5,20 @@ namespace Model {
     require_once 'Stream.php';
 
     /**
-     * TODO - Document
+     * A delivery quest
      */
     class Quest
     {
         /**
-         * TODO - Document
+         * Cell where to pick delivery from
          */
         public \Model\Vec2Int $pickupCell;
         /**
-         * TODO - Document
+         * Cell to drop the delivery at
          */
         public \Model\Vec2Int $dropCell;
         /**
-         * TODO - Document
+         * Score for completing the quest
          */
         public int $score;
     

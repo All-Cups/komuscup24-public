@@ -4,13 +4,13 @@ import "fmt"
 import "io"
 import . "komus24/stream"
 
-// TODO - Document
+// A delivery quest
 type Quest struct {
-    // TODO - Document
+    // Cell where to pick delivery from
     PickupCell Vec2Int32
-    // TODO - Document
+    // Cell to drop the delivery at
     DropCell Vec2Int32
-    // TODO - Document
+    // Score for completing the quest
     Score int64
 }
 
