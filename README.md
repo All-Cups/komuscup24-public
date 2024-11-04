@@ -8,6 +8,12 @@
 
 Соревнуйтесь с другими участниками за звание лучшего сервиса доставки в нашем виртуальном мире.
 
+# Прямые ссылки на скачивание последних версий приложения
+- [Windows](https://github.com/All-Cups/komuscup24-public/releases/download/0.1.3/komus24-windows.zip)
+- [MacOS](https://github.com/All-Cups/komuscup24-public/releases/download/0.1.3/komus24-macos.zip)
+- [Linux](https://github.com/All-Cups/komuscup24-public/releases/download/0.1.3/komus24-linux.zip)
+
+
 ## Время
 
 Время в игре считается в секундах, при этом симуляция разделена на "тики".
