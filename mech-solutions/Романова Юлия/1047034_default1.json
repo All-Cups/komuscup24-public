@@ -1,0 +1,59 @@
+{
+    "max_game_time_seconds": 300,
+    "ticks_per_second": 50,
+    "microticks": 100,
+    "cell_size": 32,
+    "collision_bounciness": 0.01,
+    "quest_count": 100,
+    "quest_score": {
+        "min": 18,
+        "max": 100
+    },
+    "city_type": {
+        "type": "Inline",
+        "cells": [
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A",
+"A...............A"
+       ]
+    },
+    "refill_speed": 100,
+    "vehicle_types": [
+        {
+            "name": "Drifter",
+            "radius": 5,
+            "weight": 1,
+            "max_speed": 1000,
+            "max_backwards_speed": 1000,
+            "acceleration": 1000,
+            "friction": 20.0,
+            "max_rotate_speed": 3.14,
+            "rotate_acceleration": 100,
+            "max_fuel": 1000,
+            "fuel_use_speed": 10
+        }
+    ],
+    "traffic": {
+        "amount": 0,
+        "radius": 5,
+        "move_time": 1,
+        "weight": 1,
+        "crash_deceleration": 200,
+        "crash_lifetime": 1
+    },
+    "collision_penalty_modifier": 5.0
+}

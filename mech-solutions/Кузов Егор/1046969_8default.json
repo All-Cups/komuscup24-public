@@ -1,0 +1,49 @@
+{
+    "max_game_time_seconds": 10,
+    "ticks_per_second": 50,
+    "microticks": 100,
+    "cell_size": 32,
+    "collision_bounciness": 0.2,
+    "quest_count": 1,
+    "quest_score": {
+        "min": 0,
+        "max": 18
+    },
+    "city_type": {
+        "type": "Manhattan",
+        "block_size": [
+            8,
+            8
+        ],
+        "size": [
+            10,
+            10
+        ],
+        "refills": 3
+    },
+    "refill_speed": 4,
+    "vehicle_types": [
+        {
+            "name": "Drifter",
+            "radius": 5,
+            "weight": 5,
+            "max_speed": 500,
+            "max_backwards_speed": 50,
+            "acceleration": 100,
+            "friction": 5.0,
+            "max_rotate_speed": 1.57,
+            "rotate_acceleration": 5,
+            "max_fuel": 20,
+            "fuel_use_speed": 2
+        }
+    ],
+    "traffic": {
+        "amount": 10,
+        "radius": 5,
+        "move_time": 1,
+        "weight": 5,
+        "crash_deceleration": 150,
+        "crash_lifetime": 1
+    },
+    "collision_penalty_modifier": 1.5
+}
